@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>投递简历</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/resume-pop.css"/>
+	<link rel="stylesheet" href="css/tip-yellow.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.poshytip.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<article class="sendResume_content ">
+	<header>
+		<ul class="new-title">
+			<li class="fl">投递简历</li>
+			<li class="fr"><b class="close hand"></b></li>
+		</ul>
+	</header>
+	<ul class="add-content pt20">
+		<li>
+			<p class="tac fsize18 c-333">完善信息，即可投递简历</p>
+		</li>
+		<li class="mt20">
+			<dl>
+				<dt>姓<i class="ml2"></i>名：</dt>
+				<dd>
+					<input id="demo-manual-trigger" type="text" placeholder="请填写您的姓名"/>
+				</dd>
+			</dl>
+		</li>
+		<li class="mt20 pr">
+			<dl>
+				<dt>学<i class="ml2"></i>校：</dt>
+				<dd>
+					<input type="text" placeholder="请填写您的学校名称"/>
+				</dd>
+			</dl>
+		</li>
+		<li class="mt20 pr">
+			<dl>
+				<dt class="ml1">专<i class="ml2"></i>业：</dt>
+				<dd>
+					<input type="text" placeholder="请填写您的专业名称"/>
+				</dd>
+			</dl>
+		</li>
+		<li class="mt20 pr">
+			<dl>
+				<dt>居住地址：</dt>
+				<dd class="pr">
+					<input type="text" placeholder="请填写您的居住地址"/>
+					<div class="city_list" style="display: block;">
+						<div class="mr_selCity">
+							<ul class="reset mr_province">
+								<li><span class="mr_on">热门城市</span>
+									<ul class="reset dn" style="display: block;">
+										<li>北京</li>
+										<li>上海</li>
+										<li>广州</li>
+										<li class="">深圳</li>
+										<li class="mr_on">杭州</li>
+										<li>成都</li>
+										<li>西安</li>
+									</ul>
+								</li>
+								<li>
+									<span class="">北京</span>
+									<ul class="reset dn" style="display: none;">
+										<li class="">北京</li>
+									</ul>
+								</li>
+								<li>
+									<span class="">上海</span>
+									<ul class="reset dn" style="display: none;">
+										<li class="">上海</li>
+									</ul>
+								</li>
+								<li>
+									<span class="">天津</span>
+									<ul class="reset dn" style="display: none;">
+										<li class="">天津</li>
+									</ul>
+								</li>
+								<li>
+									<span>重庆</span>
+									<ul class="reset dn" style="display: none;">
+										<li class="">重庆</li>
+									</ul>
+								</li>
+								<li>
+									<span>河北</span>
+									<ul class="reset dn" style="display: none;">
+										<li class="">石家庄</li>
+										<li>唐山</li>
+										<li>秦皇岛</li>
+										<li>邯郸</li>
+										<li>邢台</li>
+										<li>保定</li>
+										<li>张家口</li>
+										<li>承德</li>
+										<li>沧州</li>
+										<li>廊坊</li>
+										<li>衡水</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</dd>
+			</dl>
+		</li>
+		<li class="mt20 pr">
+			<dl>
+				<dt>出生日期：</dt>
+				<dd>
+					<input type="text" placeholder="请填写您的出生日期"/>
+				</dd>
+			</dl>
+		</li>
+		<li class="mt20 pr">
+			<dl>
+				<dt>性<i class="ml2"></i>别：</dt>
+				<dd class="sex-box">
+					<a href="javascript:void(0);">男</a>
+					<a href="javascript:void(0);">女</a>
+				</dd>
+			</dl>
+		</li>
+		<li class=" mt20 pb30 tac">
+			<button class="save-btn hand" onFocus="this.blur()">完成</button>
+		</li>
+	</ul>
+</article>
+<script>
+	$(function(){
+		/*输入框样式*/
+        $('.add-content input').on('focus',function(){
+            $(this).css('border-color','#00aced');
+        })
+        $('.add-content input').on('blur',function(){
+            $(this).css('border-color','#ccc');
+        })
+		/*男女*/
+        $('.sex-box a').each(function(){
+            $(this).on('click',function(){
+                $(this).css({'border-color':'#00aced','color':'#00aced'}).siblings('a').css({'border-color':'#f1f3e9','color':'#333'});
+                $('.sex-box a:eq(1)').css('border-left-color','#00aced');
+            })
+        })
+		/*气泡*/
+        $('#demo-manual-trigger').poshytip({
+            content: 'Hey, there! This is a tooltip.',
+            showOn: 'none',
+            alignTo: 'target',
+            alignX: 'inner-left',
+            offsetX: 0,
+            offsetY: 5
+        });
+        $('#demo-manual-trigger').poshytip('show');
+	})
+
+</script>
+</body>
+</html>

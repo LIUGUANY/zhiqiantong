@@ -1,0 +1,244 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ include file="/base.jsp"%>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>企业登录 · 注册</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=9, IE=8" /> 
+	<!-- <meta name="author" content="(www.268xue.com)"/> 
+	<meta name="keywords" content="268教育软件,在线教育,网校搭建,网校,网络教育,远程教育,云网校,在线学习,在线考试" />
+	<meta name="description" content="268教育软件是一家专注“在线教育平台”的互联网公司，在国内属顶级在线教育解决方案提供商中的领跑者。为大、中型客户提供领先的在线教育平台方案服务。"/>  -->
+	<meta name="author" content="${websitemap.web.author}"/> 
+	<meta name="keywords" content="${websitemap.web.keywords}" />
+	<meta name="description" content="${websitemap.web.description}"/> 
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="css/ep-login.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/page-style.css">
+	<!--静态js-->
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/emailList.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1147929021" type="text/javascript" charset="utf-8"></script>
+	<!--/静态js-->
+	<script type="text/javascript" src="${ctximg}/static/common/jquery-1.11.1.min.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/webutils.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/web_top.js?v=<%=version%>"></script>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1147929021" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/emailList.js"></script>
+	<script type="text/javascript" src="${ctximg}/static/edu/js/login/login.js"></script>
+    <script type="text/javascript" src="${ctximg}/static/edu/js/login/register.js?v=<%=version%>"></script>
+    <script type="text/javascript" src="${ctximg}/static/common/jquery-validation-1.11.1/dist/jquery.validate.js"></script>
+	<!--[if lt IE 9]><script src="${ctximg}/static/common/html5.js"></script><![endif]-->
+	<style type="text/css">.ness-wrap {display: none;}</style>
+	<script type="text/javascript">
+		var baselocation = "${ctx}";
+		var buyURL = baselocation+"/buy";
+		var usercookiekey="<%=usercookiekey%>";
+		var mydomain="<%=mydomain%>";
+		var keImageUploadUrl="<%=keImageUploadUrl%>";//kindeditor中使用的路径需要2个参数来区分项目和模块
+		var uploadSimpleUrl="<%=uploadSimpleUrl%>";//单独的上传按钮使用的路径
+		var staticImageServer="<%=staticImageServer%>";//返回路径
+		var staticImageServer="<%=staticImageServer%>";//图片服务器
+		$(function() {
+			var msg=getParameter("msg");
+			if(msg!=null && msg!='' && msg=='other'){
+				dialog('提示信息',"您的帐号在其他地点登录，请重新登录",1);
+			}
+            var from=getParameter("from");
+            if(from=='exam'){
+               // $(".fromflag").attr("style",'background: url("/static/edu/images/page/rl-b-bg-2.jpg") no-repeat scroll 50% 0 #fbfbfb;');
+                $(".fromflagtitle").html("考试系统 — 登录 · 注册");
+            }
+            if(from=='sns'){
+                //$(".fromflag").attr("style",'background: url("/static/edu/images/page/shequ.jpg") no-repeat scroll 50% 0 #fbfbfb;');
+                $(".fromflagtitle").html("教育社区系统 — 登录 · 注册");
+            }
+		});
+        $(function(){
+            var pageUrl = window.location;
+            if(pageUrl=='${ctx}/register'){
+                $("#goregister").click();
+            }
+            DeleteCookie("oauthlogin");
+            DeleteCookie("openNickName");
+
+
+        });
+    </script>
+</head>
+<body class="W-body">
+	<!-- /登录 -->
+	<div id="ep-login" class=" fromflag">
+		<section class="w1200">
+			<div class="rl-r-box">
+				<section class="mt50 pr box-shadow" style="z-index: 1;">
+					
+					<div id="lr-cont" class="rl-r-tab-cont">
+						<!-- 登录 开始 -->
+						<section>
+							<div class="login-title">
+								<ul>
+									<li class="tac"><a class="fsize18" href="javascript: void(0);">企业登录 </a></li>
+								</ul>
+							</div>
+							<div class="rl-r-tab-c-l">
+								<div class="sj-login-tab">
+									<input id="userType" type="hidden" value="1"/>
+								</div>
+								<div class="hLh20 of undis mt15">
+									<span class="enwErrorMsg">
+										<tt class="o-wrong" id="requestErrorID"></tt>
+									</span>
+								</div>
+								<ol>
+									<li>
+										<label>
+                                            <input type="text" placeholder="请输入邮箱/手机号" id="userEmail" onkeyup="enterSubmit(event,'pageLogin(2)')">
+                                        </label>
+										<span class="rl-jy-span enwErrorMsg">
+											<tt class="o-wrong" id="userNameError"></tt>
+										</span>
+									</li>
+									<li>
+										<label>
+                                            <input onkeyup="enterSubmit(event,'pageLogin(2)')"  type="password" id="userPassword" name="" value="" class="lTxt" placeholder="请输入您的密码">
+                                        </label>
+										<span class="rl-jy-span enwErrorMsg">
+											<tt class="o-wrong" id="passwordError"></tt>
+										</span>
+									</li>
+									<li>
+										<label style="width: 100px;">
+											<input placeholder="图形验证码" onkeyup="gohsData()" type="text" id="imgrandomcode" maxlength="6" />
+										</label>
+										<img id="randCode" border="0" onclick="this.src='${ctx}/ran/random?v='+Math.random()" alt="验证码，点击图片更换" src="${ctx}/ran/random" style="left: 110px;"/>
+
+										<span class="rl-jy-span enwErrorMsg" style="right: -42px;top: 16px;">
+											<tt class="o-wrong" id="imgrandomcodeError"></tt>
+										</span>
+
+									</li>
+									<li class="pt10">
+										<span class="inpCb ml10 hand">
+											<input type="checkbox" name="autoThirty" checked="checked" class="c-icon" id="autoThirty"><tt for="forget" class="vam c-666 ml10">记住我</tt>
+										</span>
+										<span class="ml50"><a href="${ctx}/front/forget_passwd" title="忘记密码？" class="c-orange">换一张</a></span>
+									</li>
+									
+								</ol>
+								<section class="rl-login-btn mt20 tac"><a href="javascript:void(0)" onclick="pageLogin(2)" title="登录">登 录</a></section>
+								<ul>
+									<li>
+										<span class="inpCb ml10 hand">
+											<span for="forget" class="vam c-666 ml10"><a href="">马上注册</a></span>
+										</span>
+										<span class="ml50"><a href="${ctx}/front/forget_passwd" title="忘记密码？" class="c-orange">忘记密码</a></span>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</section>
+						<!-- 登录 结束 -->
+						<!-- 注册 开始 -->
+						<section class="undis"  style="display:none">
+                            <form id="regForm"  method="post" >
+							<div class="rl-r-tab-c-l">
+								<div class="sj-login-tab">
+									<ul>
+										<li class="current">
+											<a href="javascript:void(0)" onclick="toggleMenu('email',this)">邮箱注册</a>
+										</li>
+									</ul>
+								</div>
+								<div class="sj-login-body">
+									<div class="hLh20 of undis errorDiv">
+										<span>
+											<tt class="o-wrong errorMsg"></tt>
+										</span>
+									</div>
+								<!-- 邮箱注册 开始 -->
+									<div class="sj-login-body-emli register email">
+
+										<ol>
+											<li>
+												<label>
+		                                            <input  type="text" placeholder="请输入邮箱" id="regEmail"  onblur="emailCheck()" onkeyup="gohsData()"/>
+		                                        </label>
+												<span class="rl-jy-span enwErrorMsg">
+													<tt class="o-wrong" id="emailError"></tt>
+												</span>
+											</li>
+											
+
+											<li>
+												<label>
+		                                            <input onkeyup="gohsData()" placeholder="6-20位密码，区分大小写，不能用空格" type="password" id="regPwd" onblur="passCheck('regPwd')" maxlength="20"/>
+		                                        </label>
+												<span class="rl-jy-span enwErrorMsg">
+													<tt class="o-wrong" id="regPwdError"></tt>
+												</span>
+											</li>
+											<li>
+												<label>
+		                                            <input onkeyup="gohsData()" type="password" placeholder="请再输入一次密码" id="cusPwdConfirm" onblur="passConfirmCheck('cusPwdConfirm','regPwd')" maxlength="20"/>
+		                                        </label>
+												<span class="rl-jy-span enwErrorMsg">
+													<tt class="o-wrong" id="cusPwdConfirmError"></tt>
+												</span>
+											</li>
+											<li>
+												<label style="width: 100px;">
+													<input placeholder="图形验证码" onkeyup="gohsData()" type="text" id="imgrandomcode" maxlength="6" />
+												</label>
+												<img id="randCode" border="0" onclick="this.src='${ctx}/ran/random?v='+Math.random()" alt="验证码，点击图片更换" src="${ctx}/ran/random" style="left: 110px;"/>
+
+												<span class="rl-jy-span enwErrorMsg" style="right: -42px;top: 16px;">
+													<tt class="o-wrong" id="imgrandomcodeError"></tt>
+												</span>
+
+											</li>
+										</ol>
+										<div class="mt20">
+										    <aside>
+												<span class="inpCb hand">
+
+		                                            <input type="checkbox" id="t268xueAgreementEmail" checked="checked" onclick="reAgreement(this,'registerEmailA')" class="c-icon" id="forget"><tt for="forget" class="vam c-666 ml10">同意并阅读</tt><a title="用户注册协议" target="_blank" class="c-blue" href="/help?id=191">《用户注册协议》</a></span>
+
+											</aside>
+											<section class="rl-login-btn tac mt15"><a href="javascript:void(0)" onclick="emailregister()"  class="registerEmailA" title="注 册">注 册</a></section>
+										</div>
+									</div>
+									<!-- 邮箱注册 结束 -->
+								</div>
+							</div>
+							<div class="clear"></div>
+                            </form>
+						</section>
+						<!-- 注册 结束 -->
+					</div>
+					<div class="login-bot-shadow"></div>
+				</section>
+			</div>
+			<div class="clear"></div>
+		</section>
+	</div>
+	<script type="text/javascript" src="${ctximg}/static/common/placeholder.js"></script>
+	<script type="text/javascript">
+		cardChange("#lr-title>li" , "#lr-cont>section" , "current");//登录注册切换
+		placeholderFun();//placeholder兼容ie;
+	    $("#userEmail").mailAutoComplete({
+	        boxClass: "out_box", //外部box样式
+	        listClass: "list_box", //默认的列表样式
+	        focusClass: "focus_box", //列表选样式中
+	        markCalss: "mark_box", //高亮样式
+	        autoClass: false,//不使用默认的样式
+	        textHint: true//提示文字自动隐藏
+	    });
+	</script>
+	<!-- /登录 结束 -->
+</body>
+</html>

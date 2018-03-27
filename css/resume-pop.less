@@ -1,0 +1,434 @@
+.add-box {
+//position: fixed;
+//top: 50%;
+//left: 50%;
+//margin-left: -250px;
+
+//margin-top: -160px;
+color: #333;
+font-size: 14px;
+  width: 590px;
+  background: #fff;
+  z-index: 100;
+}
+.require{
+    color: #fd5e2f;
+    vertical-align: middle;
+    padding-top:5px ;
+}
+.add-box li{
+    dt{
+        font-weight: 700;
+    }
+    dd{
+        margin-top: 5px;
+        input{
+            font-size: 14px;
+            color: #999;
+            width: 491px;
+            height: 35px;
+            border:1px solid #f1f3e9;
+            padding-left: 5px;
+        }
+    }
+    .text{
+        textarea{
+            font-size: 14px;
+            color: #999;
+            padding-left: 5px;
+             width:491px ;
+            height: 50px;
+            border:1px solid #f1f3e9;
+        }
+       
+    }
+}
+
+.add-box .new-title {
+  width: 590px;
+  height: 50px;
+  background: #00AEF0;
+  font-size: 14px;
+  color: #fff;
+}
+.add-box .new-title .close {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-position: -98px -266px;
+}
+.add-box .new-title li {
+  line-height: 50px;
+  padding: 0 15px;
+}
+.add-box .add-content {
+  width: 500px;
+  margin:0 auto;
+  font-size: 14px;
+  color: #495761;
+}
+.add-box .add-content .file input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 100px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.add-box .add-content .save-btn,
+.add-box .add-content .cancal-btn {
+  text-align: center;
+  height: 40px;
+  border: 1px solid #b5b5b6;
+  border-radius: 5px;
+  color: #495761;
+}
+.add-box .add-content .save-btn {
+    width: 200px;
+  font-size: 16px;
+  color: #fff;
+  background: #06aeed;
+  border: 1px solid #00a2e0;
+}
+.add-box .add-content .cancal-btn  {
+    width: 200px;
+  font-size: 16px;
+  color: #fd6538;
+  background: #fff;
+  border: 2px solid #fd6538;
+  margin-right: 95px;
+}
+/*录用通知+add*/
+.add-box{
+  .ml1{
+    margin-left:1em;
+  }
+}
+.work_addr{
+    li{
+      display: inline-block;
+      width: 105px;
+      height:35px;
+      border:1px solid #f1f3e9;
+      line-height:35px;
+      color:#999;
+      cursor: pointer;
+      span{
+        padding-left:5px;
+      }
+    }
+  .last_input{
+    border:none;
+    input{
+      width: 264px;
+    }
+  }
+  .bom_arrow{
+    position: absolute;
+    right:10px;
+    top:14.5px;
+    height:8px;
+    overflow: hidden;
+    display: block;
+    border-top:6px solid #999;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+  }
+  .prov_box,.city_box{
+    position: absolute;
+    top:37px;
+    left:0;
+    border:1px solid #F1F3E9;
+    height: 150px;
+    width: 105px;
+    z-index: 100;
+    background-color: #fff;
+    overflow-y: auto;
+    display: none;
+    div{
+      padding-left:5px;
+      color: #999;
+      line-height:22px;
+    }
+    div:hover{
+      background-color: #F1F3E9;
+    }
+  }
+}
+/*选择简历*/
+.select_resume{
+  .bg_shadow{
+      background: #000;
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+      position: fixed;
+      _position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+  }
+  .resume_box{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-215px;
+    margin-top:-165px;
+    width:430px;
+    height: 330px;
+    border:8px solid #575858;
+    background-color:#fff;
+    z-index: 101;
+    p{
+      padding:0 20px;
+      width: 390px;
+      height:50px;
+      line-height: 50px;
+      background-color: #06aeed;
+      font-size: 16px;
+      color: #fff;
+    }
+    .close_resume{
+      display: inline-block;
+      float: right;
+      width: 18px;
+      height:18px;
+      background:url(../images/page/close_resume.png) no-repeat scroll center center;
+      margin-top:16px;
+      cursor: pointer;
+    }
+  }
+  ul{
+    margin:40px 50px 0 50px;
+    font-size:14px;
+  }
+  .send_btn{
+    display: block;
+    width: 140px;
+    height:48px;
+    line-height:48px;
+    text-align: center;
+    font-size:16px;
+    color:#fff;
+    background-color: #00aced;
+    border-radius:3px;
+    margin:20px auto;
+  }
+  .send_btn:hover{
+    background-color: #fd5d2e;
+  }
+}
+input[type='radio'].radio{
+  opacity:0;
+  filter: alpha(opacity=0);
+  position: absolute;
+}
+span.radio{
+  display: inline-block;
+  background:url(../images/page/no-radio.png) no-repeat scroll left center;
+  padding-left:35px;
+  vertical-align: middle;
+}
+input[type='radio'].radio:checked+.radio{
+  background:url(../images/page/radio.png) no-repeat scroll left center;
+}
+input[type='checkbox'].checkbox{
+  opacity:0;
+  filter: alpha(opacity=0);
+  position: absolute;
+}
+span.checkbox{
+  display: inline-block;
+  background:url(../images/page/no-check.png) no-repeat scroll left center;
+  padding-left:25px;
+  vertical-align: middle;
+}
+span.checkbox>span{
+  display: inline-block;
+  width: 100%;
+}
+input[type='checkbox'].checkbox:checked+.checkbox{
+  background: url(../images/page/check.png) no-repeat scroll left center;
+}
+.top_line{
+  margin-top:30px;
+  padding-top:10px;
+  border-top:1px solid #dcdcdc;
+  color:#999;
+}
+/*--------投递简历------*/
+.sendResume_content {
+  color: #333;
+  font-size: 14px;
+  width: 590px;
+  background: #fff;
+  z-index: 100;
+}
+.require{
+  color: #fd5e2f;
+  vertical-align: middle;
+  padding-top:5px ;
+}
+ .sendResume_content li{
+  dt,dd{
+    display: inline-block;
+  }
+   dt{
+    font-weight: 700;
+  }
+  dd{
+    margin-top: 5px;
+    input{
+      font-size: 14px;
+      color: #999;
+      width: 410px;
+      height: 35px;
+      border:1px solid #f1f3e9;
+      padding-left: 5px;
+    }
+  }
+}
+ .sendResume_content{
+   .new-title {
+     width: 590px;
+     height: 50px;
+     background: #00AEF0;
+     font-size: 14px;
+     color: #fff;
+   }
+   .new-title .close {
+     display: inline-block;
+     width: 18px;
+     height: 18px;
+     background-position: -98px -266px;
+   }
+   .new-title li {
+     line-height: 50px;
+     padding: 0 15px;
+   }
+   .add-content {
+     width: 500px;
+     margin:0 auto;
+     font-size: 14px;
+     color: #495761;
+   }
+   .add-content .file input {
+     position: absolute;
+     right: 0;
+     top: 0;
+     font-size: 100px;
+     opacity: 0;
+     filter: alpha(opacity=0);
+   }
+   .add-content .save-btn
+   {
+     text-align: center;
+     height: 40px;
+     border-radius: 5px;
+     width: 200px;
+     font-size: 16px;
+     color: #fff;
+     background: #06aeed;
+     border: 1px solid #00a2e0;
+   }
+   .add-content .save-btn:hover{
+      background-color:#fd5d2e;
+     border: 1px solid #fd5d2e;
+
+   }
+
+  .ml2{
+    margin-left: 2em;
+  }
+   .ml0_5{
+     margin-left:.5rem;
+     margin-right:.5rem;
+     color:#333;
+     font-weight:700;
+   }
+   .sex-box a {
+     display: inline-block;
+     width: 207px;
+     height: 35px;
+     line-height: 35px;
+     text-align: center;
+     border: 1px solid #f1f3e9;
+     font-size: 14px;
+     color: #333;
+   }
+  .sex-box a + a {
+     margin-left: -5px;
+   }
+ }
+ /*-----级联省市---------*/
+.city_list{
+  position: absolute;
+  top:40px;
+  left: -1px;
+  z-index: 2;
+  width: 415px;
+  height: 130px;
+  background-color: #fff;
+  border:1px solid #f1f3e9;
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px #efefe4;
+}
+.mr_selCity{
+  margin:0;
+  width: 410px;
+  top:0;
+  ul.mr_province{
+    width: 90px;
+    border-right: 1px solid #f1f3e9;
+    font-size: 14px;
+    text-align: center;
+    line-height: 33px;
+    height: 130px;
+    overflow: auto;
+    padding:0;
+    ul{
+      width: 287px!important;
+      height: 110px!important;
+    }
+    li{
+      height:33px;
+      line-height:33px;
+      font-size:14px;
+      text-align: center;
+      cursor:pointer;
+      span{
+        cursor: pointer;
+        display: block;
+      }
+      .mr_on{
+        color:#fff;
+        background-color:#00aced;
+      }
+      ul{
+        zoom: 1;
+        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: 90px;
+        padding: 5px;
+        width: 199px;
+        height: 120px;
+        overflow: auto;
+        color: #555;
+        li{
+          float: left;
+          padding: 0 8px;
+          border-radius: 3px;
+          margin: 2px;
+          height: 23px;
+          line-height: 23px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+ /*-----/级联省市---------*/

@@ -1,0 +1,378 @@
+#appr-main .banner img {
+  height: 415px;
+  width: 100%;
+  margin-top: -4px;
+}
+/*----测评----*/
+.professional-test-item > li,
+.funny-test-item > li,
+.career-plan-item > li {
+  float: left;
+  padding-bottom: 10px;
+  width: 282px;
+  height: 330px;
+  background: #f5f5f5;
+  margin-right: 24px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+.professional-test img,
+.funny-test img,
+.career-plan img {
+  width: 100%;
+  height: 160px;
+}
+.professional-test .pl12,
+.funny-test .pl12,
+.career-plan .pl12 {
+  padding-left: 12px;
+}
+.professional-test .pl7,
+.funny-test .pl7,
+.career-plan .pl7 {
+  padding-left: 7px;
+}
+.professional-test .professional-test-lastItem,
+.funny-test .professional-test-lastItem,
+.career-plan .professional-test-lastItem,
+.professional-test .funny-test-lastItem,
+.funny-test .funny-test-lastItem,
+.career-plan .funny-test-lastItem,
+.professional-test .carre-plan-lastItem,
+.funny-test .carre-plan-lastItem,
+.career-plan .carre-plan-lastItem {
+  margin-right: 0;
+}
+.professional-test .border-bom,
+.funny-test .border-bom,
+.career-plan .border-bom {
+  border-bottom: 1px dashed #9d9d9d;
+  margin-top: 16px;
+  line-height: 24px;
+}
+.borderR {
+  border-right: 1px solid #9d9d9d;
+}
+.mt115 {
+  margin-top: 115px;
+}
+.career-plan-title {
+  margin-top: 144px;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.mt80 {
+  margin-top: 80px;
+  margin-bottom: 420px;
+}
+/*----/测评----*/
+/*------DISC性格测试------*/
+/*测试结果*/
+.appr-main {
+  background-color: #dfdfdf;
+  /*性格测试左侧*/
+  /*性格测试右侧*/
+  /*测评排行榜*/
+  /*测试结果*/
+}
+.appr-main .crumbs ul li {
+  float: left;
+}
+.appr-main .crumbs ul li a {
+  font-size: 18px;
+  color: #000;
+}
+.appr-main .crumbs ul li .triangleL {
+  display: inline-block;
+  margin: 0 7px;
+  width: 10px;
+  height: 16px;
+  background-position: -170px 4px;
+}
+.appr-main .appr-left-panel {
+  width: 880px;
+  float: left;
+  /*讨论*/
+}
+.appr-main .appr-left-panel .appr-title span {
+  font-size: 32px;
+}
+.appr-main .appr-left-panel .appr-title .icon1 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.appr-main .appr-left-panel .appr-title .a-l-icon1 {
+  width: 28px;
+  height: 24px;
+  background-position: -135px 0;
+  margin: 0 6px 0 13px;
+}
+.appr-main .appr-left-panel .appr-title .a-l-icon2 {
+  background-position: -78px 0;
+}
+.appr-main .appr-left-panel .appr-title .a-l-icon3 {
+  background-position: -51px 0;
+}
+.appr-main .appr-left-panel .appr-title .a-l-icon4 {
+  background-position: -104px 0;
+}
+.appr-main .appr-left-panel .mt78 {
+  margin-top: 78px;
+  color: #000;
+}
+.appr-main .appr-left-panel .mt85 {
+  margin-top: 85px;
+}
+.appr-main .appr-left-panel .start-test {
+  font-size: 26px;
+  width: 200px ;
+  height: 50px;
+  color: #fff;
+  background-color: #6bc513;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.appr-main .appr-left-panel .appr-discuss .issques {
+  background: #fff;
+  padding: 20px 10px;
+}
+.appr-main .appr-left-panel .appr-discuss .pub-editor-wrap {
+  min-height: 100px;
+  position: relative;
+  border: 1px solid #d3dce0;
+  width: 95%;
+}
+.appr-main .appr-left-panel .appr-discuss .pub-editor-wrap .discuss {
+  color: #555;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 62px;
+  padding: 8px;
+  resize: none;
+  width: 98%;
+  border: 0;
+}
+.appr-main .appr-left-panel .appr-discuss .pub-btn {
+  background-color: #6BC513;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100px;
+  border: 0;
+  border-radius: 5px;
+}
+.appr-main .appr-left-panel .appr-discuss .pub-btn:hover {
+  background-color: #63b216;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item {
+  margin-top: 17px;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 150px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .discuss-display {
+  height: 100%;
+  background: #FAFBFC;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-discuss {
+  margin-right: 10px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-discuss .appr-grade .comment {
+  border-bottom: 1px solid #d7d7d7;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-discuss .discuss-left {
+  background: #fafbfc;
+  width: 160px;
+  display: block;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item li {
+  border-bottom: 3px solid #ddd;
+  min-height: 160px;
+  margin-bottom: 20px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .icon2 {
+  display: inline-block;
+  width: 15px ;
+  height: 15px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .appr-discuss-icon2 {
+  margin-top: -5px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-discuss .mt_20 {
+  margin-top: -20px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .reply-bg {
+  background: #f5f7fa;
+  width: 656px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .reply-bg .withdraw {
+  background: #f9f9f9;
+  padding: 2px 15px 0px 15px;
+  cursor: pointer;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-answer {
+  width: 646px;
+  margin-right: 5px;
+  border-bottom: 1px dashed #d7d7d7;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-answer .mt10 {
+  margin-top: 10px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-answer .mt_10 {
+  margin-top: -10px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .test-answer .answer-user {
+  font-size: 14px;
+  color: #0d0d0d;
+  margin-left: 15px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .more-appr-reply .pub-editor-wrap {
+  width: 93%;
+  margin: 0 auto;
+  min-height: 23px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .more-appr-reply .pub-editor-wrap textarea {
+  color: #555;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 22px;
+  padding: 8px;
+  resize: none;
+  background: #f9f9f9;
+  width: 97%;
+  border: 0;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .more-appr-reply .reply-btn {
+  background-color: #6BC513;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  height: 30px;
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  width: 70px;
+  border: 0;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .more-appr-reply .reply-btn:hover {
+  background: #63b216;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .more-appr {
+  margin: 0 0 30px 34px;
+}
+.appr-main .appr-left-panel .appr-discuss .appr-discuss-item .click-appr {
+  border: 1px solid #d7d7d7;
+  padding: 5px 10px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon1 {
+  background-position: -106px -28px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon1:hover {
+  background-position: -105px -48px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon2 {
+  background-position: -50px -28px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon2:hover {
+  background-position: -50px -48px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon3 {
+  background-position: -80px -28px;
+}
+.appr-main .appr-left-panel .appr-discuss-icon3:hover {
+  background-position: -80px -48px;
+}
+.appr-main .appr-right-panel {
+  width: 250px;
+  margin-top: 158px;
+}
+.appr-main .appr-right-panel .more-appr-item {
+  padding: 17px 16px 40px 16px;
+  margin-top: 40px;
+  background: #fff;
+}
+.appr-main .appr-right-panel .more-appr-item h4 a {
+  color: #333;
+}
+.appr-main .appr-right-panel .more-appr-item h4 a:hover {
+  color: #6BC513;
+}
+.appr-main .appr-ranking-list {
+  background: #fff;
+  margin: -158px 0 20px 0;
+  padding-bottom: 22px;
+}
+.appr-main .appr-ranking-list dt {
+  background: #f5f3f3;
+  padding: 18px 0;
+}
+.appr-main .appr-ranking-list dd {
+  margin-left: 46px;
+  width: 162px;
+}
+.appr-main .mb_20 {
+  margin-bottom: -20px;
+}
+.appr-main .appr-result p,
+.appr-main .appr-result div,
+.appr-main .appr-result td {
+  font-family: 微软雅黑;
+  line-height: 1.8;
+}
+.appr-main .appr-result .pctitle {
+  font-size: 26px;
+  letter-spacing: 3mm;
+  margin-bottom: 20px;
+  padding: 8px;
+  text-align: center;
+}
+.appr-main .appr-result .btn {
+  background-color: #6bc513;
+  border: 0 none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: -80px;
+  text-align: center;
+  width: 120px;
+}
+.appr-main .appr-result .btn:hover {
+  background: #63b216;
+}
+.appr-main .appr-result .circle {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background: #444;
+  border-radius: 1.5px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.appr-main .appr-result .style123 ul li dl {
+  width: 320px;
+  overflow: hidden;
+}
+.appr-main .appr-result .style123 ul li dt,
+.appr-main .appr-result .style123 ul li dd {
+  float: left;
+}
+/*测试结果*/
+/*------/DISC性格测试------*/

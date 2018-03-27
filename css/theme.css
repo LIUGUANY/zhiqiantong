@@ -1,0 +1,149 @@
+/*-----/common-theme------*/
+.b-master {
+  background-color: #2bbd2f;
+}
+.b-yellow {
+  background-color: #f58808;
+}
+.green {
+  background-color: #067a00;
+}
+.b-ccc {
+  background-color: #cccccc;
+}
+.b-fff {
+  background-color: #ffffff;
+}
+.b-grey {
+  background-color: #999;
+}
+.c-fff {
+  color: #fff;
+}
+.c-ccc {
+  color: #ccc;
+}
+.c-999 {
+  color: #999;
+}
+.c-666 {
+  color: #666;
+}
+.c-4e {
+  color: #4e4e4e;
+}
+.c-333 {
+  color: #333;
+}
+.c-656 {
+  color: #656565;
+}
+.c-green {
+  color: #067a00;
+}
+.c-yellow {
+  color: #fe7801;
+}
+.c-yellow2 {
+  color: #f58808;
+}
+.c-orange,
+.error {
+  color: #ff4800;
+}
+.c-red {
+  color: #c80500;
+}
+.c-brow {
+  color: #683d1f;
+}
+.c-blue {
+  color: #2bbd2f;
+}
+.c-master {
+  color: #2bbd2f;
+}
+.c-master1 {
+  color: #59a21f;
+}
+.c-ece {
+  color: #ececec;
+}
+.c-color {
+  color: #6bc513;
+}
+.c-101 {
+  color: #101010;
+}
+.c-676 {
+  color: #777676;
+}
+.c-4b4 {
+  color: #4b4a4a;
+}
+.c-292 {
+  color: #292929;
+}
+.c-525 {
+  color: #525252;
+}
+/*----theme-page------*/
+.u-c-nav li a em,
+.u-c-nav li a .rArrow,
+.crumbs .triangleL,
+.appr-left-panel .icon1,
+.appr-discuss-item .icon2,
+.course-icon1,
+.course-main .click-view,
+.course-introduce .f-radio .icon-radio,
+.course-introduce .checked .icon-radio,
+.course-info-item-icon1,
+.course-info-item-icon2 .icon1,
+.course-catalog .icon2,
+.v-nav-list em,
+.amend,
+.del,
+.star-appr .star,
+.attention-icon,
+.small-star,
+.small-share,
+.browse,
+.attention,
+.resume-edit b,
+.browse-count,
+.icon-8,
+.icon-9,
+.icon-11 {
+  background: url(../images/page/icon-1.png) no-repeat;
+}
+.c-video-icon .kd-icon {
+  background: url(../images/appr/icon-3.png);
+}
+.c-tips-1 {
+  background: url(../images/page/icon-3.png);
+}
+.f-f0,
+.f-f1,
+.f-f2,
+.f-f3,
+.f-f4,
+.f-f5,
+.f-f6,
+.f-f7,
+.f-f8,
+.f-f9,
+.close,
+.f-f10,
+.f-f11,
+.f-f12,
+.f-f13,
+.f-f14,
+.f-f15,
+.f-f16,
+.f-c1,
+.f-resume {
+  background: url(../images/page/icon-2.png) no-repeat;
+}
+.v-p-bottom .icon3 {
+  background: url(../images/course/icon-4.png) no-repeat;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+	      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header" style="100%">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pl20 hand"><i class="f-f0 exit-icon"></i><a class="vam" href="javascript:void(0);">退出</a></span>
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/qy-logo.png" class="logo-2013 logo-qy" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li >
+							<a href="" title="企业中心">企业中心</a>
+						</li>
+						<li>
+							<a href="" title="简历管理">简历管理</a>
+						</li>
+						<li class="current">
+							<a href="" title="职位管理">职位管理</a>
+						</li>
+						<li>
+							<a href="" title="校园资讯">校园资讯</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+	
+	<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+	<script type="text/javascript">
+			/*下拉框*/
+			$( ".selectmenu" ).selectmenu();
+			/*切换*/
+			$('.resume-left .m_hide').each(function(){
+				$(this).on('click',function(){
+					var $index = $(this).index();
+					$('.resume-left .m_hide').removeClass('active');
+					$(this).addClass('active');
+					$('.work-load').eq($index).show().siblings('.work-load').hide();
+				})
+			})
+	</script>
+	<!--/企业中心-->
+	</body>
+</html>

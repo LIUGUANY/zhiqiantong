@@ -1,0 +1,142 @@
+/*我的求职*/
+.xf-u-c-right .resume-box {
+  margin: 5px 38px 0px 38px;
+  font-size: 14px;
+  color: #656565;
+}
+.xf-u-c-right .resume-box .resume-content .re-integrity-m {
+  height: 20px;
+  width: 854px;
+}
+.xf-u-c-right .resume-box .resume-content .re-integrity-m .re-solid {
+  height: 20px;
+  width: 80%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  background: #6bc513;
+}
+/*公共*/
+.xf-u-c-right .resume-box .resume-content h4 {
+  color: #5f5e5e;
+  margin-bottom: 15px;
+}
+.xf-u-c-right .resume-box .resume-content h4 .amend,
+.xf-u-c-right .resume-box .resume-content h4 .del {
+  float: right;
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background-position: -410px 3px;
+}
+.xf-u-c-right .resume-box .resume-content h4 .del {
+  margin-left: 30px;
+  background-position: -442px 0;
+}
+/*基本信息*/
+.xf-u-c-right .resume-box .resume-content .base-box:hover {
+  background-color: #f6f7e6;
+}
+.xf-u-c-right .resume-box .resume-content .base-box {
+  margin-top: 5px;
+  padding: 10px 14px 20px 26px;
+  background: #f7f7f7;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-1,
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-2 {
+  font-size: 14px;
+  color: #656565;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-1 dt,
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-2 dt,
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-1 dd,
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-2 dd {
+  float: left;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-1 {
+  width: 364px;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-1 dl {
+  width: 364px;
+  overflow: hidden;
+  margin-bottom: 17px;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-2 {
+  width: 256px;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .personal-infor-2 dl {
+  width: 256px;
+  overflow: hidden;
+  margin-bottom: 17px;
+}
+.xf-u-c-right .resume-box .resume-content .base-box .user-icon {
+  color: #656565;
+  text-align: center;
+}
+/*教育经历*/
+.xf-u-c-right .resume-box .educationalBackground .edu-bg-title li {
+  float: left;
+  font-size: 14px;
+  color: #656565;
+  margin-right: 50px;
+}
+.xf-u-c-right .resume-box .educationalBackground .edu-bg-title pre {
+  color: #656565;
+  line-height: 24px;
+}
+/*求职意向*/
+.xf-u-c-right .resume-box .careerObjective .job-infor {
+  overflow: hidden;
+}
+.xf-u-c-right .resume-box .careerObjective .job-infor li {
+  overflow: hidden;
+  margin-top: 17px;
+}
+.xf-u-c-right .resume-box .careerObjective .job-infor li dl {
+  float: left;
+  margin-right: 85px;
+}
+.xf-u-c-right .resume-box .careerObjective .job-infor li dl dd,
+.xf-u-c-right .resume-box .careerObjective .job-infor li dl dt {
+  float: left;
+}
+/*在校表现*/
+.xf-u-c-right .resume-box .school-expression .studyText {
+  margin-bottom: 22px;
+}
+.xf-u-c-right .resume-box .school-expression .studyText p {
+  margin-top: 5px;
+}
+/*语言能力*/
+.xf-u-c-right .resume-box .language .studyUnit dl {
+  overflow: hidden;
+}
+.xf-u-c-right .resume-box .language .studyUnit dl .w212 {
+  width: 212px;
+}
+.xf-u-c-right .resume-box .language .studyUnit dl .mr140 {
+  margin-right: 140px;
+}
+.xf-u-c-right .resume-box .language .studyUnit dl dt,
+.xf-u-c-right .resume-box .language .studyUnit dl dd {
+  float: left;
+}
+/*附件信息*/
+.xf-u-c-right .resume-box .accessoryInfor .studyUnit ul {
+  overflow: hidden;
+}
+.xf-u-c-right .resume-box .accessoryInfor .studyUnit ul li {
+  float: left;
+  margin-right: 57px;
+}
+.xf-u-c-right .resume-box .accessoryInfor .studyUnit dl {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.xf-u-c-right .resume-box .accessoryInfor .studyUnit dl dt,
+.xf-u-c-right .resume-box .accessoryInfor .studyUnit dl dd {
+  float: left;
+}
+.xf-u-c-right .resume-box .accessoryInfor .c-b7b {
+  color: #b7b7b7;
+}

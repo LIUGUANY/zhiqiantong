@@ -1,0 +1,761 @@
+/*主页*/
+.b(@w, @h) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+}
+//背景颜色
+@bg: #f7f8f8; //字体颜色
+@one-c: #333;
+@two-c: #666;
+@three-c: #999;
+@four-c: #b2b2b2;
+@five-c: #c5c5c5;
+@sta-c: #f2f2f2;
+@pre-c: #ff5734;
+@base-font: 12px;
+@base-font-2: 13px;
+@base-font-3: 14px;
+/*-----content-----*/
+.Wbody {
+    font: normal 12px/150% "microsoft yahei";
+    background-color: @bg;
+//  .w1200{
+//      width:1180px;
+//      margin:0 auto;
+//  }
+}
+.oSlide {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slideColorBg {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.oSlide .hot-wrap {
+    left: 50%;
+    margin-left: -500px;
+    top: 148px;
+}
+.oSlide-P {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+}
+.oSlide-P ul {
+    position: relative;
+}
+.oSlide-P ul li {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.oSlide-P ul li.oShow {
+    display: block;
+}
+.oSlide-P ul li img {
+    width: 100%;
+    height: 500px;
+}
+.oSlide-P span.oSbtn {
+    position: absolute;
+    bottom: 1.5em;
+    right: 2em;
+    height: 6px;
+    line-height: 6px;
+    left: 50%;
+    margin-left: -47px;
+}
+.oSlide-P span.oSbtn a {
+    display: inline-block;
+    background: #4b9449;
+    margin: 0 1px;
+    width: 34px;
+    padding: 0 5px;
+}
+.oSlide-P span.oSbtn a.on,
+.oSlide-P span.oSbtn a:hover {
+    background: #42ceb2;
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+.oSlide-P span.oSbtn a.on {
+    cursor: pointer;
+}
+.sPrev {
+    display: none;
+    left: 50%;
+    margin: -34px 0 0 -600px;
+    top: 50%;
+    z-index: 9;
+}
+.sNext {
+    display: none;
+    margin: -34px -600px 0 0;
+    right: 50%;
+    top: 50%;
+    z-index: 9;
+}
+/*----统计-搜索-----*/
+.sta-search {
+    margin-top: 20px;
+    height: 176px;
+    background-color: @sta-c;
+}
+.statistics-num {
+    margin-top: 45px;
+    li {
+        float: left;
+    }
+    dl {
+        text-align: center;
+        width: 95px;
+    }
+    dt {
+        width: 46px;
+        height: 46px;
+    }
+    dd {
+        color: @one-c;
+        font-size: 14px;
+    }
+    .position-icon,
+    .company-icon,
+    .intro-icon,
+    .college-icon {
+        .b(46px,46px);
+        background-position: -2px -32px;
+    }
+    .company-icon {
+        background-position: -2px -90px;
+    }
+    .intro-icon {
+        background-position: -2px -148px;
+    }
+    .college-icon {
+        background-position: -2px -206px;
+    }
+}
+//搜索
+.search_box {
+    float: right;
+    border-radius: 20px 10px;
+    padding: 3px 5px 18px;
+    margin: 45px 20px 0 0;
+    width: 750px;
+    opacity: 0.8;
+    z-index: 3;
+    filter:alpha(opacity=80);
+}
+.search_box form {
+    width: 750px;
+    line-height: 38px;
+    height: 38px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #00aced;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.search_box input:first-child {
+    width: 567px;
+    height: 38px;
+    padding: 0 15px;
+    border: 0;
+    font-size: 18px;
+}
+.search_box dl {
+    margin: 10px 0 18px 15px;
+    color: #333333;
+}
+.search_box dt {
+    font-size: 14px;
+    float: left;
+    color: #666;
+}
+.search_box dd {
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.search_box dd a {
+    font-size: @base-font-3;
+    color: #666;
+    font-family: "微软雅黑";
+}
+.search_box #search_sub {
+    height: 38px;
+    width: 152px;
+    border-radius: 0 5px 5px 0;
+    color: #FFF;
+    background: #00aced;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: 18px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/*------/统计-搜索----------*/
+/*实习职位,课程,高校*/
+//实习职位 
+//公共
+.thumbnail {
+        display: block;
+    }
+    .Level-difficulty {
+        width: 69px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 132px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        background-color: rgba(18, 19, 20, 0.6);
+    }
+    .Level-difficulty-1 {
+        width: 39px;
+        height: 56px;
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 0;
+        background: url("../images/index/practice-icon.png") no-repeat scroll 0 0;
+    }
+     .load-more-wrapper {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        .btn-load-more {
+            display: inline-block;
+            width: 120px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            background-color: #fafafa;
+            border: 1px solid #dedede;
+        }
+    }
+    .line-1 {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    height: 5px;
+    background: url("../images/index/03.png") repeat-x scroll 0 0;
+}
+//公共
+
+.practice {
+    text-align: center;
+    margin: 0 auto;
+    width: 115px;
+    background-color: @bg;
+    margin-top: -12.5px;
+    font-weight: 700;
+    color: #666;
+}
+.practice-box,.course-box{
+    li:hover{
+         -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+         -moz-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+         -webkit-transform: translate3d(0, -2px, 0); 
+         -moz-transform: translate3d(0, -2px, 0); 
+         transform: translate3d(0, -2px, 0);
+    }
+    li:hover .title a{
+        color: #00aced;
+    }
+}
+.practice-box {
+     li>a{
+        display: inline-block;
+        overflow: hidden;
+        width:285px;
+        height:210px;
+        position: relative;
+        
+    }
+    li>a img{
+        -webkit-transition: all 0.5s linear;
+        -moz-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        transition:all 0.5s linear;
+    }
+    li>a:hover img{
+         z-index: 1;
+        -webkit-transform: scale(1.5);
+         -moz-transform: scale(1.5);
+         -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    li {
+        float: left;
+        position: relative;
+        width: 285px;
+        height: auto;
+        margin-right: 17px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        border:1px solid #d1d1d1;   
+        background-color: #FFFFFF;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        div {
+            line-height: 28px;
+            margin: 20px;
+        }
+        .title {
+            a {
+                font-size: @base-font-2;
+                color: @one-c;
+                font-weight: 700;
+            }
+        }
+        .head-portrait {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .name {
+            color: #666;
+        }
+        .free {
+            float: right;
+            color: @pre-c;
+        }
+        .address,
+        .education,
+        .clock {
+            display: inline-block;
+            color: #999;
+            font-size: 13px;
+        }
+        .address {
+            width: 98px;
+            .addr-icon {
+                margin-right: 7px;
+                .b(15px,18px);
+                background-position: -87px -2px;
+                vertical-align: middle;
+            }
+        }
+        .education {
+            width: 85px;
+            .edu-icon {
+                margin-right: 7px;
+                .b(14px,16px);
+                background-position: -111px -2px;
+                vertical-align: middle;
+            }
+        }
+        .clock {
+            float: right;
+            .clock-icon {
+                margin-right: 3px;
+                .b(18px,18px);
+                background-position: -134px -2px;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+   
+}
+//测评
+.quiz-box {
+    .quiz-left {
+        margin-left: 30px;
+        width: 720px;
+        .title {
+            width: 720px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #949494;
+        }
+        .title-1 {
+            display: inline-block;
+            font: normal 14px/100% "微软雅黑";
+            color: @three-c;
+            width: 190px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            background-color: #ebeae6;
+        }
+        .recom-icon {
+            margin-right: 10px;
+            .b(21px,19px);
+            background-position: -162px -2px;
+            vertical-align: middle;
+        }
+    }
+    .quiz-list {
+        @step-one-c: #fea957;
+        @step-two-c: #43d2a4;
+        @step-three-c: #fe826b;
+        @step-four-c: #04aff3;
+        margin-top: 55px;
+        color: #fff;
+
+        li {
+            float: left;
+            margin-right: 13px;
+        }
+        dl {
+            width: 170px;
+            dt {
+                padding-top: 10px;
+                margin-bottom: 50px;
+                text-align: center;
+                width: 170px;
+                height: 160px;
+                border-radius: 4px;
+            }
+            .quiz-btn {
+                display: inline-block;
+                width: 150px;
+                height: 36px;
+                font-size: 16px;
+                line-height: 36px;
+                text-align: center;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+            .h36{
+                height: 36px;
+            }
+            .h78{
+                height: 78px;
+            }
+            .mt25{
+                margin-top: 25px;
+            }
+            dd{
+                width: 26px;
+                background-color:#f7f8f8 ;
+                height: 20px;
+                margin:0 auto;
+            }
+            .circle{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                background-color: #999;
+                border-radius: 20px;
+            }
+            
+        }
+        .step-one {
+            img{
+                margin-top: 10px;
+            }
+            dt {
+                background-color: @step-one-c;
+            }
+            .quiz-btn {
+                color: @step-one-c;
+            }
+            .current{
+                background-color: @step-one-c;
+            }
+        }
+        
+        .step-two {
+            img{
+                margin-top: 15px;
+            }
+            dt {
+                background-color: @step-two-c;
+            }
+            .quiz-btn {
+                color: @step-two-c;
+            }
+            .current{
+                background-color: @step-two-c;
+            }
+        }
+        .step-three {
+            img{
+             margin-top: 13px;   
+            }
+            dt {
+                background-color: @step-three-c;
+            }
+            .quiz-btn {
+                color: @step-three-c;
+            }
+            .current{
+                background-color: @step-three-c;
+        }
+            }
+        .step-four {
+            img{
+                margin-top:5px ;
+            }
+            dt {
+                background-color: @step-four-c;
+            }
+            .quiz-btn {
+                color: @step-four-c;
+            }
+            .current{
+                background-color: @step-four-c;
+            }
+        }
+       
+    }
+    .step-one dt,.step-two dt,.step-three dt,.step-four dt{
+        cursor: pointer;
+    }
+     .line-2{
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #999;
+            margin-top: -11px;
+        }
+.quiz-right{
+        .img-box{
+            height: 435px;
+        }
+       .shadow-list{
+          background-color: rgba(0, 0, 0, 0.4);
+          color: #fff;
+          font-size: 12px;
+          height: 92px;
+          width: 398px;
+          opacity: 1;
+          position: absolute;
+          bottom: 0px;
+          right: 0;
+          .text{
+              width: 196px;
+              padding:20px 0 0 35px;
+          }
+       }
+       .f-f4{
+           .b(22px,19px);
+           background-position: -59px -32px;
+           vertical-align: middle;
+       }
+       .btn-1{
+           display: inline-block;
+           margin: 28px 13px 0 0;
+           width:118px ;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            background-color:#ef5a60 ;
+           border-radius: 4px; 
+       }
+    }
+}
+//课程
+.course-box{
+    li>a{
+        display: inline-block;
+        overflow: hidden;
+        width:285px;
+        height:210px;
+        position: relative;
+        
+    }
+    li>a img{
+        -webkit-transition: all 0.5s linear;
+        -moz-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        transition:all 0.5s linear;
+    }
+    li>a:hover img{
+         z-index: 1;
+        -webkit-transform: scale(1.5);
+         -moz-transform: scale(1.5);
+         -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    li {
+        float: left;
+        position: relative;
+        width: 285px;
+        height: auto;
+        margin-right: 17px;
+        border:1px solid #d1d1d1;
+        margin-bottom: 30px;
+        cursor: pointer;
+        background-color: #FFFFFF;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        div {
+            line-height: 28px;
+            margin: 20px;
+        }
+        .title {
+            a {
+                font-size: @base-font-2;
+                color: @one-c;
+                 font-weight: 700;
+            }
+        }
+        .head-portrait {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .name {
+            color: #666;
+        }
+        .free {
+            float: right;
+            color: @pre-c;
+        }
+        .education,
+        .clock {
+            display: inline-block;
+            color: #999;
+            font-size: 13px;
+        }
+        .education {
+            float: right;
+            .edu-icon {
+                margin-right: 7px;
+                .b(14px,16px);
+                background-position: -111px -2px;
+                vertical-align: middle;
+            }
+        }
+        .clock {
+
+            .clock-icon {
+                margin-right: 3px;
+                .b(18px,18px);
+                background-position: -134px -2px;
+                vertical-align: middle;
+            }
+        }
+    }
+    .Level-difficulty{
+        bottom:104px;
+    }
+    .Level-difficulty-1{
+        background:url(../images/index/course-icon.png) no-repeat scroll 0 0;
+     }
+}
+//合作高校
+.college{
+    li{
+        float: left;
+        margin-right: 20px;
+        text-align: center;
+        width:224px ;
+        height: 245px;
+        background-color: #fff;
+        img{
+            margin-top: 15px;
+        }
+    }
+}
+//侧导航
+.nav{
+    width: 50px;
+    position: fixed;
+    right: 80px;
+    top:50%;
+//  left: 50%;
+//  margin-left:630px;
+    right:10px;
+    z-index: 1;
+    .pa{
+        display: none;
+        right: 60px;
+        top:-40px;
+    }
+    li{
+        background-color:#f2f2f2 ;
+        height: 50px;
+    }
+    ul li a{
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    .toTop{
+    background:url(../img/totop.jpg) no-repeat scroll 0 0;
+    opacity: 0; 
+    }
+    .wxIcon{
+        .b(33px,27px);
+        background-position: -59px -60px;
+        margin:11.5px 0 0 8.5px;
+    }
+    .appIcon{
+        .b(20px,33px);
+        background-position: -60px -93px;
+        margin:8.5px 0 0 15px;
+    }
+    .topIcon{
+        .b(24px,14px);
+        background-position: -60px -140px;
+        margin:18px 0 0 13px;
+        
+    }
+    .appBox .current{
+        background-position:-60px -168px ;
+    }
+    .wxBox .current{
+        background-position:-59px -233px ;
+    }
+    .topBox .current{
+        background-position:-60px -213px ;
+    }
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ecenter.css"/>
+		 <link href="css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+	<header id="header">
+			<section class="head-wrap ep-login">
+				<section class="w1200">
+					<h1 class="fl"><a href="" title="职前通" class="png mr30"><img src="images/enterprise/logo.png" class="logo"/></a></h1>
+					<nav class="ep-hNav clearfix">
+						<ul id="ep-nav">
+							<!--header nav begin-->
+							<li ><a href="index.html" title="企业中心">企业中心</a></li>
+							<li ><a href="appraisal.html" title="简历管理">简历管理</a></li>
+							<li ><a href="" title="简历职位">简历职位</a></li>
+							<li class="current"><a href="courseList.html" title="校园招聘">校园招聘</a></li>
+							<li class="ep-hNav-lastItem mr30"><a href="" title="公司主页">公司主页</a></li>
+							<!--header nav end-->
+						</ul>
+					</nav>
+				</section>
+			</section>
+		</header>
+	<!-- 公共头引入 -->
+	<!--企业中心-->
+	<div id="container" class="pt30 pb30">
+		<article class="ec-box w1200 of">
+			<!--left-->
+			<nav class="ec-nav fl"> 
+				<ul>
+					<li><a class="current_2" href="">校园招聘资讯</a></li>
+					<li class="mt10"><a  href="">发布新资讯</a></li>
+				</ul>
+			</nav>
+			<!--/left-->
+			<!--right-->
+			<section id="ec-issue-newInfor" class="fr ec-position-down">
+				<hgroup class="ec-position-title">
+					<h4 class="ml30">已发布资讯(<span class="c-b">共10个</span>)</h4>
+				</hgroup>
+				<section id="ec-issue-infor" class="ec-issue-infor of">
+					<div class="ec-issue-infor-content of">
+						<ul>
+						<li>
+							<div class="fl position-infor">
+								<p class="position-name">
+									<label for="">
+										<span class="c-b">北京大学2016校园招聘</span>
+									</label>
+								</p>
+								<p>
+									活动时间：2016-05-03/北京
+								</p>
+							</div>
+							<div class="fr edit">
+								<p>
+									<a class="c-b">浏览量（2829）</a>
+								</p>
+								<p class="mt25">
+									<a class="c-b mr30" href="">修改</a>
+									<a class="c-b" href="">删除</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="fl position-infor">
+								<p class="position-name">
+									<label for="">
+										<span class="c-b">北京大学2016校园招聘</span>
+									</label>
+								</p>
+								<p>
+									活动时间：2016-05-03/北京
+								</p>
+							</div>
+							<div class="fr edit">
+								<p>
+									<a class="c-b">浏览量（2829）</a>
+								</p>
+								<p class="mt25">
+									<a class="c-b mr30" href="">修改</a>
+									<a class="c-b" href="">删除</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+					</div>
+				</section>
+			</section>
+		</article>
+		<!--/right-->
+	</div>
+	<!--/企业中心-->
+	<script src="js/jquery.multi-select.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	$('#my-select').multiSelect();
+    	/*获得多选框值*/
+    	$(function(){
+	    	console.log($('#ms-my-select .ms-selection li:visible').text());
+    	})
+    </script>
+	</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+	      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header" style="100%">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+							<div  class="j-nav-set sets">
+							<!--<div class="arr"></div>
+								<ul class="set">
+									<li><a href="${ctx}/uc/uinfo" title="个人设置">个人设置</a></li>
+									<li><a href="${ctx}/uc/course" title="我的课程">我的课程</a></li>
+									<li><a href="${ctx}/uc/letter" title="我的提醒">我的提醒</a></li>
+									<li><a href="${ctx}/uc/order" title="我的订单">我的订单</a></li>
+									<li class="exit"><a onclick="exit()" href="javascript:void(0)">退出</a></li>
+								</ul>
+							</div>-->
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li >
+							<a href="index.html" title="首页">企业中心</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">简历管理</a>
+						</li>
+						<li class="current">
+							<a href="" title="实习">职位管理</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">校园招聘</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+	<!--企业中心-->
+	<!--简历管理-->
+	<article id="container" class="pt30 pb30">
+		<section class="qy-resume-box w1200 clearfix">
+			<!--left-->
+			<nav class="u-m-left u-c-box fl">
+				<section class="resume-left">
+					<div class="mr_module of">
+						<ul>
+							<li class="m_hide md_flag" >
+								<a class="clearfixs">
+									<i class="f-f9 mr_issue_i"></i>
+									<span class="mr_m_name">发布中的职位</span>
+									<span class="fr resume-num">400</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20 active">
+								<a class="clearfixs">
+									<i class="f-f9 mr_down_i"></i>
+									<span class="mr_m_name">下架职位</span>
+									<span class="fr resume-num">100</span>
+								</a>
+							</li>
+							<li class="dn m_hide  mt20" >
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_new_i"></i>
+									<span class="mr_m_name">发布新职位</span>
+									<span class="fr resume-num">200</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</nav>
+			<!--/left-->
+			<!--right-->
+		<!--已下架的职位-->
+			<section class="work-load" >
+				<section class="work-center">
+					<div class="select-load pr">
+						<p class="c-666 fsize20 mr5">下架的职位<span class="prace-color">(100)</span></p>
+						<img class="pa" src="images/page/angle.png" alt="" width="24" height="27"/>
+					</div>
+					<!--条件筛选-->
+					<div class="post-btn">
+						<dl>
+							<dd> 
+								<ul>
+									<li class="fl">
+										<input class="checkbox"  type="checkbox" name=''/>
+										<span class="checkbox"><span class="fsize14">全选</span></span>
+									</li>
+									<li class="fr edit-post">
+										<span><i class="f-f14 f-f14-6"></i><em class="vam fsize14">上架</em></span>
+										<span><i class="f-f14 f-f14-7"></i><em class="vam fsize14">删除</em></span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+				</div>
+				<!--/条件筛选-->
+				<!--职位列表-->
+					<section class="operation-post">
+						<div class="post-box clearfix mt15">
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<div class="vam" style="display: inline-block;">
+											<input type="checkbox" name="" class="checkbox">
+											<span class="checkbox"><span></span></span>
+										</div>
+										<img class="vam" src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize16"><span class="base-c">java工程师</span>（深圳）</p>
+										<p class="mt15 fsize16 c-666 w390">全职/6000-10000/大专含以上</p>
+										<p class="mt15 hand fsize14 c-999">刷新时间：2016-05-03</p>
+									</dd>
+								</dl>
+								<div class="fr post-edit vam mt20">
+									<div class="fr">
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-8"></i></dt>
+											<dd>上架</dd>
+										</dl>
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-4"></i></dt>
+											<dd>修改</dd>
+										</dl>
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-9"></i></dt>
+											<dd>删除</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="post-box clearfix mt15">
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<div class="vam" style="display: inline-block;">
+											<input type="checkbox" name="" class="checkbox">
+											<span class="checkbox"><span></span></span>
+										</div>
+										<img class="vam" src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize16"><span class="base-c">java工程师</span>（深圳）</p>
+										<p class="mt15 fsize16 c-666 w390">全职/6000-10000/大专含以上</p>
+										<p class="mt15 hand fsize14 c-999">刷新时间：2016-05-03</p>
+									</dd>
+								</dl>
+								<div class="fr post-edit vam mt20">
+									<div class="fr">
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-8"></i></dt>
+											<dd>上架</dd>
+										</dl>
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-4"></i></dt>
+											<dd>修改</dd>
+										</dl>
+										<dl style="display: inline-block;">
+											<dt><i class="f-f14 f-f14-9"></i></dt>
+											<dd>删除</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--职位列表-->
+				</section>
+			</section>
+		<!--/已下架的职位-->
+		</section>
+	</section>
+	<!--/right-->
+	</article>
+	<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+	<script type="text/javascript">
+			/*下拉框*/
+			$( ".selectmenu" ).selectmenu();
+			/*切换*/
+			$('.resume-left .m_hide').each(function(){
+				$(this).on('click',function(){
+					var $index = $(this).index();
+					$('.resume-left .m_hide').removeClass('active');
+					$(this).addClass('active');
+					$('.work-load').eq($index).show().siblings('.work-load').hide();
+				})
+			})
+	</script>
+	<!--/企业中心-->
+	</body>
+</html>

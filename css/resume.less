@@ -1,0 +1,898 @@
+@charset "utf-8";
+.b(@w, @h) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+}
+
+
+//背景颜色
+@bg: #f7f8f8; //字体颜色
+@one-c: #333;
+@two-c: #666;
+@three-c: #999;
+@four-c: #b2b2b2;
+@five-c: #c5c5c5;
+@sta-c: #f2f2f2;
+@pre-c: #ff5734;
+@bor-c:#e0e0e0;
+@base-font: 12px;
+@base-font-2: 13px;
+@base-font-3: 14px;
+.base-c{color:#00aced}
+.pr-c{color: #ff5734;}
+.Wbody {
+    background-color: @bg;
+}
+.re-btn{
+    display: inline-block;
+    width: 120px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background-color: #00aced;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*---header----*/
+.nav-bc{
+    box-shadow: 0px 0px 20px rgba(0,0,0,.3);
+}
+.fun-view{
+    margin-top: 40px;
+    background:url(../images/resume/header-bg.png) no-repeat scroll 0 0;
+    width: 100%;
+    height:214px ;
+    .fun-view-boxs{
+        width:572px;
+        height: 77px;
+        top:50%;
+        left:50%;
+        margin-left:-285px;
+        margin-top:-38.5px;
+        li{
+            float: left;
+            text-align: center;
+            width: 127px;
+            height:100% ;
+            border-radius: 5px;
+            background-color: #04aff3;
+            dl{
+                  margin-top: 15px;
+                  color: #fff;
+                 .f-f10{
+                     .b(26px,26px);
+                     background-position: 0 -311px;
+                 }
+            }
+            dt{
+                font-size: 28px;
+            }
+            dd{
+                margin-top: 10px;
+                font-size: 18px;
+            }
+        }
+        li:first-child{
+            margin-right: 95px;
+        }
+        .position-number{
+            margin-right: 95px;
+            background-color: #fea957;
+        }
+        li:last-child{
+            background-color: #43d2a4;
+        }
+    }
+}
+/*---/header----*/
+/*公开度*/
+.myresume_left .switch_resume{
+    float: right;
+    position: relative;
+    margin:12px 16px 0 0;
+    z-index: 10;
+    font-size: 14px;
+    width: 186px;
+}
+.switch_resume{
+    .find_me{
+        color: #00aced;
+        margin-right: 4px;
+    }
+    span{
+        float: left;
+        margin:3px 0 0;
+    }
+    .openresume{
+        display: inline-block;
+        height: 26px;
+        overflow: hidden;
+        zoom: 1;
+    }
+    .toggle{
+        background-color: #00aced;
+        border-radius: 60px;
+        color: #fff;
+        height: 24px;
+        margin:1px;
+        -webkit-transition: .25s;
+        -moz-transition: .25s;
+        -o-transition: .25s;
+        transition: .25s;
+        -webkit-backface-visibility: hidden;
+        input{
+            display: none;
+            position: absolute;
+            outline: 0;
+            opacity: .01;
+            filter: alpha(opacity=1);
+            zoom:1;
+        }
+    }
+    .toggle:before{
+        display: table;
+        content: '';
+    }
+    .toggle .toggle-radio:first-child{
+        margin-bottom: -26px;
+        left: 1px;
+        top:-1px;
+    }
+    .toggle.toggle-off{
+        background-color:#dadbda;
+        .toggle-radio{
+            background:url(../images/resume/icon-off.png) no-repeat ;
+            background-position: 0 0;
+            left: -1px;
+            top: -1px;
+            margin-left: 0;
+            margin-right: -13px;
+            z-index: 1;
+        }
+    }
+    .toggle.toggle-off .toggle-radio:first-child{
+        left: -120%;
+    }
+    .toggle .toggle-radio{
+        cursor: pointer;
+        background:url(../images/resume/icon-on.png) no-repeat right top;
+        display: block;
+        height: 26px;
+        left: 120%;
+        margin-left: -10px;
+        padding:0 22px;
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        -webkit-transition: .25s;
+        -moz-transition: .25s;
+        -o-transition: .25s;
+        transition: .25s;
+        -webkit-backface-visibility: hidden;
+        i.checked{
+            width: 20px;
+            height: 24px;
+            display: block;
+            background:url(../images/resume/block-on.png) no-repeat 0 center;
+        }
+        i.uncheck{
+            width: 20px;
+            height: 24px;
+            display: block;
+            background:url(../images/resume/block-off.png) no-repeat 6px center;
+        }
+    }
+    
+}
+
+/*----resume-nav-----*/
+.nav-tabs{
+    margin-top: 20px;
+    border:1px solid #d2d2d2;
+    height: 58px;
+    background-color: #fafafa;
+    li{
+        float: left;
+        text-align: center;
+        a{
+            padding:0 48px;
+            border-right: 2px solid @bor-c;
+            line-height: 56px;
+            font-size: 18px;
+            color: #666;
+        }
+    }
+    li:last-child a{
+        border-right: 0;
+    }
+    li.current{
+        border-bottom: 2px solid #00aced;
+    }
+    li.current a{
+        color: #00aced;
+    }
+    li:hover a{
+        color: #00aced;
+    }
+}
+/*-----/resume-nav----*/
+/*---------resume-lists--------------*/
+ .address,
+.education,
+.clock {
+    margin-right: 10px;
+    display: inline-block;
+    color: #999;
+    font-size: 13px;
+}
+.address {
+    .addr-icon {
+        margin-right: 7px;
+        .b(15px,18px);
+        background-position: -87px -2px;
+        vertical-align: middle;
+    }
+}
+.education {
+    .edu-icon {
+        margin-right: 7px;
+        .b(14px,16px);
+        background-position: -111px -2px;
+        vertical-align: middle;
+    }
+}
+.clock {
+    .clock-icon {
+        margin-right: 3px;
+        .b(18px,18px);
+        background-position: -134px -2px;
+        vertical-align: middle;
+    }
+}
+.send-resume{
+    border:1px solid #ebebeb;
+    margin-bottom: 10px;
+    height: 127px;
+    background-color: #fff;
+    
+}
+.send-resume-list{
+        margin:37px 30px;
+        .company-title{
+            display: inline-block;
+            min-width: 420px;
+        }
+        dt,dd{
+            float: left;
+        }
+         .r-btn{
+             float: right;
+         }
+         .company-name,.company-position{
+             display: inline-block;
+             min-width:176px;
+         }
+ }
+/*---------/resume-lists--------------*/
+.view-item li:hover{
+    box-shadow: 0 0 7px 1px #ddd;
+}
+/*收藏简历*/
+.b-blue{
+    background-color:#43d2a4 ;
+}
+/*关注公司*/
+.b-red{
+    background-color:#fe826b ;
+    
+}
+/*------推荐职位----------*/
+.other-btn{
+    display: inline-block;
+    font-size: 14px;
+    color: #303131;
+    width: 95px;
+    height: 38px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    padding-left: 23px;
+    line-height: 38px;
+    border-radius: 5px;
+    background:url(../images/resume/Refresh.png) no-repeat scroll 75px center;
+}
+/*我的简历*/
+#resume-main{
+    width:1180px;
+    margin:0 auto;
+    margin-top: 27px;
+    position: relative;
+    padding-bottom: 52px;
+     @ba-c:#00aced;
+ /*右侧导航*/
+ .base-r-c{
+     color:#00aced ;
+ }
+ .resume-right-title{
+     padding:20px 10px;
+     height:40px ;
+     width: 270px;
+     border:1px solid #e8e8e8;
+     background-color: #fafafa;
+     font-size: 14px;
+     .re-integrity-m{
+         width: 100%;
+         height: 6px;
+         border-radius: 6px;
+         .re-solid{
+             height: 6px;
+             width: 100%;
+             background-color:#00aced ;
+              border-radius: 6px;
+         }
+     }
+ }
+.mr_module{
+    .require{
+        font-size: 24px;
+        color: #fd5e2f;
+        vertical-align: middle;
+        padding-top: 10px;
+    }
+}
+.mr_module li{height:50px;line-height:50px;border-left:2px solid transparent;margin-left:-1px;border-left:1px solid #e5e5e5;padding-left:6px;font-size: 14px;cursor: pointer;}
+.mr_module li a{display:block;height:100%;padding-left: 27px;}
+.mr_module li a:hover{background-color:#fafafa;}
+.mr_module li a{color:#333;}
+.mr_module li a *{vertical-align:middle;}
+.mr_module li i{display:inline-block;margin:0 10px 0 5px;}
+.mr_module li .mr_base_i{width:13px;height:13px;background-position:-95px -226px;}
+.mr_module li .select{display:inline-block;width:17px;height:11px;margin:20px 15px;background-position:-48px -266px;vertical-align: middle;}
+.mr_module li .del{width:13px;height:13px;background-position:-76px -266px;}
+.mr_module li .mr_works_i{width:15px;height:15px;background-position:-117px -226px;}
+.mr_module li .mr_edu_i{width:15px;height:15px;background-position:-141px -226px;}
+.mr_module li .mr_hopework_i{background-position:-63px -239px;}
+.mr_module li.active{border-color:#00aced;border-width:2px;}
+.mr_module li.active a{background-color:#fafafa;}
+.mr_require{float:right;margin-right:16px;width:40px;height:22px;line-height:22px;line-height:22px;text-align:center;margin-top:14px;color:#fff;background-color:#ff6962;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;}
+.mr_module .mr_module_add{border-color:#fff;margin-left:-2px;padding-left:6px;}
+.mr_module li .mr_addmd_i{width:14px;height:14px;margin-left:19px;background-position:-25px -266px;}
+.mr_module li.m_hide .mr_school_i{width:17px;height:15px;margin-left:19px;background-position:-165px -226px;}
+.mr_module li.m_hide .mr_production_i{width:14px;height:14px;margin-left:19px;background-position:-96px -246px;}
+.mr_module li.m_hide .mr_items_i{width:14px;height:13px;margin-left:19px;background-position:-143px -248px;}
+.mr_module li.m_hide .mr_self_i{width:15px;height:14px;margin-left:19px;background-position:-117px -246px;}
+.mr_module li.m_hide .mr_cetr_i{width:15px;height:19px;margin-left:19px;background-position:-166px -244px;}
+.mr_module li.m_hide .mr_language_i{width:16px;height:19px;margin-left:19px;background-position:0px -266px;}
+}
+/*myresume-left*/
+.myresume_left{
+    width: 830px;
+    background-color: #fafafa;
+    .mr_top_bg{
+        background:url(../images/resume/top_bg.png) no-repeat scroll 0 0;
+        height: 90px;
+        position: relative;
+        z-index: 1;
+    }
+    .mr_top_bg *{
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        left: 352px;
+        top:12px;
+    }
+    .mr_top_bg .opa{
+        width: 100%;
+        height: 151px;
+        left: 0;
+        top:0;
+    }
+    .mr_top_bg input{
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    .mr_top_bg .shadow{
+        height: 118px;
+        left: 356px;
+        top: 19px;
+        width: 118px;
+    }
+    .mr_content_c{
+        padding-top: 10px;
+        font-size: 14px;
+        font-family: "microsoft yahei";
+        color: #666;
+        line-height: 24px;
+        width: 655px;
+    }
+}
+.mr_content{
+    padding: 64px 0 0 0;
+    /*基本信息*/
+   .mr_left_bg{
+       position: absolute;
+       background:url(../images/resume/top_left.png) no-repeat 0 0;
+        width:15px ;
+        height: 30px;
+        top:76px;
+   }
+   .mr_right_bg{
+       position: absolute;
+       background:url(../images/resume/top_right.png) no-repeat 0 0;
+        width:15px ;
+        height: 30px;
+        top:76px;
+        right: 0;
+   }
+   .mr_base_infor{
+       margin-top: 30px;
+   }
+   .base_infor_title{
+       text-align: center;
+   }
+    .base_infor_title:before,.base_infor_title:after{
+            content:'';
+            display: inline-block;
+            width: 255px;
+            height: 1px;
+            border-top: 1px solid #e8e8e8;            
+            vertical-align: middle;
+            
+    }
+     .base_infor_title_1:after{
+          width: 175px;
+          margin-right: 80px;
+      }
+    .base_infor_text{
+        display: inline-block;
+        background-color: #eee;
+        border-radius: 26px;
+        font-size: 18px;
+        margin: 0 13px;
+        padding: 6px 24px;
+        text-align: center;
+    }
+    .mr_empty_add,.mr_empty_add_two{
+        background-color: #fafafa;
+        border: 1px dashed #d7d7d7;
+        cursor: pointer;
+        height: 98px;
+        line-height: 98px;
+        width: 655px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: center;
+        i{
+            display: inline-block;
+            margin-right: 6px;
+            width: 16px;
+            height: 18px;
+            background: url(../images/resume/Plus.png) no-repeat scroll center 1px;
+            vertical-align: middle;
+        }
+        span{
+            font-size:16px;
+            color: #5bd2ff;
+            vertical-align: middle;
+        }
+    }
+     .mr_content_b{
+            font-size: 14px;
+            color: #666;
+            line-height:22px ;
+        }
+    .mr_common_edit{
+        background-color: #fefff2;
+        padding:50px 0 50px 85px;
+        input{
+            width: 265px;
+            height: 40px;
+            background-color:#fff;
+            padding-left: 14px;
+            border:1px solid #f1f3e9;
+        }
+        .mr_del{
+            color: #ff685e;
+            font-size: 14px;
+            margin-right:104px;
+        }
+        dl{
+            display: inline-block;
+        }
+        .ml100{
+            margin-left: 105px;
+        }
+        dt{
+            color: #999;
+          margin-bottom: 10px;  
+        }
+        .full_name{
+            width: 602px;
+        }
+        .mr_save,.mr_cancel,.mr_save_t1,.mr_save_t2{
+            padding: 12px 18px;
+            font-size: 16px;
+            vertical-align: middle;
+            background-color: #00aced;
+            border-radius:3px;
+            color:#fff;
+        }
+        .mr_save:hover,.mr_save_t1:hover,.mr_save_t2:hover{
+            background-color: #fd5d2e;
+        }
+        .mr_cancel{
+            background-color: transparent;
+            color: #00aced;
+        }
+        .mr_button{
+            width: 200px;
+             border:0;
+            cursor: pointer;
+             text-align: left;
+        }
+        .form_wrap{
+            position: relative;
+            cursor: pointer;
+            width: 279px;
+            height: 40px;
+            border:1px solid #f1f3e9;
+            background-color:#fff;
+            border-radius: 3px;
+        }
+        .half_box{
+            width: 137px;
+            display: inline-block;
+            .mr_button{
+                width: 100px;
+            }
+            .xl_list{
+                width: 137px;
+            }
+        }
+        
+        .mr_sj{
+            position: absolute;
+            right: 18px;
+            top:17px;
+            height: 0;
+            width: 0;
+            font-size: 0;
+            border:6px solid #fff;
+            display: block;
+            border-color: #d3d3d3 transparent transparent;
+        }
+        .xl_list{
+            display: none;
+            position: absolute;
+            top: 42px;
+            left: -1px;
+            z-index: 999;
+            width: 279px;
+            background-color: #fff;
+            border: 1px solid #e7e7e7;
+            box-shadow: 2px 2px 4px #efefe4;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            li{
+                height: 36px;
+                line-height: 36px;
+                padding-left: 17px;
+            }
+            li:hover{
+                background-color: #f4f4f4;
+            }
+        }
+        .content-box{
+            textarea{
+                padding-left:14px;
+                width: 652px;
+                height: 113px;
+                border:1px solid #f1f3e9;
+                resize:none;
+                overflow: hidden;
+            }
+        }
+       .dis-box {
+            background: #fff none repeat scroll 0 0;
+            border: 1px solid #f1f3e9;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 41px;
+            width: 230px;
+            z-index: 1;
+             ul {
+                padding: 10px;
+            }
+            li.current {
+                background: #00a2e0 none repeat scroll 0 0;
+                color: #fff;
+            }
+            li {
+                color: #00a2e0;
+                cursor: pointer;
+                float: left;
+                font-size: 12px;
+                height: 26px;
+                line-height: 26px;
+                margin-right: 2px;
+                text-align: center;
+                width: 50px;
+            }
+        }
+    }
+     .search-content{
+         .text{
+            background: #fff none repeat scroll 0 0;
+            border: 1px solid #f1f3e9;
+            color: #495761;
+            cursor: pointer;
+            font: 12px/40px "microsoft yahei";
+            height: 40px;
+            width: 111px;
+            padding: 0 10px;
+            position: relative;
+            z-index: 100;
+        }
+        .text:first-child{
+            margin-right: 10px;
+        }
+        .city{
+            display: inline-block;
+            position: relative;
+        }
+        .icon1{
+            background-position: 0 0;
+            color: #b0b0b0;
+            display: inline-block;
+            height: 5px;
+            position: absolute;
+            right: 20px;
+            top: 0;
+            width: 8px;
+        }
+       
+     }
+     .mr_title_head .mr_hand_r,.mr_title_head .mr_hand_r_t{
+         position: absolute;
+         right: 0;
+         top: 30px;
+     }
+    /*日期*/
+   
+    /*基本信息编辑*/
+    .mr_w604{
+        width: 604px;
+        margin:0 auto;
+    }
+    .mr_p_info{
+        padding:20px 0 20px 0;
+    }
+    .mr_name{
+            display: block;
+            height: 40px;
+            width: 468px;
+            margin: 0 auto;
+            line-height: 40px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+    }
+    .mr_p_name {
+        height: 40px;
+        line-height: 38px;
+        margin-bottom: 8px;
+    }
+    .mr_p_introduce {
+        line-height: 32px;
+        margin-bottom: 8px;
+        min-height: 34px;
+    }
+    .mr_intro {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 468px;
+        font-size: 16px;
+        line-height: 34px;
+        color: #333;
+    }
+    .info_b,.info_j,.info_t,.info_m {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size:14px;
+    color: #666;
+    }
+    .mr_infoed{
+        background-color: #fefef5;
+    }
+    .mr_info_edit{
+        position: absolute;
+        right: 190px;
+        top:0;
+        display: none;
+    }
+    .f-f15{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 2px;
+    }
+    .f-f15-2 {
+        background-position: -143px -477px;
+    }
+    .f-f15-3{
+        background-position: 0px -500px;
+    }
+    .f-f15-4{
+        background-position: -165px -477px;
+    }
+    .edit_text{
+        color: #5bd2ff;
+     }
+     .icon-mobile-phone{
+        margin-right: 3px;
+         font-size: 18px;
+         color: #999;
+         vertical-align: middle;
+        
+     }
+     .icon-envelope-alt{
+         font-size: 15px;
+         color: #999;
+        margin-right: 3px;
+     }
+ /*教育经历*/
+    .mr_hand_r,.mr_hand_r_t,.mr_hand_e{
+//      position: absolute;
+//      right: 95px;
+//      top: 7px;
+        float: right;
+        margin-right: 95px;
+        margin-top: -23px;
+    }
+    .list_show{
+        margin:0 40px 20px 85px;
+        overflow: hidden;
+        height: auto;
+        .mr_hand_r,.mr_hand_r_t,.mr_hand_e{
+//          right: 53px;
+//          top:0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        dt,dd{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        dd{
+            width:641px ;
+        }
+        .mr_jobe_list>span{
+            font-size: 16px;
+            color: #666;
+        }
+        .mr_content_l{
+            font:normal 14px/30px "microsoft yahei";
+            color: #999;
+            margin-top: 10px;
+        }
+        .re-integrity-m {
+            display: inline-block;
+            width: 30%;
+            height: 6px;
+            border-radius: 6px;
+            vertical-align: middle;
+            background-color: #EEEEEE;
+        }
+        .re-solid {
+            height: 6px;
+            width: 50%;
+            background-color: #43d2a4;
+            border-radius: 6px;
+        }
+    }
+/*求职意向*/
+    .mr_job_info{
+        color: #999;
+        li{
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom:10px ;
+        }
+        .icon-time{
+            font-size: 15px;
+            margin-right: 3px;
+        }
+        .f-f16{
+            .b(13px,13px);
+            background-position:0 -548px;
+            vertical-align: middle;
+            margin-right:3px;
+        }
+        .f-f16-1{
+            height: 16px;
+        }
+        .f-f16-2{
+              background-position:-13px -548px;
+        }
+        .f-f16-3{
+              background-position:-30px -548px;
+        }
+        .f-f16-4{
+              background-position:-46px -548px;
+        }
+    
+        .first-list{
+            min-width: 370px;
+        }
+    }
+    .major-box{
+//      display: none;
+        width: 828px;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: #fff;
+        border:1px solid #dfdfdf;
+        z-index: 100;
+        p{
+            width:100% ;
+            height: 30px;
+            background-color: #fdffeb;
+            line-height: 30px;
+            .icon-remove{
+                font-size: 24px;
+                color: #d3d3d3;
+                margin-right:15px;
+                font-weight: 100;
+            }
+        }
+        .major-list{
+            font-size: 14px;
+            color: #666;
+            margin:20px;
+            li{
+                display: inline-block;
+                min-width:160px ;
+                padding:5px;
+                cursor: pointer;
+            }
+            li:hover{
+                color: #00aced;
+            }
+            .w100{
+                min-width: 100px;
+            }
+        }
+        
+    }
+    .accessoryInfor .list_show dt{
+        background-color:#15b2ed;
+        padding:15px 0;
+        width: 580px;
+        display: inline-block;
+        border-radius: 2px;
+    }
+      .accessoryInfor .list_show dd{
+          display: inline-block;
+          width: 68px;
+      }
+      .icon-trash{
+          font-size: 20px;
+          color: #5bd2ff;
+          margin-right: 4px;
+          vertical-align: middle;
+      }
+}
+.u-m-left.fix-box{  
+    position: fixed;
+    top:0;
+}

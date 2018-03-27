@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+	      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header" style="100%">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+							<div  class="j-nav-set sets">
+							<!--<div class="arr"></div>
+								<ul class="set">
+									<li><a href="${ctx}/uc/uinfo" title="个人设置">个人设置</a></li>
+									<li><a href="${ctx}/uc/course" title="我的课程">我的课程</a></li>
+									<li><a href="${ctx}/uc/letter" title="我的提醒">我的提醒</a></li>
+									<li><a href="${ctx}/uc/order" title="我的订单">我的订单</a></li>
+									<li class="exit"><a onclick="exit()" href="javascript:void(0)">退出</a></li>
+								</ul>
+							</div>-->
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li >
+							<a href="index.html" title="首页">企业中心</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">简历管理</a>
+						</li>
+						<li class="current">
+							<a href="" title="实习">职位管理</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">校园招聘</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+	<!--企业中心-->
+	<!--校园资讯-->
+	<article id="container" class="pt30 pb30">
+		<section class="qy-resume-box w1200 clearfix">
+			<!--left-->
+			<nav class="u-m-left u-c-box fl">
+				<section class="resume-left">
+					<div class="mr_module of">
+						<ul>
+							<li class="m_hide active" >
+								<a class="clearfixs">
+									<i class="f-f9 mr_issue_i"></i>
+									<span class="mr_m_name">校园招聘资讯</span>
+									<span class="fr resume-num">400</span>
+								</a>
+							</li>
+							<li class="dn m_hide  mt20 " >
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_new_i"></i>
+									<span class="mr_m_name">发布新资讯</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</nav>
+			<!--/left-->
+			<!--right-->
+		<!--发布新资讯-->
+			<section class="work-load">
+				<section class="work-center issue-post b-fff">
+					<div class="select-load pr  border-bom">
+						<p class="c-666 fsize20 mr5">发布新资讯</p>
+						<img class="pa" src="images/page/angle.png" alt="" width="24" height="27"/>
+					</div>
+					<section class="post-item">
+						<header class="mt50">
+							<p class="title tac fsize14 c-333 pr"><span>发布新资讯</span></p>
+							<p class="border-bom pr">
+							</p>
+						</header>
+						<section>
+							<form action="">
+								<ul>
+									<li class="mt40">
+										<dl>
+											<dt class="fsize14 mr15"><span class="vam c-red mr5">*</span>标<i class="ml2">题</i></dt>
+											<dd class="input-box"><input type="text" /></dd>
+										</dl>
+									</li>
+									<li class="mt20">
+										<dl>
+											<dt class="fsize14 mr15"><span class="vam c-red mr5">*</span>举办时间</dt>
+											<dd class="input-box"><input type="text" placeholder="100"/></dd>
+										</dl>
+									</li>
+									
+									<li class="mt20">
+										<dl>
+											<dt class="fsize14 mr15"><span class="vam c-red mr5">*</span>举办地点</dt>
+											<dd class="input-box"><input type="text" /></dd>
+										</dl>
+									</li>
+									<li class="mt20">
+										<dl>
+											<dt class="fsize14 mr15 vat"><span class="vam c-red mr5">*</span>内<i class="ml2">容</i></dt>
+											<dd class="input-box">
+												<textarea name="" rows="" cols=""></textarea>
+											</dd>
+										</dl>
+									</li>
+									<li class="mt50 fr post-btns">
+										<button class="mr40"><i class="f-f14 f-f14-10 vam"></i><i>预览</i></button>
+										<button class="mr40 down-btn"><i class="f-f14 f-f14-11 vam"></i><i class="vam">存入下架职位</i></button>
+										<button class="issue-btn"><i class="f-f14 f-f14-12 vam"></i><i class="vam">马上发布</i></button>
+									</li>
+								</ul>
+							</form>
+						</section>
+					</section>
+				</section>
+			</section>
+		<!--/发布新资讯-->
+		</section>
+	</section>
+	<!--/right-->
+	</article>
+	<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+	<script type="text/javascript">
+			/*切换*/
+			$('.resume-left .m_hide').each(function(){
+				$(this).on('click',function(){
+					var $index = $(this).index();
+					$('.resume-left .m_hide').removeClass('active');
+					$(this).addClass('active');
+					$('.work-load').eq($index).show().siblings('.work-load').hide();
+				})
+			})
+	</script>
+	<!--/企业中心-->
+	</body>
+</html>

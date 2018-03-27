@@ -1,0 +1,116 @@
+@charset "utf-8";
+.Wbody .w1200 {
+  width: 1180px;
+  margin: 0 auto;
+}
+.nav-bc {
+  box-shadow: 30px 0px 30px #d2d2d2;
+  z-index: 100;
+  position: relative;
+}
+#company-header {
+  padding-top: 30px;
+  height: 215px;
+  width: 100%;
+  background-color: #f2f2f2;
+  position: relative;
+}
+#company-header .company-infor {
+  height: 158px;
+  border: 1px solid #d2d2d2;
+  background-color: #fff;
+}
+#company-header .company-infor .company-logo img {
+  padding: 10px 10px 13px 15px;
+  border-right: 1px solid #d2d2d2;
+}
+#company-header .company-infor li {
+  float: left;
+}
+#company-header .company-intro {
+  width: 970px;
+  padding: 20px 0 20px 30px;
+}
+#company-header .company-intro .v-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-position: -54px -266px;
+}
+#company-header .company-intro .tags {
+  float: right;
+}
+#company-header .company-intro .tags .tag {
+  border: 1px solid #e8e8e8;
+  padding: 6px 7px;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  margin-right: 3px;
+}
+#company-header .company-status {
+  margin-top: 35px;
+  color: #666;
+  font-size: 14px;
+}
+#company-header .company-status .ml_20 {
+  margin-left: -20px;
+}
+#company-header .company-status .border-r {
+  padding: 7px 20px 7px 20px;
+  border-right: 1px solid #E8E8E8;
+}
+#company-header .company-status .f-f7-1 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-position: -2px -266px;
+}
+#company-header .company-status .f-f7-2 {
+  display: inline-block;
+  width: 11px;
+  height: 13px;
+  background-position: -2px -286px;
+}
+#company-header .company-status .f-f7-3 {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-position: -120px -227px;
+}
+#company-header .company-status .f-f7-4 {
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  background-position: -93px -227px;
+}
+#company-header .company-status .star {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-position: -27px -266px;
+  margin-right: 2px;
+}
+#company-header .company-status .no-star {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background-position: -25px -283px;
+}
+#company-header .company-nav {
+  font-size: 18px;
+  margin-top: 20px;
+}
+#company-header .company-nav li {
+  float: left;
+  height: 33px;
+  margin-right: 40px;
+}
+#company-header .company-nav li a {
+  color: #333;
+  padding: 0 2px 13px 2px;
+}
+#company-header .company-nav li a.current {
+  border-bottom: 2px solid #00aced;
+}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/enecter-1.css" />
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="Wbody">
+		<!-- 公共头引入 -->
+		<header id="header">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li class="current">
+							<a href="index.html" title="首页">首页</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">找实习</a>
+						</li>
+						<li>
+							<a href="" title="实习">写简历</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">做测评</a>
+						</li>
+						<li>
+							<a href="" title="职乎">学课程</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+		<article class="container">
+			<header id="company-header">
+				<ul class="company-infor w1200 of">
+					<li class="company-logo">
+						<img src="images/enterprise/qy-logo.png" alt="公司logo" width="134" height="135" />
+					</li>
+					<li class="company-intro">
+						<dl>
+							<dt><span class="fsize24 c-333 vam mr5">华为</span><i class="f-f7 v-icon vam"></i></dt>
+							<dd class="mt20"><span class="fsize16 c-333">全球领先的信息与通信解决方案供应商</span>
+								<span class="tags">
+									<i class="tag">股票期权</i>
+									<i class="tag">绩效资金</i>
+									<i class="tag">定期体检</i>
+									<i class="tag">五险一金</i>
+									<i class="tag">弹性工作</i>
+									<i class="tag">免费班车</i>
+								</span>
+							</dd>
+							<dd class="company-status">
+								<span class="border-r ml_20"><i class="f-f7 f-f7-1 vam mr10"></i><b class="vam">移动互联网，企业服务</b></span>
+								<span class="border-r"><i class="f-f7 f-f7-2 vam mr10"></i><b class="vam">深圳</b></span>
+								<span class="border-r"><i class="f-f7 f-f7-3 vam mr10"></i><b class="vam">2000人以上</b></span>
+								<span class="border-r"><i class="f-f7 f-f7-4 vam mr10"></i><b class="vam">1902993人关注</b></span>
+								<span class="ml20"><i class="f-f7 star vam"></i><i class="f-f7 star vam"></i><i class="f-f7 star vam"></i><i class="f-f7 star vam"></i><i class="f-f7 no-star vam"></i><b class="vam ml10">评分</b></span>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!--nav-->
+				<nav class="company-nav w1200">
+					<ul>
+						<li>
+							<a href="javascript:void(0);">公司主页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">招聘职位(15)</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">校园招聘</a>
+						</li>
+						<li>
+							<a class="current" href="javascript:void(0);">评价</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!--content-->
+			<article class="w1200">
+				<!--评价-->
+				<section class="toggle interview_container item_container">
+					<p class="item_ltitle">面试评价</p>
+					<!--评价列表-->
+					<section class="list-container">
+						<ul class="list-content">
+							<!--带回复框评价-1-->
+							<li class="review-area clearfix">
+								<div class="review-avater fl">
+									<img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+								</div>
+								<div class="review-right">
+									<div class="review-stars clearfix">
+										<span class="review-name fsize14 vam">匿名</span>
+										<div class="stars vam">
+											<span class="vam c-999">
+												评分 :
+											</span>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 no-star vam"></i>
+										</div>
+										<span class="title c-999">面试职位 :</span>
+										<a title="" href="" class="job-name" target="_blank">项目经理</a><i class="c-666 fsize14">(已删除)</i>
+										<span class="review-date">2016-07-21</span>
+									</div>
+									<div class="review-content">
+										<div class="fsize14 c-666">
+											<span class="review-type c-999">[评价]</span>
+											<div class="interview-process">面试的过程还好，面试官很温柔</div>
+										</div>
+									</div>
+									<div class="review-action">
+										<span class="reply fsize14">回复</span>
+										<span class="useful fsize14 ml10 "><i class="vam icon2 appr-discuss-icon2"></i><i>0</i></span>
+									</div>
+									<div class="review-reply pr">
+										<div class="triangleOut-editor"></div>
+										<div class="triangleIn-editor"></div>
+										<textarea placeholder="您的回复将会展示在您的公司主页及相应职位页下方" class="reply-editor"></textarea>
+										<div class="text-count">还可输入<span>300</span>字</div>
+										<input type="button" class="saveBtn" value="提交">
+										<input type="button" class="cancelBtn" value="取消">
+									</div>
+								</div>
+							</li>
+							<!--/带回复框评价-1-->
+							<!--带回复框评价-2-->
+							<li class="review-area clearfix">
+								<div class="review-avater fl">
+									<img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+								</div>
+								<div class="review-right">
+									<div class="review-stars clearfix">
+										<span class="review-name fsize14 vam">匿名</span>
+										<span class="review-date">2016-07-21</span>
+									</div>
+									<div class="review-content">
+										<div class="fsize14 c-666">
+											<span class="review-type c-999">[评价]</span>
+											<div class="interview-process">面试的过程还好，面试官很温柔</div>
+										</div>
+									</div>
+									<div class="review-action">
+										<span class="reply fsize14">HR回复</span>
+										<span class="useful fsize14 ml10 "><i class="vam icon2 appr-discuss-icon2"></i><i>0</i></span>
+									</div>
+									<div class="review-reply pr">
+										<div class="triangleOut-editor"></div>
+										<div class="triangleIn-editor"></div>
+										<textarea placeholder="您的回复将会展示在您的公司主页及相应职位页下方" class="reply-editor"></textarea>
+										<div class="text-count">还可输入<span>300</span>字</div>
+										<input type="button" class="saveBtn" value="提交">
+										<input type="button" class="cancelBtn" value="取消">
+									</div>
+								</div>
+							</li>
+							<!--/带回复框评价-2-->
+							<!--多人回复-->
+							<li class="review-area clearfix">
+								<div class="review-avater fl">
+									<img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+								</div>
+								<div class="review-right">
+									<div class="review-stars clearfix">
+										<span class="review-name fsize14 vam">匿名</span>
+										<div class="stars vam">
+											<span class="vam c-999">
+												评分 :
+											</span>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+											<i class="f-f7 star vam"></i>
+										</div>
+										<span class="title c-999">面试职位 :</span>
+										<a title="" href="" class="job-name" target="_blank">项目经理</a><i class="c-666 fsize14">(已删除)</i>
+										<span class="review-date">2016-07-21</span>
+									</div>
+									<div class="review-content">
+										<div class="fsize14 c-666">
+											<span class="review-type c-999">[评价]</span>
+											<div class="interview-process">面试的过程还好，面试官很温柔</div>
+										</div>
+									</div>
+									<div class="review-action">
+										<span class="reply fsize14">回复</span>
+									<span class="useful fsize14 ml10 "><i class="vam icon2 appr-discuss-icon2"></i><i>0</i></span>
+									</div>
+									<!--回复-->
+									<div class="review-reply pr">
+										<div class="triangleOut-editor top_10"></div>
+										<div class="triangleIn-editor top_8"></div>
+										<div class="reply-area">
+											<ul>
+												<li class="clearfix mb10">
+													<img width="50" height="50" alt="评价回复人头像" class="lazy_img" src="images/head.png" style="display: block;">
+													<div class="reply-right">
+
+														<div class="reply-info">
+															<span>华为</span> &nbsp;·&nbsp;
+															<span>ROGER</span> &nbsp;·&nbsp;
+															<span>HR</span>
+															<span class="reply-date c-999 fr">2016-07-04</span>
+														</div>
+
+														<div class="c-666 fsize14">
+															您已经是表现出优秀的才能，才在众人之中脱颖而出参与我们的面试阶段，对您在面试过程中所表现出来的积极努力和认真参与的态度，我们致以由衷的敬意和真诚的赞赏！我们对于Android开发岗位要求基础必须扎实，如果只是略懂皮毛，确实无法胜任该岗位的工作。欢迎您继续关注我们的招聘信息，向我们推荐您身边的人才！
+														</div>
+														<div class="review-action">
+															<span class="reply fsize14 no-right">回复</span>
+														</div>
+														<div class="review-reply pr">
+															<div class="triangleOut-editor"></div>
+															<div class="triangleIn-editor"></div>
+															<textarea placeholder="您的回复将会展示在您的公司主页及相应职位页下方" class="reply-editor"></textarea>
+															<div class="text-count">还可输入<span>300</span>字</div>
+															<input type="button" class="saveBtn" value="提交">
+															<input type="button" class="cancelBtn" value="取消">
+														</div>
+													</div>
+												</li>
+												<li class="border-top clearfix mb10 pt10">
+													<img width="50" height="50" alt="评价回复人头像" class="lazy_img" src="images/head.png" style="display: block;">
+													<div class="reply-right">
+														<div class="reply-info">
+															<span>华为</span> &nbsp;·&nbsp;
+															<span>ROGER</span> &nbsp;·&nbsp;
+															<span>HR</span>
+															<span class="reply-date c-999 fr">2016-07-04</span>
+														</div>
+
+														<div class="c-666 fsize14">
+															您已经是表现出优秀的才能，才在众人之中脱颖而出参与我们的面试阶段，对您在面试过程中所表现出来的积极努力和认真参与的态度，我们致以由衷的敬意和真诚的赞赏！我们对于Android开发岗位要求基础必须扎实，如果只是略懂皮毛，确实无法胜任该岗位的工作。欢迎您继续关注我们的招聘信息，向我们推荐您身边的人才！
+														</div>
+														<div class="review-action">
+															<span class="reply fsize14 no-right">回复</span>
+														</div>
+														<div class="review-reply pr clearfix">
+															<div class="triangleOut-editor top_10"></div>
+															<div class="triangleIn-editor top_8"></div>
+															<div class="reply-more">
+																<div class="review-avater fl">
+																	<img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+																</div>
+																<div class="review-right">
+																	<div class="review-stars clearfix">
+																		<span class="review-name fsize14 vam">匿名</span>
+																		<span class="review-date">2016-07-21</span>
+																	</div>
+																	<div class="review-content">
+																		<div class="fsize14 c-666">
+																			<span class="review-type c-999">[评价]</span>
+																			<div class="interview-process">面试的过程还好，面试官很温柔....!</div>
+																		</div>
+																	</div>
+																	<div class="review-action">
+																		<span class="reply fsize14 no-right">回复</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="review-reply pr clearfix">
+															<div class="triangleOut-editor top_10 left_84"></div>
+															<div class="triangleIn-editor top_8 left_85"></div>
+															<div class="reply-more">
+																<div class="review-avater fl">
+																	<img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+																</div>
+																<div class="review-right">
+																	<div class="review-stars clearfix">
+																		<span class="review-name fsize14 vam">匿名</span>
+																		<span class="review-date">2016-07-21</span>
+																	</div>
+																	<div class="review-content">
+																		<div class="fsize14 c-666">
+																			<span class="review-type c-999">[评价]</span>
+																			<div class="interview-process">面试的过程还好，面试官很温柔面试的过程还好，面试官很温柔面试的过程还好，面试官很温柔面试的过程还好，面试官很温柔面试的过程还好，面试官很温柔面试的过程还好，面试官很温柔</div>
+																		</div>
+																	</div>
+																	<div class="review-action">
+																		<span class="reply fsize14 no-right">回复</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!--分割线-->
+														<div class="line">
+														</div>
+														<!--/分割线-->
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--/回复-->
+							</div>
+							</li>
+							<!--多人回复-->
+						</ul>
+					</section>
+					<!--/评价列表-->
+				</section>
+				<!--/评价-->
+			</article>
+			<!--/content-end-->
+		</article>
+		<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd>
+									<a href="">百度贴吧</a>
+								</dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd>
+									<a href="">新浪微博</a>
+								</dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon">
+									<a href="">官方微信</a>
+								</dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd>
+									<a href="">下载APP</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+		<script type="text/javascript">
+			$('.company-nav li').each(function() {
+				var index = $(this).index();
+				$(this).on('click', function() {
+					$('.company-nav li').find('a').removeClass('current');
+					$(this).find('a').addClass('current');
+					$('.toggle').eq(index).show().siblings('.toggle').hide();
+				})
+			})
+		</script>
+	</body>
+
+</html>

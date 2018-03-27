@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/new-style.css" />
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+	      	<script src="js/html5.js"></script>
+	    <![endif]-->
+		<style>
+			.hl_shadow{
+				position: fixed;
+				top: 0;
+				/*left: 0;*/
+				width: 100%;
+				height: 100%;
+				background: #000;
+				opacity: 0.6;
+				filter: alpha(opacity=60);
+				z-index: 10000;
+			}
+			.hl_add_box .hl_text:before{
+				content: '';
+				position: absolute;
+				top:385px;
+				display: block;
+				width: 583px;
+				height: 145px;
+				background:url(images/indicate_text.png);
+				z-index: 10002;
+			}
+			.hl_add_box .hl_btn:before{
+				content: '';
+				position: absolute;
+				top:650px;
+				left: 300px;
+				display: block;
+				width: 265px;
+				height: 162px;
+				background:url(images/hl_btn.png);
+				z-index: 10002;
+			}
+			.accessory_resume{
+				margin:0px 0 0 -20px;
+				width: 630px;
+				position: relative;
+				z-index: 10001;
+				background:#fff;
+				border-width:12px;
+				border-style: solid;
+				border-color: rgba(0,0,0,.44);
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+	<body class="Wbody">
+		<!--高亮-->
+		<div class="hl_shadow">
+		</div>
+		<div class="hl_add_box w1200 pr">
+			<div class="hl_text"></div>
+			<div class="hl_btn">
+			</div>
+		</div>
+		<!--/高亮-->
+		<!-- 公共头引入 -->
+		<header id="header">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li class="current">
+							<a href="index.html" title="首页">首页</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">找实习</a>
+						</li>
+						<li>
+							<a href="" title="实习">写简历</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">做测评</a>
+						</li>
+						<li>
+							<a href="" title="职乎">学课程</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+		<!--resume-main-->
+		<article class="w1200 clearfix pt40">
+			<!--header-begin-->
+			<section>
+				<div class="resume_header">
+					我的简历
+				</div>
+				<div class="fun_view pr clearfix">
+					<div class="edit_resume">
+						<ul>
+							<li class="online_resume">
+								<p>
+									<span class="c-000 fsize14 mr10">在线简历</span>
+									<span class="c-999">2016-12-16<i class="ml5"></i>14:25:26</span>
+								</p>
+								<p class="mt20">
+									<span class="c-666">
+										王小强<i class="ml10"></i>现居深圳<i class="ml10"></i>1995.09
+									</span>
+									<span class="fr">
+										<a class="mr20 preview_icon" href="">预览</a>
+										<a class="amend_icon" href="">修改</a>
+									</span>
+								</p>
+							</li>
+							<li class="accessory_resume mt20">
+								<p style="padding:10px 10px 0 10px;">
+									<span  class="c-000 fsize14 mr10">附件简历 <i class="no_perfect">(未完善)</i></span>
+									<span  class="c-999">2016-12-16<i class="ml5"></i>14:25:26</span>
+								</p>
+								<p class="mt20"  style="padding:0 10px 10px 10px;">
+									<span  class="c-666">
+										王小强<i class="ml10"></i>现居深圳<i class="ml10"></i>1995.09
+									</span>
+									<span class="fr">
+										<a class="preview_icon mr20" href="">预览</a>
+										<a class="r_add_icon" href="">添加</a>
+									</span>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="tj_resume">
+						<ul>
+							<li class="canvas_btn">
+								<canvas id="circle" class="hand" width="100" height="100" ></canvas>
+							</li>
+							<li class="ml20">
+								<p>
+									您打败了全国58%的求职者
+								</p>
+								<p class="mt10" style="font-family: 'Microsoft YaHei'">
+									还有3项信息待完善！
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="data_statistics">
+						<p>
+							<span>20</span>
+							职位申请
+						</p>
+						<p>
+							<span>18</span>
+							简历浏览
+						</p>
+					</div>
+				</div>
+				<div class="clearfix mt10">
+					<ul>
+						<li class="fl">
+							<a href="">
+								<img src="images/resume/add_card.png" alt="" width="585" height="80">
+							</a>
+						</li>
+						<li class="fr">
+							<a href="">
+								<img src="images/resume/quiz_icon.png" alt="" width="584" height="80">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--header-end-->
+			<!--main-begin-->
+			<section class="resume-content">
+				<!--tabs-->
+				<nav class="nav-tabs of" style="margin-top:10px;">
+					<ul>
+						<li class='current'><a href="javascript:void(0);">投递职位</a></li>
+						<li><a href="javascript:void(0);">收藏职位</a></li>
+						<li><a href="javascript:void(0);">关注公司</a></li>
+					</ul>
+				</nav>
+				<!--/tabs-->
+				<!--resume-lists-->
+				<section>
+					<!--send-resume-->
+					<section class="mt10 view-item" >
+						<div class="send-resume-box">
+							<ul>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title"><b class="company-position">IEG游戏技术实习生</b><b class="pr-c fsize18 ml10">￥119-120/天</b></span></p>
+											<p class="mt20"><span class="fsize16 c-333 vam mr10 company-name">腾讯计算机系统有限公司</span>
+												<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+												<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+												<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">五个月</span></span>
+											</p>
+										</dt>
+										<dd class="fsize16 c-333">
+											<p class="mt10"><a  class="fsize18 c-666">被查看</a></p>
+											<p class="mt10"><span class="fsize14 c-999">2016-07-14 09:41</span></p>
+										</dd>
+										<dd class="r-btn"><a class="re-btn">评价该公司</a></dd>
+									</dl>
+								</li>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title"><b class="company-position">IEG游戏技术实习生</b><b class="pr-c fsize18 ml10">￥119-120/天</b></span></p>
+											<p class="mt20"><span class="fsize16 c-333 vam mr10 company-name">腾讯计算机系统有限公司</span>
+												<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+												<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+												<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">五个月</span></span>
+											</p>
+										</dt>
+										<dd class="fsize16 c-333">
+											<p class="mt10"><a  class="fsize18 c-666">已下载</a></p>
+											<p class="mt10"><span class="fsize14 c-999">2016-07-14 09:41</span></p>
+										</dd>
+										<dd class="r-btn"><a class="re-btn">评价该公司</a></dd>
+									</dl>
+								</li>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title"><b class="company-position">IEG游戏技术实习生</b><b class="pr-c fsize18 ml10">￥119-120/天</b></span></p>
+											<p class="mt20"><span class="fsize16 c-333 vam mr10 company-name">腾讯计算机系统有限公司</span>
+												<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+												<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+												<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">五个月</span></span>
+											</p>
+										</dt>
+										<dd class="fsize16 c-333">
+											<p class="mt10"><a  class="fsize18 c-666">不合适</a></p>
+											<p class="mt10"><span class="fsize14 c-999">2016-07-14 09:41</span></p>
+										</dd>
+										<dd class="r-btn"><a class="re-btn">评价该公司</a></dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						
+					</section>
+					<!--/send-resume-->
+					<!--collect-position-->
+					<section class="mt10 view-item" style="display: none;">
+						<div class="send-resume-box">
+							<ul>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title"><b class="company-position">IEG游戏技术实习生</b><b class="pr-c fsize18 ml10">￥119-120/天</b></span></p>
+											<p class="mt20"><span class="fsize16 c-333 vam mr10 company-name">腾讯计算机系统有限公司</span>
+												<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+												<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+												<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">五个月</span></span>
+											</p>
+										</dt>
+										<dd class="r-btn"><a class="re-btn b-blue">申请职位</a></dd>
+									</dl>
+								</li>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title"><b class="company-position">IEG游戏技术实习生</b><b class="pr-c fsize18 ml10">￥119-120/天</b></span></p>
+											<p class="mt20"><span class="fsize16 c-333 vam mr10 company-name">腾讯计算机系统有限公司</span>
+												<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+												<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+												<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">五个月</span></span>
+											</p>
+										</dt>
+										<dd class="r-btn"><a class="re-btn b-blue">申请职位</a></dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</section>
+						<!--collect-position-end-->
+					
+				
+					<!--attention-company-->
+					<section class="mt10 view-item" style="display: none;">
+						<div class="send-resume-box">
+							<ul>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title">IEG游戏技术实习生</span></p>
+											<p class="mt20 pr-c fsize18">68个职位 / 深圳</p>
+										</dt>
+										<dd class="r-btn"><a class="re-btn b-red">取消关注</a></dd>
+									</dl>
+								</li>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title">IEG游戏技术实习生</span></p>
+											<p class="mt20 pr-c fsize18">68个职位 / 深圳</p>
+										</dt>
+										<dd class="r-btn"><a class="re-btn b-red">取消关注</a></dd>
+									</dl>
+								</li>
+								<li class="send-resume">
+									<dl class="send-resume-list">
+										<dt>
+											<p><span class="base-c fsize18 company-title">IEG游戏技术实习生</span></p>
+											<p class="mt20 pr-c fsize18">68个职位 / 深圳</p>
+										</dt>
+										<dd class="r-btn"><a class="re-btn b-red">取消关注</a></dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<!--/attention-company-->
+					<!--page-->
+						<div class="page mt20">
+							分页部分
+						</div>
+						<!--page-->
+						<!--footer-->
+						<div class="other-position mt40">
+							<p class="of"><span class="fsize18 c-333">推荐职位</span><a class="other-btn fr" href="javascript:void(0);">换一批</a></p>
+							<!--推荐职位-->	
+							<!--hot-search-list-->
+							<ul>
+								<li class="job_inf">
+									<div class="jib_inf_inf">
+										<div class="ov_hide">
+											<a href="" target="_blank">
+												<h3>梅赛德斯奔驰 (销售计划实习生)</h3>
+											</a>
+											<p>
+													戴姆勒奔驰-企业服务
+												<span class="price">
+													￥119-120/天
+												</span>
+											</p>
+											<p title="北京">
+												<span class="address">
+													<i class="f-f2 addr-icon vam" title="北京"></i> 
+													<span class="vam">北京</span>
+												</span>
+												<span class="education">
+													<i class="f-f2 edu-icon vam"></i>
+													<span class="vam">本科</span>
+												</span>
+												<span class="clock">
+													<i class="f-f2 clock-icon vam"></i>
+													<span class="vam">4天/周</span> 
+												</span>
+											</p>
+											<a href=""  target="_blank" class="company_logo">
+												<img src="images/page/microsoft.png"/>
+											</a>
+										</div>
+									</div>
+								</li>
+								<li class="job_inf" style="margin-right: 0;">
+									<div class="jib_inf_inf">
+										<div class="ov_hide">
+											<a href="" target="_blank">
+												<h3>梅赛德斯奔驰 (销售计划实习生)</h3>
+											</a>
+											<p>
+													戴姆勒奔驰-企业服务
+												<span class="price">
+													￥119-120/天
+												</span>
+											</p>
+											<p title="北京">
+												<span class="address">
+													<i class="f-f2 addr-icon vam" title="北京"></i> 
+													<span class="vam">北京</span>
+												</span>
+												<span class="education">
+													<i class="f-f2 edu-icon vam"></i>
+													<span class="vam">本科</span>
+												</span>
+												<span class="clock">
+													<i class="f-f2 clock-icon vam"></i>
+													<span class="vam">4天/周</span> 
+												</span>
+											</p>
+											<a href=""  target="_blank" class="company_logo">
+												<img src="images/page/microsoft.png"/>
+											</a>
+										</div>
+									</div>
+								</li>
+								<!--/hot-search-list-->
+							</ul>
+							<!--推荐职位-->	
+						</div>
+						<!--/footer-->
+				</section>
+				<!--/resume-lists-->
+			</section>
+			<!--/main-end-->
+		</article>
+		<!--/resume-main-->
+			<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+		<script src="js/circle.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$('.nav-tabs li').each(function(){
+			var index = $(this).index();
+			$(this).on('click',function(){
+				$(this).addClass('current').siblings('li').removeClass('current');
+				$('.view-item').eq(index).show().siblings('.view-item').hide();
+			})
+		})
+		</script>
+	</body>
+</html>

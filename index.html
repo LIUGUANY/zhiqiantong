@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+		<!--<meta name="viewport" content="width=1200px, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>--> 
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/page-ncity-style.css.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!--<title><sitemesh:title ></sitemesh:title>-${websitemap.web.company}-${websitemap.web.title}</title>
+	<meta name="author" content="${websitemap.web.author}"/> 
+	<meta name="keywords" content="${websitemap.web.keywords}" />
+	<meta name="description" content="${websitemap.web.description}"/> 
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/page-ncity-style.css.css">-->
+		<!--<script type="text/javascript" src="${ctximg}/static/common/jquery-1.11.1.min.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/pageJs.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/webutils.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/web_top.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/header_msg.js?v=<%=version%>"></script>
+    <script type="text/javascript" src="${ctximg}/static/common/emailList.js"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/delete-file.js?v=<%=version%>"></script>-->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	#oSlideFun li{
+			width:100%;
+			overflow:hidden;
+			height:370px;
+			position:relative;
+		}
+		#oSlideFun .banner-img{
+			display:inline-block;
+			width:1920px;
+			position:absolute;
+			left:50%;
+			margin-left:-960px;
+		}
+    </style>
+	</head>
+
+	<body class="Wbody" style="min-width: 1200px;">
+		<!-- 公共头引入 -->
+		<header id="header" style="100%">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li class="current">
+							<a href="index.html" title="首页">首页</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">找实习</a>
+						</li>
+						<li>
+							<a href="" title="实习">写简历</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">做测评</a>
+						</li>
+						<li>
+							<a href="" title="职乎">学课程</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+		<!--main-->
+		<section id="main">
+			<!--banner-->
+			<div class="banner pr" style="z-index: 100;">
+				<ul id="oSlideFun">
+					<li class="bannerbox"> 
+						<a class="banner-img" href="">
+							<img src="images/index/4.png" alt="banner"/>
+						</a>
+					</li>
+				</ul>	
+			</div>
+			<!--/banner-end-->
+			<section class="w1200 sta-search of">
+				<ul class="statistics-num fl of">
+					<li>
+						<dl>
+							<dt class="f-f1 position-icon"></dt>
+							<dd>职位12345</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="f-f1 company-icon"></dt>
+							<dd>公司12345678</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="f-f1 intro-icon"></dt>
+							<dd>简历12345</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="f-f1 college-icon"></dt>
+							<dd>高校12345</dd>
+						</dl>
+					</li>
+				</ul>
+				<div class="search_box">
+					<form method="get" action="/interns">
+						<input type="text" value="" name="k" placeholder="请输入期望的 实习岗位 或 公司名 或 城市" id="trainee" tabindex="1">
+						<input type="submit" value="搜 索 实 习" id="search_sub">
+					</form>
+					<dl>
+						<dt>热门实习 :</dt>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">软件</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">广告</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">招聘</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">市场</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">银行</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">行政</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">财会</a>
+						</dd>
+						<dd>
+							<a class="hot_job_scl" href="javascript:void(0)">前端</a>
+						</dd>
+					</dl>
+				</div>
+			</section>
+		</section>
+		<!--实习职位-->
+		<section class="practice-box clearfix">
+			<div class="w1200">
+				<!--实习职位标题-->
+				<p class="line-1"></p>
+				<p class="practice fsize18 c-333">实习职位</p>
+				<!--/实习职位标题-->
+				<ul class="mt30 of">
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">急聘</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<a target="_blank" href="javascript:void(0);"><img width="20" height="20" class="head-portrait" alt="" src="images/index/V.png"><span class="name">戴姆勒奔驰-企业服务</span></a><span class="free">￥119-120/天</span> </p>
+							<p>
+								<span class="address"><i class="f-f2 addr-icon"></i><span class="vam">北京</span></span>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">本科</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">&gt;5天</span></span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!--more-->
+				<p class="load-more-wrapper"> <a class="btn-load-more" href="">查看更多</a></p>
+				<!--/more-->
+			</div>
+		</section>
+		<!--/实习职位-->
+		<!--测评-->
+		<section class="quiz-box">
+			<div class="w1200 of">
+				<p class="line-1"></p>
+				<p class="practice fsize18 c-333 pb30">职业测评</p>
+				<div class="quiz-left fl mt20">
+					<p class="fsize24 mb15">如何玩转职业发展</p>
+					<p class="title"><span class="title-1">只需4步在激竞争中提升自己</span><span class="fr fsize16 c-666"><i class="f-f3 recom-icon"></i>推荐</span></p>
+					<ul class="quiz-list clearfix">
+						<li  class="step-one">
+							<dl>
+								<dt>
+									<p class="fsize18">三大类型专业评测</p>
+									<p class="fsize12">职业测评<span class="mr5 ml5">技能测评</span> 潜力测评</p>
+									<p class="tac  h78"><img src="images/index/quiz-icon.png" alt="测评" width="56" height="56"/></p>
+									<p class=""><a class="quiz-btn" href="">立即测评</a></p>
+								</dt>
+								<dd class="tac"><span class="circle current">1</span></dd>
+							</dl>
+						</li>
+						<li class="step-two">
+							<dl>
+								<dt>
+									<p class="fsize18  h36">学技能</p>
+									<p class="tac  h78"><img src="images/index/VideoCamera.png" alt="测评" width="64" height="42"/></p>
+									<p class=""><a class="quiz-btn" href="">去学习</a></p>
+								</dt>
+								<dd class="tac"><span class="circle">2</span></dd>
+							</dl>
+						</li>
+						<li class="step-three">
+							<dl>
+								<dt>
+									<p class="fsize18">做简介</p>
+									<p class="fsize12">专属多媒体简介</p>
+									<p class="tac  h78"><img src="images/index/Film-Strip.png" alt="测评" width="57" height="45"/></p>
+									<p class=""><a class="quiz-btn" href="">去完善</a></p>
+								</dt>
+								<dd class="tac"><span class="circle">3</span></dd>
+							</dl>
+						</li>
+						<li class="step-four">
+							<dl>
+								<dt>
+									<p class="fsize18  h36">找工作</p>
+									<p class="tac h78"><img src="images/index/ico.png" alt="测评" width="30" height="61"/></p>
+									<p class=""><a class="quiz-btn" href="">去投递</a></p>
+								</dt>
+								<dd class="tac"><span class="circle">4</span></dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="line-2"></div>
+				</div>
+				<div class="quiz-right fr">
+					<div class="pr img-box">
+						<img src="images/index/mayun.png" alt="马云" width="398" height="435"/>
+						<div class="shadow-list">
+							<dl class="fl text">
+								<dt><i class="f-f4"></i><span class="fsize18 c-fff vam ml5">极速职业测评</span></dt>
+								<dd class="fsize14 mt5">你是否处于职业困惑中，不知道自己适合干什么？</dd>
+							</dl>
+							<a class="fr btn-1" href="">立即测评</a>
+						</div>
+					</div>
+					<div class="pr img-box">
+						<img src="images/index/mayun.png" alt="马云" width="398" height="435"/>
+						<div class="shadow-list">
+							<dl class="fl text">
+								<dt><i class="f-f4"></i><span class="fsize18 c-fff vam ml5">极速职业测评</span></dt>
+								<dd class="fsize14 mt5">你是否处于职业困惑中，不知道自己适合干什么？</dd>
+							</dl>
+							<a class="fr btn-1" href="">立即测评-1</a>
+						</div>
+					</div>
+					<div class="pr img-box">
+						<img src="images/index/mayun.png" alt="马云" width="398" height="435"/>
+						<div class="shadow-list">
+							<dl class="fl text">
+								<dt><i class="f-f4"></i><span class="fsize18 c-fff vam ml5">极速职业测评</span></dt>
+								<dd class="fsize14 mt5">你是否处于职业困惑中，不知道自己适合干什么？</dd>
+							</dl>
+							<a class="fr btn-1" href="">立即测评-3</a>
+						</div>
+					</div>
+					<div class="pr img-box">
+						<img src="images/index/mayun.png" alt="马云" width="398" height="435"/>
+						<div class="shadow-list">
+							<dl class="fl text">
+								<dt><i class="f-f4"></i><span class="fsize18 c-fff vam ml5">极速职业测评</span></dt>
+								<dd class="fsize14 mt5">你是否处于职业困惑中，不知道自己适合干什么？</dd>
+							</dl>
+							<a class="fr btn-1" href="">立即测评-4</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/测评-->
+		<!--课程-->
+		<section class="course-box clearfix">
+			<div class="w1200 pt30">
+				<!--课程标题-->
+				<p class="line-1"></p>
+				<p class="practice fsize18 c-333">课程</p>
+				<!--/课程标题-->
+				<ul class="mt30 of">
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.gogoup.com/course/GNjI="><img width="285" height="210" class="thumbnail" alt="" src="images/index/car.png"></a>
+						<span class="Level-difficulty">限时免费</span>
+						<span class="Level-difficulty-1"></span>
+						<div>
+							<p class="title">
+								<a title="梅赛德斯奔驰 (销售计划实习生)" target="_blank" href="">梅赛德斯奔驰 (销售计划实习生)</a>
+							</p>
+							<p>
+								<span class="education"><i class="f-f2 edu-icon"></i><span class="vam">2080人在学</span></span>
+								<span class="clock"><i class="f-f2 clock-icon"></i><span class="vam">10小时23分</span></span>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<!--more-->
+				<p class="load-more-wrapper"> <a class="btn-load-more" href="">查看更多</a></p>
+				<!--/more-->
+			</div>
+		</section>
+		<!--/课程-->
+		<!--合作高校-->
+		<section class="college clearfix">
+			<div class="w1200 pt30">
+				<!--课程标题-->
+				<p class="line-1"></p>
+				<p class="practice fsize18 c-333">合作高校</p>
+				<!--/课程标题-->
+				<ul class="mt30 of">
+					<li>
+						<img src="images/index/zs-college.png" alt="" width="182" height="183"/>
+						<p class="fsize14 c-999 mt15">中山大学</p>
+					</li>
+					<li>
+						<img src="images/index/zs-college.png" alt="" width="182" height="183"/>
+						<p class="fsize14 c-999 mt15">中山大学</p>
+					</li>
+					<li>
+						<img src="images/index/zs-college.png" alt="" width="182" height="183"/>
+						<p class="fsize14 c-999 mt15">中山大学</p>
+					</li>
+					<li>
+						<img src="images/index/zs-college.png" alt="" width="182" height="183"/>
+						<p class="fsize14 c-999 mt15">中山大学</p>
+					</li>
+					<li>
+						<img src="images/index/zs-college.png" alt="" width="182" height="183"/>
+						<p class="fsize14 c-999 mt15">中山大学</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!--/合作高校-->
+		<!--侧导航-->
+		<aside class="nav">
+			<ul>
+				<li class="wxBox"><a  href=""><i class="f-f5 wxIcon"></i></a></li>
+				<li class="appBox pr"><a  href=""><i class="f-f5 appIcon"></i></a><span class="pa"><img src="images/index/wx-ewm.png" alt="二维码" width="140" height="140"/></span></li>
+				<li class="topBox"><a class="toTop" href="#header" style="opacity: 1;"><i class="f-f5 topIcon"></i></a></li>
+			</ul>
+		</aside>
+		<!--侧导航-->
+		<!--main-->
+		<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+		<script type="text/javascript">
+		$(function(){
+			var $w = $(document).width();
+			$('.banner').width($w);
+		})
+		</script>
+	</body>
+</html>

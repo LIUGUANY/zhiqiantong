@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>职前通-职位搜索</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/page-style.css"/>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+	<style>
+		#post-search span.no_checkbox {
+			background: url(images/page/post_no_checked.png) no-repeat;
+			display: inline-block;
+			padding-left: 25px;
+			height: 19px;
+		}
+		/*.work_addr_item a{
+			transition:all .2s ease-out;
+		}*/
+	</style>
+</head>
+<body>
+<!-- 公共头引入 -->
+<header id="header">
+	<section class="head-wrap fa">
+		<div class="w1200 login-info">
+			<ul>
+				<li class="fl">
+					<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+					<span class="ml20"><i class="f-f0 app-download vam"></i><a
+							href="javascript:void(0);">下载APP</a></span>
+				</li>
+				<!--登录前-->
+				<li class="fr" style="display: none;">
+					<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+					<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+					<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+				</li>
+				<!--/登录前-->
+				<!--登录后-->
+				<li class="fr pr">
+					<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+					<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+					<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+					<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+				</li>
+				<!--/登录后-->
+			</ul>
+		</div>
+	</section>
+	<section class="head-wrap nav-bc">
+		<nav class="hNav w1200 pl20">
+			<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013"/></a>
+			<ul class="c-ece fl">
+				<!--header nav begin-->
+				<li class="current">
+					<a href="index.html" title="首页">首页</a>
+				</li>
+				<li>
+					<a href="appraisal.html" title="测评">找实习</a>
+				</li>
+				<li>
+					<a href="" title="实习">写简历</a>
+				</li>
+				<li>
+					<a href="courseList.html" title="课程">做测评</a>
+				</li>
+				<li>
+					<a href="" title="职乎">学课程</a>
+				</li>
+				<!--header nav end-->
+			</ul>
+		</nav>
+	</section>
+</header>
+<!-- /公共头引入 -->
+<article id="post-search" class="b-fff input-wrapper">
+	<!--search-->
+	<header class="post_search_box w1200">
+		<div class="input_wrapper">
+			<div class="keyword_wrapper">
+				<input class="post_input_text" type="text" maxlength="64" placeholder="搜索期望的职位或公司名">
+				<input type="button" value="搜索">
+			</div>
+		</div>
+	</header>
+	<!--/search-->
+	<section class="w1200">
+		<!--tab-->
+		<ul class="post_tabs">
+			<li>
+				<a class="practice_tab active" href="javascript:void(0);">实习</a>
+			</li>
+			<li>
+				<a class="full_time_tab" href="javascript:void(0);">应届</a>
+			</li>
+		</ul>
+		<!--/tab-->
+		<!--实习-->
+		<section class="post_practice_box">
+			<!--工作地点-->
+			<section class="post_work_addr">
+				<dl class="post_position_head pb0 pr">
+					<dt class="work_addr_name">工作地点：</dt>
+					<dd class="work_addr_items">
+						<div class="work_addr_item">
+							<a class="active" href="javascript:void(0);">全国</a>
+							<a href="javascript:void(0);">北京</a>
+							<a href="javascript:void(0);">上海</a>
+							<a href="javascript:void(0);">广州</a>
+							<a href="javascript:void(0);">深圳</a>
+							<a href="javascript:void(0);">杭州</a>
+							<a href="javascript:void(0);">成都</a>
+							<a href="javascript:void(0);">南京</a>
+							<a href="javascript:void(0);">西安</a>
+							<a href="javascript:void(0);">武汉</a>
+							<a href="javascript:void(0);">长沙</a>
+							<a href="javascript:void(0);">厦门</a>
+							<a href="javascript:void(0);">重庆</a>
+							<a href="javascript:void(0);">天津</a>
+							<a href="javascript:void(0);">苏州</a>
+						</div>
+						<div class="work_addr_item"  style="display: none;">
+							<span class="already_checked">
+								锡林郭勒盟
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								乌鲁木齐
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								乌兰察布
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								阿拉善盟
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								克拉玛依
+								<i class="close_addr"></i>
+							</span>
+							<b class="c-666 ml40">热门推荐：</b>
+							<a class="mr10" href="javascript:void(0);">北京</a>
+							<a class="mr10" href="javascript:void(0);">上海</a>
+							<a class="mr10" href="javascript:void(0);">广州</a>
+							<a class="mr10" href="javascript:void(0);">深圳</a>
+							<a class="mr10" href="javascript:void(0);">杭州</a>
+						</div>
+						<div class="post_more_btn pa">
+							<span>更多</span>
+							<i class="more_btn"></i>
+						</div>
+					</dd>
+					<dd class="post_dsah_line"></dd>
+				</dl>
+				<dl class="post_position_head  pr0">
+					<dt class="work_addr_name">专业选择：</dt>
+					<dd class="work_addr_items">
+						<div class="work_addr_item profession_checked">
+							<a class="active " href="javascript:void(0);">不限</a>
+							<a href="javascript:void(0);">互联网通信</a>
+							<a href="javascript:void(0);">市场商务</a>
+							<a href="javascript:void(0);">电子电气</a>
+							<a href="javascript:void(0);">人事行政</a>
+							<a href="javascript:void(0);">外语外贸</a>
+							<a href="javascript:void(0);">财经法务</a>
+							<a href="javascript:void(0);">教育咨询</a>
+							<a href="javascript:void(0);">媒体设计</a>
+							<a href="javascript:void(0);">环保生物</a>
+							<a href="javascript:void(0);">机械建筑</a>
+							<a class="mr0" href="javascript:void(0);">其他</a>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<!--/工作地点-->
+			<!--/条件筛选-->
+			<section class="post_work_addr post_more_select mt10">
+				<dl class="post_position_head pr">
+					<dt class="work_addr_name">更多筛选</dt>
+					<dd class="work_addr_items more_select_btn">
+						<div class="post_more_btn pa">
+							<span>更多</span>
+							<i class="more_btn"></i>
+						</div>
+					</dd>
+				</dl>
+				<div class="post_more_items" style="display: none;">
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">日薪范围：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active" href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">面议</a>
+								<a href="javascript:void(0);">50以下/天</a>
+								<a href="javascript:void(0);">50-100以下/天</a>
+								<a href="javascript:void(0);">100-150以下/天</a>
+								<a href="javascript:void(0);">150-200以下/天</a>
+								<a href="javascript:void(0);">200以上/天</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">实习天数：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">1天/周</a>
+								<a href="javascript:void(0);">2天/周</a>
+								<a href="javascript:void(0);">3天/周</a>
+								<a href="javascript:void(0);">4天/周</a>
+								<a href="javascript:void(0);">5天/周</a>
+								<a href="javascript:void(0);">6天/周</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">实习月数：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">1个月</a>
+								<a href="javascript:void(0);">2个月</a>
+								<a href="javascript:void(0);">3个月</a>
+								<a href="javascript:void(0);">4个月</a>
+								<a href="javascript:void(0);">5个月</a>
+								<a href="javascript:void(0);">5个月以上</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">学历要求：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">中专</a>
+								<a href="javascript:void(0);">大专</a>
+								<a href="javascript:void(0);">本科</a>
+								<a href="javascript:void(0);">硕士</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">转正机会：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">提供转正</a>
+								<a href="javascript:void(0);">面议</a>
+								<a href="javascript:void(0);">不提供转正</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">员工宿舍：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">提供住宿</a>
+								<a href="javascript:void(0);">不提供住宿</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+
+					<dl class="post_position_head bbm_line pr">
+						<dt class="work_addr_name">在线面试：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active" href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">支持在线面试</a>
+								<a href="javascript:void(0);">不支持在线面试</a>
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<!--/条件筛选-->
+			<!--排序-->
+			<section class="post_work_addr post_sort_way mt10">
+				<dl class="post_position_head pr">
+					<dt class="work_addr_name fl ml20">排序方式：</dt>
+					<dd class="work_addr_items fl mr20">
+						<div class="work_addr_item">
+							<a class="active" href="javascript:void(0);">默认</a>
+							<a href="javascript:void(0);">最近更新</a>
+							<a href="javascript:void(0);">人气更旺</a>
+						</div>
+					</dd>
+					<dd class="post_page fr" >
+						<div class="page-style" >
+							<span class="fsize14 vam c-666"><b class="">1</b> / 21</span>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<!--/排序-->
+		</section>
+		<!--实习-->
+		<!--应届-->
+		<section class="post_practice_box" style="display: none">
+			<!--工作地点-->
+			<section class="post_work_addr">
+				<dl class="post_position_head pr">
+					<dt class="work_addr_name">工作地点：</dt>
+					<dd class="work_addr_items">
+						<div class="work_addr_item" style="display: none;">
+							<a class="active" href="javascript:void(0);">全国</a>
+							<a href="javascript:void(0);">北京</a>
+							<a href="javascript:void(0);">上海</a>
+							<a href="javascript:void(0);">广州</a>
+							<a href="javascript:void(0);">深圳</a>
+							<a href="javascript:void(0);">杭州</a>
+							<a href="javascript:void(0);">成都</a>
+							<a href="javascript:void(0);">南京</a>
+							<a href="javascript:void(0);">西安</a>
+							<a href="javascript:void(0);">武汉</a>
+							<a href="javascript:void(0);">长沙</a>
+							<a href="javascript:void(0);">厦门</a>
+							<a href="javascript:void(0);">重庆</a>
+							<a href="javascript:void(0);">天津</a>
+							<a href="javascript:void(0);">苏州</a>
+						</div>
+						<div class="work_addr_item">
+							<span class="already_checked">
+								<b class="already_city" title="锡林郭勒盟">锡林郭勒盟</b>
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								<b class="already_city" title="乌鲁木齐">乌鲁木齐</b>
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								<b class="already_city" title="乌兰察布">乌兰察布</b>
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								<b class="already_city" title="阿拉善盟">阿拉善盟</b>
+								<i class="close_addr"></i>
+							</span>
+							<span class="already_checked">
+								<b class="already_city" title="克拉玛依">克拉玛依</b>
+								<i class="close_addr"></i>
+							</span>
+							<b class="c-666 ml40">热门推荐：</b>
+							<a class="mr10" href="javascript:void(0);">北京</a>
+							<a class="mr10" href="javascript:void(0);">上海</a>
+							<a class="mr10" href="javascript:void(0);">广州</a>
+							<a class="mr10" href="javascript:void(0);">深圳</a>
+							<a class="mr10" href="javascript:void(0);">杭州</a>
+						</div>
+						<div class="post_more_btn pa">
+							<span>更多</span>
+							<i class="more_btn"></i>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<!--/工作地点-->
+			<!--/条件筛选-->
+			<section class="post_work_addr post_more_select mt10">
+				<dl class="post_position_head pr">
+					<dt class="work_addr_name">更多筛选</dt>
+					<dd class="work_addr_items more_select_btn">
+						<div class="post_more_btn pa">
+							<span>更多</span>
+							<i class="more_btn"></i>
+						</div>
+					</dd>
+				</dl>
+				<div class="post_more_items" style="display: none;">
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">学历要求：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active"  href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">中专</a>
+								<a href="javascript:void(0);">大专</a>
+								<a href="javascript:void(0);">本科</a>
+								<a href="javascript:void(0);">硕士</a>
+								<a href="javascript:void(0);">博士</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr0">
+						<dt class="work_addr_name">行业类别：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active" href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">互联网通信</a>
+								<a href="javascript:void(0);">市场商务</a>
+								<a href="javascript:void(0);">电子电气</a>
+								<a href="javascript:void(0);">人事行政</a>
+								<a href="javascript:void(0);">外语外贸</a>
+								<a href="javascript:void(0);">财经法务</a>
+								<a href="javascript:void(0);">教育咨询</a>
+								<a href="javascript:void(0);">媒体设计</a>
+								<a href="javascript:void(0);">环保生物</a>
+								<a href="javascript:void(0);">机械建筑</a>
+								<a class="mr0" href="javascript:void(0);">其他</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head pr">
+						<dt class="work_addr_name">月薪要求：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active" href="javascript:void(0);">不限</a>
+								<a href="javascript:void(0);">2k以下</a>
+								<a href="javascript:void(0);">2k~5k</a>
+								<a href="javascript:void(0);">5k~10k</a>
+								<a href="javascript:void(0);">10k~15k</a>
+								<a href="javascript:void(0);">15k~25k</a>
+								<a href="javascript:void(0);">25k~50k</a>
+								<a href="javascript:void(0);">50k以上</a>
+							</div>
+						</dd>
+						<dd class="post_dsah_line"></dd>
+					</dl>
+					<dl class="post_position_head bbm_line pr">
+						<dt class="work_addr_name">公司性质：</dt>
+						<dd class="work_addr_items">
+							<div class="work_addr_item">
+								<a class="active" href="javascript:void(0);">不限</a>
+								<a  href="javascript:void(0);">外资</a>
+								<a href="javascript:void(0);">国企</a>
+								<a href="javascript:void(0);">合资</a>
+								<a href="javascript:void(0);">民营公司</a>
+								<a href="javascript:void(0);">上市公司</a>
+								<a href="javascript:void(0);">创业公司</a>
+								<a href="javascript:void(0);">政府机构</a>
+								<a href="javascript:void(0);">事业单位</a>
+								<a href="javascript:void(0);">非盈利机构</a>
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<!--/条件筛选-->
+			<!--排序-->
+			<section class="post_work_addr post_sort_way mt10">
+				<dl class="post_position_head pr">
+					<dt class="work_addr_name fl ml20">排序方式：</dt>
+					<dd class="work_addr_items fl mr20">
+						<div class="work_addr_item">
+							<a class="active" href="javascript:void(0);">默认</a>
+							<a href="javascript:void(0);">最近更新</a>
+							<a href="javascript:void(0);">人气更旺</a>
+						</div>
+
+					</dd>
+					<dd class="post_page fr" >
+						<div class="page-style" >
+							<span class="fsize14 vam c-666"><b class="">1</b> / 21</span>
+						</div>
+					</dd>
+				</dl>
+			</section>
+			<!--/排序-->
+		</section>
+		<!--应届-->
+		<!--申请，收藏职位-->
+		<section class="post_manage">
+			<ul>
+				<li class="post_inBlock">
+					<input class="checkbox" type="checkbox" >
+					<span class="checkbox">
+						<span class="fsize14">全选</span>
+					</span>
+				</li>
+				<li class="post_inBlock post_apply active ml15">
+					<a href="javascript:void(0);">
+						申请职位
+					</a>
+				</li>
+				<li class="post_inBlock post_collect ml5">
+					<a href="javascript:void(0);">
+						收藏职位
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!--/申请，收藏职位-->
+		<!--position-list-->
+		<section class="search_post_list position_list">
+				<div class="detail-1 of">
+					<ul>
+						<li class="mr15">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span></span></span>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<i class="post_current">应届</i>
+									<a class="base-c fsize16 mr20 company-name" href="">php工程师</a>
+									<span class="fsize16 c-999">2016 -07-08</span>
+								</dt>
+								<dd class="mt15">
+									<span class="pr-c fsize18 vam w160">￥2k-5k</span>
+									<span>
+										<span class="vam c-333 fsize13">北京/本科</span>
+									</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="fr mt20">
+							<a  class="base-btn" href="javascript:void(0);">申请职位</a>
+						</li>
+						<li class="fr mr100">
+							<dl>
+								<dt class="fl">
+									<img src="images/enterprise/micro.png" alt="公司logo" width="60" height="60"/>
+								</dt>
+								<dd class="fl ml10">
+									<p class="mt5"><span class="fsize16 base-c vam mr5">腾讯计算机系统有限公司</span>
+									<p class="mt5 fsize14 c-666 company_style">互联网/企业服务/上市公司</p>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="detail-2">
+					<ul class="com-tags">
+						<li class="fsize14 c-666 fl">“上市公司、免费零食、饮料供应”</li>
+					</ul>
+				</div>
+		</section>
+		<section class="search_post_list position_list">
+				<div class="detail-1 of">
+					<ul>
+						<li class="mr15">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="no_checkbox"><span></span></span>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<i class="post_practice">实习</i>
+									<a class="base-c fsize16 mr20 company-name" href="">IEG游戏技术实习生</a>
+									<span class="fsize16 c-999">2016 -07-08</span>
+								</dt>
+								<dd class="mt15">
+									<span class="pr-c fsize18 vam w160">￥119-120/天</span>
+									<span>
+										<span class="vam c-333 fsize13">北京/5个月</span>
+									</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="fr mt20">
+							<a  class="base-btn" href="javascript:void(0);">申请职位</a>
+						</li>
+						<li class="fr mr100">
+							<dl>
+								<dt class="fl">
+									<img src="images/enterprise/micro.png" alt="公司logo" width="60" height="60"/>
+								</dt>
+								<dd class="fl ml10">
+									<p class="mt5"><span class="fsize16 base-c vam mr5">腾讯计算机系统有限公司</span>
+									<p class="mt5 fsize14 c-666 company_style">互联网/企业服务/上市公司</p>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="detail-2">
+					<ul class="com-tags">
+						<li class="fsize14 c-666 fl">“上市公司、免费零食、饮料供应”</li>
+					</ul>
+				</div>
+		</section>
+		<!--/position-list-->
+	</section>
+</article>
+<!-- 公共底引入 -->
+<footer id="footer" class="foot-box mt50 pr">
+	<div class="f-ob-1 clearfix">
+		<div class="w1200">
+			<ul>
+				<li class="left-list fl">
+					<a href="">关于职前通</a>
+					<a href="">联系我们</a>
+					<a href="">我要合作</a>
+				</li>
+				<li class="right-list fr">
+					<dl class="mr40">
+						<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+						<dd><a href="">百度贴吧</a></dd>
+					</dl>
+					<dl class="mr40">
+						<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+						<dd><a href="">新浪微博</a></dd>
+					</dl>
+					<dl class="mr40 pr">
+						<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+						<dd class="wx-icon"><a href="">官方微信</a></dd>
+						<dd class="current-ewm"><img src="images/index/ewm.png" alt=""/></dd>
+					</dl>
+					<dl>
+						<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+						<dd><a href="">下载APP</a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="f-ob-2 clearfix">
+		<div class="w1200">
+			<ul>
+				<li class="fl mt25">
+					<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+					<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+				</li>
+				<li class="fr mt15">
+					<dl>
+						<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+						<dd>职前通 最专业的ICT学习平台</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!-- 公共底引入 -->
+<script type="text/javascript">
+	$(function(){
+		/*筛选点击效果*/
+		$('.post_more_select .work_addr_item a,.post_sort_way .work_addr_item a,.profession_checked a').each(function(){
+			$(this).on('click',function(){
+				if($(this).hasClass('active')){
+					$(this).removeClass('active');
+				}else{
+					$(this).addClass('active').siblings().removeClass('active');
+				}
+			})
+		})
+		/*更多筛选*/
+		$('.more_select_btn').each(function(){
+			$(this).on('click',function(){
+				if($(this).hasClass('active')){
+					$(this).parent('.post_position_head').siblings('.post_more_items').slideUp('200');
+					$(this).find('.more_btn').css('background-position','-140px -547px');
+					$(this).removeClass('active');
+				}else{
+					$(this).parent('.post_position_head').siblings('.post_more_items').slideDown('200');
+					$(this).find('.more_btn').css('background-position','-140px -560px');
+					$(this).addClass('active');
+				}
+			})
+		})
+
+		/*已选工作地址*/
+		$('.already_checked').each(function(){
+			$(this).hover(function(){
+				$(this).addClass('active');
+			},function(){
+				$(this).removeClass('active');
+			})
+		})
+		/*职位列表最后一项添加下划线*/
+		$('.position_list:last').css('border-bottom','1px solid #ebebeb')
+		/*tab切换*/
+		$('.post_tabs li a').each(function(){
+			$(this).on('click',function(){
+				var $index = $(this).parent().index();
+				if($(this).hasClass('active')){
+					return;
+				}else{
+					$(this).addClass('active').parent('li').siblings().find('a').removeClass('active');
+					$('.post_practice_box').eq($index).show().siblings('.post_practice_box').hide();
+				}
+			})
+		})
+		/*申请，收藏职位浮动*/
+		$(window).scroll(function(){
+			var $scrollTop = $(window).scrollTop();
+			if($scrollTop>420){
+				$('.post_manage').addClass('fix-box');
+				$('.post_sort_way').addClass('mb10');
+			}else{
+				$('.post_manage').removeClass('fix-box');
+				$('.post_sort_way').removeClass('mb10');
+			}
+		})
+	})
+</script>
+</body>
+</html>

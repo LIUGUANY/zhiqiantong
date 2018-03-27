@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>出生年月</title>
+	<link rel="stylesheet" href="css/form.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="form_birth">
+	<ul class="search-content">
+		<li class="birth_box">
+			<div class="text">
+				<div id="birthdayYear" class="inputBox">1995</div><b class="year">年</b>
+			</div>
+			<div class="dis-box" style="display: none;">
+				<ul class="of birthday_year">
+					<li class="current">1989</li>
+					<li>1990</li>
+					<li>1991</li>
+					<li>1992</li>
+					<li>1993</li>
+					<li>1994</li>
+					<li>1995</li>
+					<li>1996</li>
+					<li>1997</li>
+					<li>1998</li>
+					<li>1999</li>
+					<li>2000</li>
+				</ul>
+			</div>
+		</li>
+		<li class="birth_box">
+			<div  class="text">
+				<div id="birthdayMonth" class="inputBox">9</div><b class="month">月</b> </div>
+			<div class="dis-box" style="display: none;">
+				<ul class="of">
+					<li class="current">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>10</li>
+					<li>11</li>
+					<li>12</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+<script>
+	$(function(){
+		$('.birth_box .text').each(function(){
+			$(this).on('click',function(event){
+				if($(this).hasClass('one')){
+					$(this).next('.dis-box').hide();
+					$(this).removeClass('one');
+					event.stopPropagation();
+				}else{
+					$(this).next('.dis-box').show();
+					$(this).parent().siblings().children('.dis-box').hide();
+					$(this).addClass('one');
+					$(this).parent().siblings().children('.text').removeClass('one');
+					event.stopPropagation();
+					/*点击城市显示*/
+					$(this).siblings('.dis-box').find('li').each(function(){
+						$(this).on('click',function(){
+							$(this).addClass('current');
+							$(this).siblings().removeClass('current');
+							var $currenVal = $(this).text();
+							$(this).parents('.birth_box').find('.inputBox').text($currenVal);
+							$(this).parents('.dis-box').hide();
+							$(this).parents('.dis-box').siblings('.text').removeClass('one');
+						})
+					})
+				}
+			})
+		})
+	})
+</script>
+</body>
+</html>

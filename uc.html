@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/page-style.css"/>
+	<!--<title><sitemesh:title ></sitemesh:title>-${websitemap.web.company}-${websitemap.web.title}</title>
+	<meta name="author" content="${websitemap.web.author}"/> 
+	<meta name="keywords" content="${websitemap.web.keywords}" />
+	<meta name="description" content="${websitemap.web.description}"/> 
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/page-ncity-style.css.css">-->
+	<!--<script type="text/javascript" src="${ctximg}/static/common/jquery-1.11.1.min.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/pageJs.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/webutils.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/web_top.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/header_msg.js?v=<%=version%>"></script>
+    <script type="text/javascript" src="${ctximg}/static/common/emailList.js"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/delete-file.js?v=<%=version%>"></script>-->
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ucenter.js" type="text/javascript" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="W-body">
+	<!-- 公共头引入 -->
+	<header id="header">
+			<section class="head-wrap">
+				<section class="w1200">
+					<h1><a href="" title="职前通" class="png"><img src="images/page/logo.png" class="logo-2013"/></a></h1>
+					<nav class="hNav">
+						<ul class="c-ece fl">
+							<!--header nav begin-->
+							<li><a href="" title="首页">首页</a></li>
+							<li><a href="" title="测评">测评</a></li>
+							<li><a href="" title="实习">实习</a></li>
+							<li><a href="" title="课程">课程</a></li>
+							<li><a href="" title="职乎">职乎</a></li>
+							<!--header nav end-->
+						</ul>
+					</nav>
+					<div class="searchBox fl">
+						<form method="post" action="">
+							<input type="text" name="search" value="" />
+							<b class="search"></b>
+						</form>
+					</div>
+					<ul class="t-link c-ece fr" >
+						<!--登录前开始-->
+						<li class="login"><a href="/login" title="登录" >登录</a></li>
+						<li class=""><a href="/register" title="注册" >注册</a></li>
+					</ul>
+					<ul class="t-link c-ece fr" style="display: none;">
+						<!--登录后开始-->
+						<li class="user"><span>你好,zqt5555</span><img src="images/head.png" alt="头像" width="30" height="30"/></li>
+					</ul>
+					<div class="clear"></div>
+				</section>
+			</section>
+		</header>
+	<!-- 公共头引入 -->
+	<section id="u-main">
+		<!--uc-left-begin-->
+		<menu class="u-m-left u-c-box fl" >
+			<dl class="u-c-left">
+				<dt>
+					<section class="of u-user-box">
+						<dl>
+							<dt>
+								<p><img src="images/ucenter/head.png" alt="头像" /></p>
+								<p><img src="images/ucenter/VIP.png" alt="体验VIP" /></p>
+							</dt>
+							<dd><p>小白</p><img src="images/ucenter/setting.png"/></dd>
+						</dl>
+						<div class="clear">
+						</div>
+					</section>
+				</dt>
+				<dd>
+					<ul class="u-c-nav">
+						<li class="current"><a href="/uc/home" class="u-c-icon1"><em class="icon16"></em><span>我的课程</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/course" class="u-c-icon2"><em class="icon16"></em><span>我的求职</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/mystudyGroup" class="u-c-icon3"><em class="icon16"></em><span>我的关注</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/fav" class="u-c-icon4"><em class="icon16"></em><span>我的积分</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/note" class="u-c-icon5"><em class="icon16"></em><span>我的提醒</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/myinte" class="u-c-icon6"><em class="icon16"></em><span>我的提问</span><s class="rArrow"></s></a></li>
+						<li><a href="/uc/letter" class="u-c-icon7 pr"><em class="icon16"></em><span>我的订单</span><s class="rArrow"></s></a></li>
+						<li  class="community"><a href="/uc/answerList" class="u-c-icon8"><em class="icon16"></em><span>我的社区</span><s class="rArrow"></s></a></li>
+					</ul>
+				</dd>
+			</dl>
+		</menu>
+	<!--uc-left-end-->
+	<!--uc-right-begin-->
+	<!--我的课程-->
+		<div class="clearfix">
+			<section class="xf-u-c-right u-c-box fr" style="display: block;">
+				<header class="xf-u-c-title">
+					<ul class="clearfix course-title">
+						<li class="current">收藏课程</li>
+						<li>课程笔记</li>
+						<li>课程提问</li>
+					</ul>
+				</header>
+				<div class="course-box">
+					<div class="course-list course">
+						<ul>
+							<li class="mr15"></li>
+							<li class="mr15"></li>
+							<li class="mr15"></li>
+							<li></li>
+						</ul>
+					</div>
+					<div class="course-note course" style="display: none;">
+						<ul class="clearfix">
+								<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+								<li>JAVA字符串的问题</li>
+								<li class="date">2016-4-28</li>
+								<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+						<ul class="clearfix">
+								<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+								<li>JAVA字符串的问题</li>
+								<li class="date">2016-4-28</li>
+								<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+					</div>
+					<div class="course-question course" style="display: none;">
+						<ul class="clearfix">
+								<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+								<li>JAVA字符串的问题11</li>
+								<li class="date">2016-4-28</li>
+								<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+						<ul class="clearfix">
+								<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+								<li>JAVA字符串的问题11</li>
+								<li class="date">2016-4-28</li>
+								<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</section>
+			<!--我的求职-->
+			<section class="xf-u-c-right u-c-box fr" >
+				<header class="xf-u-c-title">
+					<ul class="clearfix resume-title">
+						<li class="current">我的简历</li>
+						<li>投递职位</li>
+					</ul>
+				</header>
+				<div class="resume-box">
+					<div class="resume-content resume" style="display: none;">
+					</div>
+					<div class="resume-send resume" style="display: none;">
+						<ul class="clearfix">
+							<li class="post-list">
+								<ul>
+									<li class="search">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li>评价该公司</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li>评价该公司</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li>评价该公司</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li>评价该公司</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--我的关注-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title">
+					<ul class="clearfix attention-title">
+						<li class="current">公司</li>
+						<li>高校</li>
+						<li>朋友</li>
+					</ul>
+				</header>
+				<div class="company-box">
+						<ul class="clearfix company-list" >
+							<li class="current">
+								<ul>
+									<li class="company-title"><img src="images/huawei.png" alt="华为" width="33" height="31"/><span class="c-color">华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span></li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+									</li>
+								</ul>
+							</li>
+							<li class="other-infor">
+								<ul>
+									<li class="company-title">
+										<img src="images/huawei.png" alt="华为" width="33" height="31" /><span>华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span>
+									</li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="clearfix company-list college-list" style="display: none">
+							<li class="current">
+								<ul>
+									<li class="company-title"><img src="images/huawei.png" alt="华为" width="33" height="31"/><span class="c-color">华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span></li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXo。
+									</li>
+								</ul>
+							</li>
+							<li class="other-infor">
+								<ul>
+									<li class="company-title">
+										<img src="images/huawei.png" alt="华为" width="33" height="31" /><span>华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span>
+									</li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="clearfix company-list friend-list" style="display: none">
+							<li class="current">
+								<ul>
+									<li class="company-title"><img src="images/icon1.png" alt="华为" width="30" height="30"/><span class="c-color">西门吹雪</span></li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXo。
+									</li>
+								</ul>
+							</li>
+							<li class="other-infor">
+								<ul>
+									<li class="company-title">
+										<img src="images/icon2.png" alt="华为" width="30" height="30" /><span>独孤求败</span>
+									</li>
+									<li class="recruit-infor">
+										华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+									</li>
+								</ul>
+							</li>
+						</ul>
+				</div>
+			</section>
+			<!--我的积分-->	
+			<section class="xf-u-c-right u-c-box fr">
+				<ul class="clearfix integral-box">
+					<li><span>您的积分为 : </span><span class="c-red"> 120</span></li>
+					<li>赚积分</li>
+					<li>花积分</li>
+				</ul>
+			</section>
+			<!--我的提醒-->
+			<section class="xf-u-c-right u-c-box fr" >
+					<ul class="clearfix remind-box">
+						<li><input class="mr10" type="checkbox" name="remind" id="remind" value="" /><span>开启三天未登录提醒</span></li>
+						<li class="ml50">1.小白欢迎您注册职前通，系统送您10个积分，每天登录都有积分奖励哦</li>
+					</ul>
+			</section>
+			<!--我的提问-->
+			<section class="xf-u-c-right u-c-box fr" >
+				<header class="xf-u-c-title">
+					<ul class="clearfix myQuestion">
+						<li><a href="">问题来源</a></li>
+						<li><a href="">标题</a></li>
+						<li><a href="">时间</a></li>
+						<li><a href="">操作</a></li>
+					</ul>
+				</header>
+				<div class="u-cou-learn-box">
+						<ul class="clearfix myQtList">
+							<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+							<li>JAVA字符串的问题</li>
+							<li class="date">2016-4-28</li>
+							<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+						<ul class="clearfix myQtList">
+							<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+							<li>JAVA字符串的问题</li>
+							<li class="date">2016-4-28</li>
+							<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+						</ul>
+				</div>
+			</section>
+			<!--我的订单-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title order-head">
+					<ul class="clearfix order-title">
+						<li>商品</li>
+						<li>订单号</li>
+						<li>金额(元)</li>
+						<li>时间</li>
+						<li class="state">状态</li>
+					</ul>
+				</header>
+				<div class="u-cou-learn-box order-box">
+						<ul class="clearfix">
+							<li class="u-title c-color">1.安卓工程师职业规划</li>
+							<li>20151017293</li>
+							<li class="money">20</li>
+							<li class="date">2016-3-28</li>
+							<li class="u-state buy"><a class="c-color" href="">已购买</a><b></b><a class="c-color" href="">查看详情</a></li>
+						</ul>
+						<ul class="clearfix">
+							<li class="u-title c-color">2.安卓工程师职业规划</li>
+							<li>20151017293</li>
+							<li class="money">20</li>
+							<li class="date">2016-3-28</li>
+							<li class="u-state no-buy"><a class="c-red" href="">未购买</a><b></b><a class="c-333" href="">查看详情</a></li>
+						</ul>
+				</div>
+			</section>
+			<!--我的社区-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title cmty-head">
+					<ul class="clearfix cmty-title">
+						<li class="current">我的帖子</li>
+						<li>我评论的帖子</li>
+						<li>我收藏的帖子</li>
+					</ul>
+				</header>
+				<div class="u-cou-learn-box cmty-box">
+						<ul class="clearfix">
+							<li class="u-title cmty-title">标题</li>
+							<li class="date">发布日期</li>
+							<li class="number">跟帖数</li>
+							<li class="">其他</li>
+						</ul>
+						<ul class="clearfix cmty-list mt20">
+							<li class="c-color cmty-infor">1.公司招聘是否会优先考虑参加过职业培训的毕业生？</li>
+							<li class="date">2015-10-27</li>
+							<li class="number pl30">3</li>
+							<li class="handle">置顶</li>
+						</ul>
+				</div>
+			</section>
+			
+		</div>
+	</section>
+	<!--uc-right-begin-->
+	
+	<!-- 公共底引入 -->
+	<footer id="footer" class="foot-box of">
+		<div class="f-ob w1200 clearfix">
+			<ul class="f-t-item">
+				<li><a href="">帮助中心</a></li>
+				<li><a href="">新手指南</a></li>
+				<li><a href="">常见问题</a></li>
+				<li><a href="">服务条款</a></li>
+				<li><a href="">VIP权益</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li><a href="">关注我们</a></li>
+				<li><a href="">百度贴吧</a></li>
+				<li><a href="">新浪微博</a></li>
+				<li><a href="">官方微信</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li><a href="">关于我们</a></li>
+				<li><a href="">关于职前通</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">诚聘英才</a></li>
+				<li><a href="">意见反馈</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li><a href="">我要合作</a></li>
+				<li><a href="">培训驻入</a></li>
+				<li><a href="">企业合作</a></li>
+				<li><a href="">高校合作</a></li>
+			</ul>
+			<ul class="f-t-item f-t-ewm">
+				<li class="app"><img src="images/page/app.png" width="182" height="184"/></li>
+				<li class="app">APP下载</li>
+			</ul>
+		</div>
+		<div class="w1200 clearfix footer-link">
+			<ul>
+				<li class="zqt">职前通</li>
+				<li>最专业的ICT学习平台</li>
+				<li>2015讯方版权所有<a href="">&copy;2015www.zhitiantong.com</a>All Right Reversed</li>
+			</ul>
+		</div>
+	</footer>
+	<!-- 公共底引入 -->
+	<!-- 统计代码 -->
+</body>
+</html>

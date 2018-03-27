@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>收到的简历</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+      	<script src="js/html5.js"></script>
+    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+	<header id="header">
+			<section class="head-wrap ep-login">
+				<section class="w1200">
+					<h1 class="fl"><a href="" title="职前通" class="png mr30"><img src="images/enterprise/logo.png" class="logo"/></a></h1>
+					<nav class="ep-hNav clearfix">
+						<ul id="ep-nav">
+							<!--header nav begin-->
+							<li><a href="index.html" title="企业中心">企业中心</a></li>
+							<li class="current"><a href="appraisal.html" title="简历管理">简历管理</a></li>
+							<li><a href="" title="简历职位">简历职位</a></li>
+							<li><a href="courseList.html" title="校园招聘">校园招聘</a></li>
+							<li class="ep-hNav-lastItem mr30"><a href="" title="公司主页">公司主页</a></li>
+							<!--header nav end-->
+						</ul>
+					</nav>
+				</section>
+			</section>
+		</header>
+	<!-- 公共头引入 -->
+	<!--简历管理-->
+	<article id="container" class="pt30 pb30">
+		<section class="qy-resume-box w1200 clearfix">
+			<!--left-->
+			<nav class="u-m-left u-c-box fl">
+				<section class="resume-left">
+					<div class="mr_module of">
+						<ul>
+							<li class="m_hide md_flag active" >
+								<a class="clearfixs">
+									<i class="f-f9 mr_school_i"></i>
+									<span class="mr_m_name">待处理的简历</span>
+									<span class="fr resume-num">400</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20">
+								<a class="clearfixs">
+									<i class="f-f9 mr_production_i"></i>
+									<span class="mr_m_name">已通知简历</span>
+									<span class="fr resume-num">100</span>
+								</a>
+							</li>
+							<li class="dn m_hide  mt20" >
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_self_i"></i>
+									<span class="mr_m_name">收藏的简历</span>
+									<span class="fr resume-num">200</span>
+								</a>
+							</li>
+							<li class="m_hide md_flag  mt20">
+								<a class="clearfixs">
+									<i class="f-f9 mr_cetr_i"></i>
+									<span class="mr_m_name">不合适简历</span>
+									<span class="fr resume-num">300</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20" >
+								<a class="clearfixs">
+									<i class="f-f9 mr_search_i"></i>
+									<span class="mr_m_name">搜索简历</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20" >
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_appr_i"></i>
+									<span class="mr_m_name">面试评价</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</nav>
+			<!--/left-->
+			<!--right-->
+		<!--搜索简历-->
+			<section class="work-load">
+				<section class="work-center search-resume">
+					<div class="select-load pr">
+						<form method="get" action="" class="pr">
+							<input type="text" value="" name="" placeholder="搜索应聘职位" >
+							<button id="search_sub"><i class="f-f13 search"></i></button>
+						</form>
+						<img class="pa" src="images/page/angle.png" alt="" width="24" height="27"/>
+					</div>
+					<!--/条件筛选-->
+					<div class="select-res">
+						<dl>
+							<dd class="select-item"> 
+									<form action="">
+										<ul class="of limit pl20">
+											<li>
+												<label for="">地点：</label>
+												<select class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+											<li>
+												<label for="">学历：</label>
+												<select  class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+											<li>
+												<label for="">专业：</label>
+												<select  class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+											<li>
+												<label for="">到岗时间：</label>
+												<select  class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+											<li>
+												<label for="">性别：</label>
+												<select  class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+											<li style="margin-right: 0;">
+												<label for="">薪资：</label>
+												<select  class="selectmenu" name="">
+													<option value="不限">不限</option>
+												</select>
+											</li>
+										</ul>
+									</form>
+							</dd>
+							<dd class="select-post pt5 pb5">
+								<p class="lhl50 ml20 fsize14 c-333">
+									找到<span class="base-c fsize14">XXX</span>匹配简历有<span class="base-c fsize14" >285</span>
+								</p>
+							</dd>
+						</dl>
+				</div>
+				<!--/条件筛选-->
+					<section class="mt15 operation-resume">
+						<div class="resume-box clearfix">
+							<div class="of select-title">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span class="fsize14 c-666"><em class="c-999">应聘：</em>新媒体运营</span></span>
+								<time class="fr fsize14">2016-05-03</time>
+							</div>
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<img src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize14 c-666">陈子昂  /  男  /  1995  /  深圳  </p>
+										<p class="mt15 fsize14 c-999 w390">中山大学  /  建筑系</p>
+										<p class="mt15 hand fsize14 border-bom">查阅简历<i class="fsize14">&gt;</i></p>
+									</dd>
+								</dl>
+								<div class="fr edit vam">
+									<dl>
+										<dt><i class="f-f13 f-f13-12"></i></dt>
+										<dd>面试</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-8"></i></dt>
+										<dd>收藏</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-9"></i></dt>
+										<dd>下载</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-10"></i></dt>
+										<dd>不合适</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-11"></i></dt>
+										<dd>删除</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="resume-box clearfix">
+							<div class="of select-title">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span class="fsize14 c-666"><em class="c-999">应聘：</em>新媒体运营</span></span>
+								<time class="fr fsize14">2016-05-03</time>
+							</div>
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<img src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize14 c-666">陈子昂  /  男  /  1995  /  深圳  </p>
+										<p class="mt15 fsize14 c-999 w390">中山大学  /  建筑系 </p>
+										<p class="mt15 hand fsize14 border-bom">查阅简历<i class="fsize14">&gt;</i></p>
+									</dd>
+								</dl>
+								<div class="fr edit vam">
+									<dl>
+										<dt><i class="f-f13 f-f13-12"></i></dt>
+										<dd>面试</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-8"></i></dt>
+										<dd>收藏</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-9"></i></dt>
+										<dd>下载</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-10"></i></dt>
+										<dd>不合适</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-11"></i></dt>
+										<dd>删除</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</section>
+		<!--/搜索简历-->
+		</section>
+	</section>
+	<!--/right-->
+	</article>
+	<script type="text/javascript">
+			/*下拉框*/
+			$( ".selectmenu" ).selectmenu();
+			/*切换*/
+			$('.resume-left .m_hide').each(function(){
+				$(this).on('click',function(){
+					var $index = $(this).index();
+					$('.resume-left .m_hide').removeClass('active');
+					$(this).addClass('active');
+					$('.work-load').eq($index).show().siblings('.work-load').hide();
+				})
+			})
+			/*筛选缩放*/
+			$('.select-more').hide();
+			$('.select-res').css('border-bottom','1px solid #ebebeb');
+			var selectFlg = $(".select-res .more-post");
+			selectFlg.on("click",function(){
+			   if($(this).hasClass('on')){
+			   		$(this).removeClass('on');
+			   		$(this).parent().siblings('.select-more').slideUp(200);
+			  		$(this).parents('.select-res').css('border-bottom','1px solid #ebebeb');
+			   		$('.select-post').css('border-bottom','none');
+			  		$(this).children('.more-icon').css('background-position','-176px -375px');
+			   }else{
+			   		$(this).addClass('on');
+			   		$(this).parent().siblings('.select-more').slideDown(200);
+			   		$(this).parents('.select-res').css('border-bottom','1px solid #e8e8e8');
+			   		$('.select-post').css('border-bottom','none');
+			  		$(this).children('.more-icon').css('background-position','-176px -387px');
+			   }
+			  })
+	</script>
+	
+	</body>
+</html>

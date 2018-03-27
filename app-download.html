@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.bg{
+				background:url(images/app-bg.png) no-repeat center fixed;
+				background-size: 100% 100%;
+			}
+			.logo{
+				margin-top: 20%;
+			}
+			.c-fff{
+				color: #fff;
+			}
+			.btn{
+				width:65%;
+				color: #13b6f7;
+				font-weight:700;
+			}
+			.text-title{
+				margin-top: 25%;
+			}
+			.down-btn{
+				margin-top: 15%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row bg ">
+				<div class="logo">
+					<img class="col-xs-8  col-sm-8 col-xs-offset-2 col-sm-ofset-2 img-responsive" src="images/app-logo .png" alt="" />
+				</div>
+				<div class="col-xs-12 col-sm-12 text-center mt10">
+					<h3 class="c-fff">大学生实习就业更简单</h3>
+				</div>
+				<div class="col-xs-12  col-sm-12 text-left text-title">
+					<h6 class="c-fff col-xs-offset-2">
+						◆ 多维度专业测评，全方位发现自己
+					</h6>
+					<h6 class="c-fff col-xs-offset-2">
+						◆ 掌握精品求职课程，轻松拿offer
+					</h6>
+					<h6 class="c-fff col-xs-offset-2">
+						◆ 精准对接海量名企，内推直达及时反馈
+					</h6>
+					<h6 class="c-fff col-xs-offset-2">
+						◆ 随时随地跟踪目标岗位动态，接收面试通知
+					</h6>
+				</div>
+				<div class="col-xs-12  col-sm-12 text-center down-btn"> 
+					<a class="btn btn-default" href="#" role="button">下载安装</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			function setTime(){
+				var $h = $(window).height();
+				$('.bg').height($h);
+			}
+			setTimeout(setTime,500);			
+		})
+		</script>
+	</body>
+</html>

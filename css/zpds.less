@@ -1,0 +1,391 @@
+@charset "utf-8";
+.zp-box{
+    background-color: #f7f8f8;
+}
+.banner_3{
+    width: 100%;
+    height: 397px;
+    overflow: hidden;
+    position: relative;
+}
+.banner_3 .banner_img{
+    position: absolute;
+    display: inline-block;
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+}
+.profession_1,.profession_2,.profession_3,.profession_4,.profession_5{
+    margin-top: 164px;
+    margin-bottom: 10px;
+    position: relative;
+  
+  .profession_box{
+      width:978px ;
+      height: 916px;
+      border:4px solid #e39e25;
+      margin:0 auto;
+      background-color: #f7f8f8;
+      z-index: 100;
+  }  
+  .top_box{
+      height: 550px;
+      width: 100%;
+      background:url(../images/banner/top_right_line.png) no-repeat scroll top right;
+      background-color: #e39e25;
+    .top_content{
+        padding:60px;
+        color: #fff;
+        li:first-child+li{
+            margin-top: 78px;
+        }
+         li:first-child+li+li{
+             margin-top: 60px;
+         }
+        li{
+            font-size: 18px;
+            color: #333;
+            dl{
+                display: inline-block;
+                width: 124px;
+                text-align: center;
+                margin-right: 17px;
+            }
+            dl:last-child{
+                margin-right: 0;
+            }
+        }
+        dt{
+            img{
+                border:1px solid #dcdcdc;
+            }
+        }
+        dd{
+            margin-top: 15px;
+            width: 7em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            a{
+                color: #333;
+            }
+            a:hover{
+                color: #00aced;
+            }
+        }
+    }
+  }
+  .line_1,.line_2{
+      display: inline-block;
+      width: 53px;
+      height: 45px;
+      position: absolute;
+      background:url(../images/banner/bom_left_line.png) no-repeat scroll ;
+  }
+  .line_1{
+      bottom: -.5px;
+      left: -.6px;
+  }  
+  .line_2{
+      background:url(../images/banner/bom_rightline.png) no-repeat scroll ;
+      bottom:-.5px;
+      right: -.6px;
+  }
+}
+.profession_1:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -70px;
+    top: -251px;
+    width: 366px;
+    height: 664px;
+    background:url(../images/banner/left_1.png) no-repeat scroll;
+}
+.profession_1:after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -40px;
+    bottom: -290px;
+    width: 180px;
+    height: 440px;
+    background:url(../images/banner/right_1.png) no-repeat scroll;
+}
+.prossion_2{
+    margin-top: 145px;
+    .top_box{
+        background-color: #e39e25;
+    }
+}
+.profession_2:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -27px;
+    bottom: -370px;
+    width: 144px;
+    height: 550px;
+    background:url(../images/banner/left_2.png) no-repeat scroll;
+    z-index: 10;
+}
+.profession_3:after{
+     content: '';
+    display: block;
+    position: absolute;
+    right: -45px;
+    bottom: -430px;
+    width: 192px;
+    height: 633px;
+    background:url(../images/banner/right_2.png) no-repeat scroll;
+}
+.profession_4:before{
+     content: '';
+    display: block;
+    position: absolute;
+    left: -40px;
+    bottom: -490px;
+    width: 165px;
+    height: 663px;
+    background:url(../images/banner/left_3.png) no-repeat scroll;
+}
+.profession_5:after{
+     content: '';
+    display: block;
+    position: absolute;
+    right: 132px;
+    bottom: -484px;
+    width: 690px;
+    height: 486px;
+    background:url(../images/banner/right_3.png) no-repeat scroll;
+}
+.profession_3,.profession_5{
+    .profession_box{
+        height: 652px;
+    }
+    .top_box{
+        height: 600px;
+        width: 930px;
+        background-image: none;
+        .top_content{
+            padding:60px 0 60px 60px;
+            li:first-child+li{
+                margin-top: 35px;
+            }
+            li:first-child+li+li{
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+.profession_5 {
+    .profession_box{
+        height: 925px;
+    }
+    .top_box{
+        height: 865px;
+        .top_content{
+           li:first-child+li{
+                    margin-top: 75px;
+                    
+                }
+                li:first-child+li+li{
+                    margin-top: 60px;
+                } 
+        }
+    }
+}
+/*讯方招聘*/
+.xf-recruit{
+    width: 100%;
+    margin-top: -15px;
+    background:url(../images/xf-schoolR/xf-bg.png) no-repeat scroll ;
+}
+.xf-content{
+    width: 1088px;
+    margin:0 auto;
+    background-color: #fff;
+    .xf-culture{
+    height: 310px;
+    background:url(../images/xf-schoolR/xf-logo.png) no-repeat;
+    background-position: 100% 100%;
+    }
+    .xf-culture-content{
+        width: 744px;
+        margin:0 auto;
+        .xf_intro p{
+            margin-top: 10px;
+            color: #003366;
+        }
+    }
+}
+//公司简介,招聘岗位,宣讲流程
+.xf-intro,.xf-job,.xf-prech,.xf-zpProcess,.xf-welfare{
+     .xf-title{
+         margin-top: -1px;
+        width: 100%;
+        height: 181px;
+        background:url(../images/xf-schoolR/title-1.png) no-repeat;
+    }
+    .xf-intro-content{
+        width: 100%;
+        height: 512px;
+        background:url(../images/xf-schoolR/xf-contentBg.png) no-repeat;
+        background-position: 0 100%;
+        dl{
+            width: 990px;
+            margin:0 auto;
+        }
+        dt{
+            margin-top: 68px;
+            width: 554px;
+            font-size:16px ;
+            color: #003366;
+            float: left;
+            line-height: 30px;
+        }
+        dd{
+            margin-top: 43px;
+            width:400px ;
+            height: 270px;
+            float: right;
+            background:url(../images/xf-schoolR/xf-intro.png) no-repeat;
+        }
+    }
+}
+/*招聘岗位*/
+.xf-job{
+    .xf-title{
+         background:url(../images/xf-schoolR/title-2.png) no-repeat;
+    }
+    .xf-intro-content{
+        height: 620px;
+    }
+    .xf-post-items{
+        width: 911px;
+        margin:0 auto;
+        padding-top: 35px;
+        overflow: hidden;
+        .xf-post-item{
+            width: 278px;
+            height: 230px;
+            margin-right: 35px;
+            border:1px solid #dcdcdc;
+            border-radius: 5px;
+            float: left;
+            
+        }
+    }
+    .xf-post-content{
+        margin:24px 12px 0 12px;
+        font-size: 20px;
+        color: #333;
+        li:first-child{
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 15px;
+            p:first-child{
+                padding-left: 20px;
+                background:url(../images/xf-schoolR/xf-left.png) no-repeat 0 0;
+            }
+        }
+        li.xf-btn+li{
+            margin-top: 20px;
+            color: #666;
+        }
+        li.xf-btn{
+            margin-top: 15px;
+            a{
+                display: block;
+                margin-left: 50px;
+                width: 155px;
+                height: 36px;
+                text-align: center;
+                line-height: 36px;
+                background-color: #fae791;
+                color: #666666;
+                border-radius: 3px;
+            }
+            a:Hover{
+                background-color: #fad532;
+            }
+        }
+    }
+}
+/*宣讲流程*/
+.xf-prech{
+    position: relative;
+    .xf-title{
+        background:url(../images/xf-schoolR/title-3.png) no-repeat;
+    }
+    .xf-prech-content{
+        width: 100%;
+        height: 845px;
+        background:url(../images/xf-schoolR/xf-prech.png) no-repeat 0 0;
+    }
+    .xf-coord{
+        position: absolute;
+        bottom: -220px;
+        right: 0;
+        display: block;
+        width: 517px;
+        height: 733px;
+        background:url(../images/xf-schoolR/xf-coord.png) no-repeat 0 0;
+    }
+}
+/*招聘流程*/
+.xf-zpProcess{
+    .xf-title{
+          background:url(../images/xf-schoolR/title-4.png) no-repeat;
+    }
+    .xf-zpProcess-content{
+         width: 100%;
+        height: 481px;
+        background:url(../images/xf-schoolR/zpProcess.png) no-repeat 0 0;
+    }
+}
+//福利待遇
+.xf-welfare{
+    .xf-title{
+        margin-top: -40px;
+         background:url(../images/xf-schoolR/title-5.png) no-repeat;
+    }
+    .xf-intro-content{
+        height: 520px;
+    }
+    .welfare-content{
+        width: 960px;
+        margin:0 auto;
+        padding-top: 90px;
+        span{
+           font-size: 18px;
+           color: #003366;
+           margin-bottom:18px ;
+            display: block;
+        }
+    }
+}
+/*底部*/
+.xf-footer{
+    width: 100%;
+    height: 256px;
+    background-color: #fae791;
+    .xf-infor{
+        position: relative;
+        width: 1088px;
+        margin:0 auto;
+        color: #003366;
+        ul{
+            padding:40px 0 0 45px;
+            font-size: 16px;
+        }
+    }
+    .footer-coord{
+        position: absolute;
+        top:-110px;
+        right: -240px;        
+        width: 733px;
+        height: 366px;
+        background:url(../images/xf-schoolR/footer-crood.png) no-repeat;
+    }
+}

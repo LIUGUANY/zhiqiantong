@@ -1,0 +1,132 @@
+#container {
+  background: #dfdfdf;
+  height: 1000px;
+} /*----/enterprise-collect-resume----*/
+/*------/enterprese-resume-end----------*/
+#container .ep-resume-box .ep-information-box {
+  text-align: center;
+  width: 210px;
+}
+#container .ep-resume-box .ep-information-box li {
+  background: #f8f8f8;
+}
+#container .ep-resume-box .ep-information-box li a {
+  font-size: 16px;
+  color: #666;
+}
+#container .ep-resume-box .ep-information-box li a.current {
+  display: inline-block;
+  height: 40px;
+  width: 210px;
+  background: #2a94f3;
+  color: #fff;
+}
+#container .ep-resume-box .ep-information-box li p {
+  height: 40px;
+  line-height: 40px;
+}
+#container .ep-resume-box .work-load {
+  width: 966px;
+  background: #fff;
+  margin-left: 236px;
+  min-height: 900px;
+}
+#container .ep-resume-box .work-load .work-center .select-load {
+  background: #f8f8f8;
+  padding: 30px 0 30px 30px;
+}
+#container .ep-resume-box .work-load .work-center .select-load .base-color {
+  color: #2a94f3;
+}
+#container .ep-resume-box .work-load .work-center .select-box {
+  background: #f8f8f8;
+  margin-top: 10px;
+  display: inline-block;
+}
+#container .ep-resume-box .work-load .work-center .select-box .select-title {
+  color: #2a94f3;
+}
+#container .ep-resume-box .work-load .work-center .select-box dl {
+  margin-top: 23px;
+}
+#container .ep-resume-box .work-load .work-center .select-box dt {
+  font-size: 14px;
+  line-height: 26px;
+  color: #4e4e4e;
+}
+#container .ep-resume-box .work-load .work-center .select-box dd {
+  width: 820px;
+}
+#container .ep-resume-box .work-load .work-center .select-box dd a {
+  font-size: 14px;
+  color: #989898;
+  margin-right: 15px;
+}
+#container .ep-resume-box .work-load .work-center .select-box dd a:hover {
+  color: #2a94f3;
+}
+#container .ep-resume-box .work-load .work-center .select-box dd .unlimit {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #2a94f3;
+  color: #fff;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+#container .ep-resume-box .work-load .work-center .all {
+  background: #f8f8f8;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+#container .ep-resume-box .work-load .work-center .all .all-cl,
+#container .ep-resume-box .work-load .work-center .all li a {
+  color: #4e4e4e;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .select-title {
+  background: #f8f8f8;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .select-title label,
+#container .ep-resume-box .work-load .work-center .resume-box .select-title time {
+  color: #4e4e4e;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor {
+  padding: 20px 30px 10px 20px;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor dt {
+  margin-right: 18px;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor dd p {
+  color: #2a94f3;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor dd p a {
+  color: #2a94f3;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor dd .no-look {
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+  background: url(../images/enterprise/bom-arr.png) no-repeat scroll 0 0;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor .edit a {
+  color: #2a94f3;
+  margin-right: 20px;
+  font-size: 14px;
+}
+#container .ep-resume-box .work-load .work-center .resume-box .user-infor .edit .list-item {
+  margin-right: 0;
+}
+#container .ep-resume-box .work-load .work-center .already-look .user-infor dd p {
+  color: #989898;
+}
+#container .ep-resume-box .work-load .work-center .already-look .user-infor dd p a {
+  color: #989898;
+}
+#container .ep-resume-box .work-load .work-center .already-look .user-infor dd .look {
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+  background: url(../images/enterprise/bom-arr-look.png) no-repeat scroll 0 0;
+}
+/*# sourceMappingURL=ep-resume.css.map */

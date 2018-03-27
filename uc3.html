@@ -1,0 +1,2432 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/page-ncity-style.css.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/ucenter.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/ucenter_1.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/ucenter_1.css" />-->
+		<!--<title><sitemesh:title ></sitemesh:title>-${websitemap.web.company}-${websitemap.web.title}</title>
+	<meta name="author" content="${websitemap.web.author}"/> 
+	<meta name="keywords" content="${websitemap.web.keywords}" />
+	<meta name="description" content="${websitemap.web.description}"/> 
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${ctximg}/static/edu/css/page-ncity-style.css.css">-->
+	<!--<script type="text/javascript" src="${ctximg}/static/common/jquery-1.11.1.min.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/pageJs.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/webutils.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/web_top.js?v=<%=version%>"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/header_msg.js?v=<%=version%>"></script>
+    <script type="text/javascript" src="${ctximg}/static/common/emailList.js"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/delete-file.js?v=<%=version%>"></script>-->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ucenter.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Validform_v5.3.1_min.js" type="text/javascript" charset="utf-8"></script>
+		<!--头像设置-->
+		<script type="text/javascript" src="<%=imagesPath%>/kindeditor/kindeditor-all.js"></script>
+		<jsp:include page="/WEB-INF/view/edu/ucenter/avatar_resource.jsp"></jsp:include>
+		<!--<script type="text/javascript">
+			var cusid=${queryUser.id};
+		</script>-->
+		<!--/头像设置-->
+		<!--第三方绑定-->
+		<script src="${ctx}/static/edu/js/ucenter/u_profile.js"></script>
+		<!--/第三方绑定-->
+		<!--密码修改-->
+		<script typer="text/javascript" src="${ctximg}/static/common/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="${ctximg}/static/common/jquery-validation-1.11.1/localization/messages_zh.js"></script>
+		<script type="text/javascript" src="${ctximg}/static/common/jquery-validation-1.11.1/dist/additional-methods.min.js"></script>
+		<script type="text/javascript" src="${ctximg}/static/edu/js/user/u_editpwd.js"></script>
+		<script type="text/javascript">
+			var updateError = "${updateError}";
+			var updateMessage = "${updateMessage}";
+		</script>
+		<!--/密码修改-->
+		<!--账户信息-->
+		<script type="text/javascript" src="${ctximg}/static/edu/js/ucenter/u_user_info.js?v=${v}"></script>
+		<!--/账户信息-->
+		<!--个人信息-->
+		<link rel="stylesheet" href="${ctximg}/static/common/jquery-ui-1.10.4/css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
+	<script src="${ctximg}/static/common/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.js?v=${v}"></script>
+	<script src="${ctximg}/static/common/jquery-ui-1.10.4/js/jquery.ui.datepicker-zh-CN.js?v=${v}"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/jquery-ui-1.10.4/js/jquery-ui-timepicker-addon.js?v=${v}"></script>
+	<script type="text/javascript" src="${ctximg}/static/common/jquery-ui-1.10.4/js/jquery-ui-timepicker-zh-CN.js?v=${v}"></script>
+	<script type="text/javascript" src="${ctximg}/static/edu/js/ucenter/u_user_info.js?v=${v}"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			//时间插件
+//			$("#birth").datepicker({
+//				regional:"zh-CN",
+//				changeMonth: true,
+//				changeYear:true,
+//				dateFormat:"yy-mm-dd ",
+//				yearRange:"-40:+0",
+//				defaultDate:NewDate($("#birth").val())
+//			});
+//			$("#birth").datetimepicker(
+//					{regional:"zh-CN",
+//						changeMonth: true,
+//						changeYear:true,
+//						dateFormat:"yy-mm-dd ",
+//						yearRange:"1985:2015"
+//					});
+		});
+		function NewDate(str) {
+			if(str==null||str==''){
+				var myDate=new Date();
+				str=myDate.getFullYear()+"-01-01";
+			}
+			str = str.split('-');
+			var date = new Date();
+			date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+			date.setUTCHours(0, 0, 0, 0);
+			return date;
+		}
+
+		function updateInfo(){
+			var nickname = $("#nickname").val();
+			if(nickname=="" || nickname ==null){
+				$(".nicknameError").show();
+				return;
+			}else if(nickname.length>10){
+				$(".nicknameError1").show();
+				return;
+			}
+			var realname = $("#realname").val();
+			if(realname=="" || realname ==null){
+				$(".realnameError").show();
+				return;
+			}
+			var major = $("#major").val();
+			if(major=="" || major ==null){
+				$(".majorError").show();
+				return;
+			}
+			var school = $("#school").val();
+			if(school=="" || school ==null){
+				$(".schoolError").show();
+				return;
+			}
+			var birth = $("#birth").val();
+			if(birth=="" || birth ==null){
+				$(".birthError").show();
+				return;
+			}
+			var d1 = new Date(birth.replace(/\-/g, "\/"));
+			var d2 = new Date();
+			if(d1>=d2)	{
+				$(".birthDateError").show();
+				return;
+			}
+			var profession = $("#profession").val();
+			if(profession=="" || profession ==null){
+				$(".professionError").show();
+				return;
+			}
+			$.ajax({
+				url:'/uc/user/updateMeans',
+				data:$("#searchForm").serialize(),
+				type:'post',
+				dataType:'json',
+				success:function(result){
+					if(result.success){
+						showuserLoginInfo();
+						$(".buttonOK").show();
+//						dialog('提示信息',result.message,15);
+					}else{
+						$(".buttonNo").show();
+//						dialog('提示信息',result.message,1);
+					}
+				}
+			});
+		}
+	</script>
+		<!--/个人信息-->
+		
+		<!--[if lt IE 9]>
+      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+    <![endif]-->
+	</head>
+	<body class="W-body">
+		<!-- 公共头引入 -->
+		<header id="header">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+							<div  class="j-nav-set sets">
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li class="current">
+							<a href="index.html" title="首页">首页</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">找实习</a>
+						</li>
+						<li>
+							<a href="" title="实习">写简历</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">做测评</a>
+						</li>
+						<li>
+							<a href="" title="职乎">学课程</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+		<section id="u-main">
+			
+		<!--uc-right-begin-->
+
+		<div class="clearfix">
+			<!--个人资料-->
+			<section class="xf-u-c-right u-c-box fl" style="display: block;">
+				<header class="xf-u-c-title">
+					<ul class="clearfix user-infor">
+						<li class="current"><a class="hand">账户信息</a></li>
+						<li><a class="hand">个人资料</a></li>
+						<li><a class="hand">头像设置</a></li>
+					</ul>
+				</header>
+				<div class="seting-box">
+					<!--账户信息-->
+						<div class="u-cou-learn-box">
+							<div class="mt50" id="user_info">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab">昵称：</span>
+										<label class="u-a-txt">
+											<input type="text" readonly="readonly"  maxlength="50" name="queryUser.nickname" id="nickname" value="${queryUser.nickname}">
+										</label>
+										<span class="ml10">
+											<a class="c-orange" href="javascript:void(0)" onclick="clickUpdate('user_info_nickUpdate')">修改</a>
+										</span>
+									</li>
+									<li>
+										<span class="vam u-a-lab">邮箱：</span>
+										<c:if test="${empty queryUser.email}">
+											<label class="u-a-txt">
+											<a class="c-orange" href="javascript:void(0)" onclick="clickUpdate('email_update_one')">设置邮箱</a>
+											<font id="email-1" color="red"></font>
+										</label>
+										</c:if>
+										<c:if test="${!empty queryUser.email}">
+											<label class="u-a-txt">
+											<span>${queryUser.email}</span>
+											<font id="email-1" color="red"></font>
+										</label>
+											<span class="ml10">
+											<a class="c-orange" href="javascript:void(0)" onclick="clickUpdate('email_update_one')">修改</a>
+										</span>
+										</c:if>
+									</li>
+									<li>
+										<span class="vam u-a-lab">手机号：</span>
+										<c:if test="${empty queryUser.mobile}">
+											<label class="u-a-txt">
+												<a class="c-orange" href="javascript:void(0)" onclick="clickUpdate('mobile_update_one')">设置手机号</a>
+											<font id="mobile-1" color="red"></font>
+										</label>
+										</c:if>
+										<c:if test="${!empty queryUser.mobile}">
+											<span>${queryUser.mobile}</span>
+											<span class="ml10">
+												<a class="c-orange" href="javascript:void(0)" onclick="clickUpdate('mobile_update_one')">修改</a>
+											</span>
+										</c:if>
+									</li>
+								</ol>
+							</div>
+							<input type="hidden" id="hideCode" value="">
+							<!-- 昵称修改开始 -->
+							<div class="mt50 nick" id="user_info_nickUpdate" style="display:none">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab">新昵称：</span>
+										<label class="u-a-txt">
+											<input type="text" maxlength="50"  name="nick" id="newNick" onkeydown="$('#nick-2').text('');" value="">
+											<font id="nick-2" color="red"></font>
+										</label>
+									</li>
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+											<label class="u-a-set-btn"><input type="button" onclick="updateUserMeans('nick')" value="修  改"></label>
+											<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('nick')" value="取  消"></label>
+										</span>
+									</li>
+								</ol>
+							</div>
+							<!-- 昵称修改结束 -->
+							<!-- 邮箱修改开始 -->
+							<div class="mt50 updateEmail" id="email_update_one" style="display:none">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab"></span>
+										<label class="u-a-txt">
+											<span style="color: #333">通过手机号验证您的身份</span>
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">验证码：</span>
+										<label class="u-a-txt">
+											<input style="width:100px" type="text" placeholder="短信验证码" value=""  id="email_update_one_code">
+										</label>
+										<label class="ml20">
+											<span id="email_update_one_send" class="u-a-set-btn" style="color:#666666; line-height: 24px; display: inline-block; padding: 2px 10px;" onclick="getVerifications('email_update_one')">获取短信验证码</span>
+											<span id="email_update_one_wait" class="moblie-but-o gray-btn mt10 c-999" style="padding: 5px 10px;display:none;width: 120px;"></span>
+										</label>
+									</li>
+
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+												<label class="u-a-set-btn"><input type="button" onclick="updateEmailCheckMobileCode('email_update_one_code')" value="确 定"></label>
+												<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('updateEmail')" value="取  消"></label>
+											</span>
+									</li>
+								</ol>
+							</div>
+							<div class="mt50 updateEmail" id="email_update_two" style="display:none">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab">新邮箱：</span>
+										<label class="u-a-txt">
+											<input type="text" maxlength="50"  name="email" id="newEmail"  value="">
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">验证码：</span>
+										<label class="u-a-txt">
+											<input style="width:100px" type="text" placeholder="动态验证码" value=""  id="email_update_two_code">
+										</label>
+										<label class="ml20">
+											<span id="email_update_two_send" class="u-a-set-btn" style="color:#666666; line-height: 24px; display: inline-block; padding: 2px 10px;" onclick="getVerifications('email_update_two')">获取邮箱验证码</span>
+											<span id="email_update_two_wait" class="moblie-but-o gray-btn mt10 c-999" style="padding: 5px 10px;display:none;width: 120px;"></span>
+										</label>
+									</li>
+
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+												<label class="u-a-set-btn"><input type="button" onclick="updateUserMeans('email')" value="修  改"></label>
+												<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('updateEmail')" value="取  消"></label>
+											</span>
+									</li>
+								</ol>
+							</div>
+							<!-- 邮箱修改结束 -->
+
+							<!-- 手机修改开始 -->
+							<div class="mt50 updateMobile" id="mobile_update_one" style="display:none">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab"></span>
+										<label class="u-a-txt">
+											<span style="color: #333">通过邮箱验证您的身份</span>
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">验证码：</span>
+										<label class="u-a-txt">
+											<input style="width:100px" type="text" placeholder="邮箱验证码" value=""  id="mobile_update_one_code">
+										</label>
+										<label class="ml20">
+											<span id="mobile_update_one_send" class="u-a-set-btn" style="color:#666666; line-height: 24px; display: inline-block; padding: 2px 10px;" onclick="getVerifications('mobile_update_one')">获取邮箱验证码</span>
+											<span id="mobile_update_one_wait" class="moblie-but-o gray-btn mt10 c-999" style="padding: 5px 10px;display:none;width: 120px;"></span>
+										</label>
+									</li>
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+												<label class="u-a-set-btn"><input type="button" onclick="updateMobileCheckEmaileCode('mobile_update_one_code')" value="确 定"></label>
+												<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('updateMobile')" value="取  消"></label>
+											</span>
+									</li>
+								</ol>
+							</div>
+							<div class="mt50 updateMobile" id="mobile_update_two" style="display:none">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab">新手机：</span>
+										<label class="u-a-txt">
+											<input type="text" maxlength="50"  name="email" id="newMobile"  value="">
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">验证码：</span>
+										<label class="u-a-txt">
+											<input style="width:100px" type="text" placeholder="动态验证码" value=""  id="mobile_update_two_code">
+										</label>
+										<label class="ml20">
+											<span id="mobile_update_two_send" class="u-a-set-btn" style="color:#666666; line-height: 24px; display: inline-block; padding: 2px 10px;" onclick="getVerifications('mobile_update_two')">获取短信验证码</span>
+											<span id="mobile_update_two_wait" class="moblie-but-o gray-btn mt10 c-999" style="padding: 5px 10px;display:none;width: 120px;"></span>
+										</label>
+									</li>
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+												<label class="u-a-set-btn"><input type="button" onclick="updateUserMeans('mobile')" value="修  改"></label>
+												<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('updateMobile')" value="取  消"></label>
+											</span>
+									</li>
+								</ol>
+							</div>
+							<!-- 手机修改结束 -->
+						<!--修改密码-->
+						<div style="border:1px solid #e8e8e8"></div>
+							<div class="mt50">
+								<ol class="u-account-set">
+									<li>
+										<span class="vam u-a-lab">旧密码：</span>
+										<label class="u-a-txt">
+											<input type="password" name="customer.cusPwd" id="oldPwd" value="">
+											<font id="oldPwd_1" color="red"></font>
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">新密码：</span>
+										<label class="u-a-txt">
+											<input type="password" name="newPwd" id="newPwd" maxlength="20" value="">
+											<font id="newpwd_1" color="red"></font>
+										</label>
+									</li>
+									<li>
+										<span class="vam u-a-lab">再输一次：</span>
+										<label class="u-a-txt">
+											<input type="password" name="newPwdConfirm" maxlength="20" id="newPwdConfirm" value="">
+										</label>
+									</li>
+									<li class="mt40">
+										<span class="vam u-a-lab">&nbsp;</span>
+										<span class="vam ml50">
+											<label class="u-a-set-btn">
+												<input type="button" onclick="subit();" value="保 存">
+											</label>
+										</span>
+									</li>
+								</ol>
+							</div>
+						<!--/修改密码-->
+						<!--第三方绑定-->
+					<div style="border:1px solid #e8e8e8"></div>
+						<article class="u-m-c-w837">
+								<section class="u-m-c-wrap">
+									<section class="line1">
+										<div class="Binding">
+											<p class="fsize14 f-fM c-orange hLh30 tac">绑定第三方账号，可以直接登录，还可以将内容同步到以下平台，与更多好友分享。</p>
+											<ul class="Binding-list clearfix">
+												<li class="Binding-qq">
+													<div <c:if test="${!empty userProfileQQ.id}">class="current"</c:if>>
+														<span class="img">&nbsp;</span>
+														<p class="fsize14 f-fM c-333 tac mt20">
+															<c:choose>
+																<c:when test="${!empty userProfileQQ.id}">
+																	<c:choose>
+																		<c:when test="${not empty userProfileQQ.name}">${userProfileQQ.name}</c:when>
+																		<c:otherwise>&nbsp;</c:otherwise>
+																	</c:choose>
+																</c:when>
+																<c:otherwise>未绑定账号</c:otherwise>
+															</c:choose>
+														</p>
+														<c:choose>
+															<c:when test="${!empty userProfileQQ.id}"><a href="javascript:void(0)" onclick="exclideBungingConfirm('QQ',${userProfileQQ.id})" class="ljbd-btn mt20">解除绑定</a></c:when>
+															<c:otherwise><a href="javascript:oauthLogin('QQ')" class="ljbd-btn mt20">立即绑定</a></c:otherwise>
+														</c:choose>
+													</div>
+												</li>
+												<li class="Binding-xl">
+													<div <c:if test="${!empty userProfileSina.id}">class="current"</c:if>>
+														<span class="img">&nbsp;</span>
+														<p class="fsize14 f-fM c-333 tac mt20">
+															<c:choose>
+																<c:when test="${!empty userProfileSina.id}">
+																	<c:choose>
+																		<c:when test="${not empty userProfileSina.name}">${userProfileSina.name}</c:when>
+																		<c:otherwise>&nbsp;</c:otherwise>
+																	</c:choose>
+																</c:when>
+																<c:otherwise>未绑定账号</c:otherwise>
+															</c:choose>
+														</p>
+														<c:choose>
+															<c:when test="${!empty userProfileSina.id}"><a href="javascript:void(0)" onclick="exclideBungingConfirm('新浪账号',${userProfileSina.id})" class="ljbd-btn mt20">解除绑定</a></c:when>
+															<c:otherwise><a href="javascript:oauthLogin('SINA')" class="ljbd-btn mt20">立即绑定</a></c:otherwise>
+														</c:choose>
+						
+													</div>
+												</li>
+												<li class="Binding-wx">
+													<div <c:if test="${!empty userProfileWeiXin.id}">class="current"</c:if>>
+														<span class="img">&nbsp;</span>
+														<p class="fsize14 f-fM c-333 tac mt20">
+															<c:choose>
+																<c:when test="${!empty userProfileWeiXin.id}">
+																	<c:choose>
+																		<c:when test="${not empty userProfileWeiXin.name}">${userProfileWeiXin.name}</c:when>
+																		<c:otherwise>&nbsp;</c:otherwise>
+																	</c:choose>
+																</c:when>
+																<c:otherwise>未绑定账号</c:otherwise>
+															</c:choose>
+														</p>
+														<c:choose>
+															<c:when test="${!empty userProfileWeiXin.id}"><a href="javascript:void(0)" onclick="exclideBungingConfirm('微信',${userProfileWeiXin.id})" class="ljbd-btn mt20">解除绑定</a></c:when>
+															<c:otherwise><a href="javascript:oauthLogin('WEIXIN')" class="ljbd-btn mt20">立即绑定</a></c:otherwise>
+														</c:choose>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</section>
+								</section>
+							</article>
+						<!--/第三方绑定-->
+						</div>
+					
+						
+					<!--/账户信息-->
+					<!--个人设置-->
+						<div class="u-cou-learn-box" style="display: none;">
+							<div class="mt50 updateInfo" id="update_user_info">
+								<form action="${ctx}/uc/myCouPon" method="post" id="searchForm">
+									<ol class="u-account-set">
+										<li>
+											<span class="vam u-a-lab">昵称：</span>
+											<label class="u-a-txt">
+						<input type="text" maxlength="10" name="userExpand.nickname" onclick="$('.nicknameError').hide();$('.nicknameError1').hide();" id="nickname" value="${queryUser.nickname}">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis nicknameError">
+						<tt class="fsize14 c-red f-fM vam">*请输入昵称</tt>
+					</span>
+											<span class="fsize14 c-red f-fM ml10  undis nicknameError1">
+						<tt class="fsize14 c-red f-fM vam">*昵称不能大于10位</tt>
+					</span>
+										</li>
+										<li>
+											<span class="vam u-a-lab">姓名：</span>
+											<label class="u-a-txt">
+						<input type="text" maxlength="10" name="userExpand.realname" onclick="$('.realnameError').hide()" id="realname" value="${queryUser.realname}">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis realnameError">
+						<tt class="fsize14 c-red f-fM vam">*请输入姓名</tt>
+					</span>
+										</li>
+										<li>
+											<span class="vam u-a-lab">专业：</span>
+											<label class="u-a-txt">
+						<input type="text"  maxlength="50"  name="userExpand.major" onclick="$('.majorError').hide()" id="major" value="${queryUser.major}">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis majorError">
+						<tt class="fsize14 c-red f-fM vam">*请输入专业</tt>
+					</span>
+										</li>
+										<li>
+											<span class="vam u-a-lab">学校：</span>
+											<label class="u-a-txt">
+						<input type="text" maxlength="50" name="userExpand.school" onclick="$('.schoolError').hide()"  class="school" id="school"  value="${queryUser.school}">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis schoolError">
+						<tt class="fsize14 c-red f-fM vam">*请输入学校</tt>
+					</span>
+										</li>
+										<li>
+											<span class="vam u-a-lab">出生年月：</span>
+											<label class="u-a-txt">
+						<input type="text" maxlength="50" name="userExpand.birth" onclick="$('.birthError,.birthDateError').hide()" readonly class="birth" id="birth"  value="<fmt:formatDate type="both" value="${queryUser.birth}" pattern="yyyy-MM-dd"/>">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis birthError">
+						<tt class="fsize14 c-red f-fM vam">*请输入出生年月</tt>
+					</span>
+											<span class="fsize14 c-red f-fM ml10  undis birthDateError">
+						<tt class="fsize14 c-red f-fM vam">*出生日期不能大于当前日期</tt>
+					</span>
+										</li>
+										<li>
+											<span class="vam u-a-lab">意向职业：</span>
+											<label class="u-a-txt">
+						<input type="text" maxlength="50" name="userExpand.profession" onclick="$('.professionError').hide()" class="profession" id="profession"  value="${queryUser.profession}">
+					</label>
+											<span class="fsize14 c-red f-fM ml10  undis professionError">
+						<tt class="fsize14 c-red f-fM vam">*请输入意向职业</tt>
+					</span>
+										</li>
+										<li class="mt40">
+											<span class="vam u-a-lab">&nbsp;</span>
+											<span class="vam ml50">
+							<label class="u-a-set-btn"><input type="button" onclick="updateInfo()" value="修  改"></label>
+							<%--<label class="u-a-set-btn ml10"><input type="button" onclick="clickCancel('updateInfo')" value="取  消"></label>--%>
+
+						</span>
+											<span class="fsize14 c-red f-fM ml10  undis buttonOK">
+							<tt class="fsize14 c-red f-fM vam">*修改成功</tt>
+						</span>
+											<span class="fsize14 c-red f-fM ml10  undis buttonNO">
+							<tt class="fsize14 c-red f-fM vam">*修改失败，请稍后再试！</tt>
+						</span>
+										</li>
+									</ol>
+								</form>
+							</div>
+						</div>
+					<!--/个人设置-->
+					<!--头像设置-->
+						<div class="u-cou-learn-box" style="display: none;">
+							<section class="line1">
+								<!-- 中间内容开始 -->
+								<article>
+									<section>
+										<div class="mt30 ml20 mr20">
+
+											<section>
+												<input type="hidden" id="now-user-img" value="${queryUser.avatar}" />
+												<input type="hidden" id="userImg" value="" />
+												<form name="tempPicForm" id="tempPicForm" method="post" action="${ctx}/cus/uc!uploadPhoto.action" enctype="multipart/form-data">
+
+													<div class="mb50">
+														<section class="uBoxBg of">
+															<section class="clearfix">
+																<!--头像上传控件-->
+																<section class="uploadBtnWrap mb20 pr">
+																	<!-- <input id="fileupload" type="file" width="133"
+																height="45" name="" class="pa"> -->
+																	<input type="button" id="fileupload" value="浏览" width="70" />
+																</section>
+																<!--头像上传控件-->
+																<!--头像裁切控件-->
+																<div class="fl jc-demo-box pr">
+																	<c:if test="${queryUser.avatar==null||queryUser.avatar==''}">
+																	<img src="<%=imagesPath%>/static/edu/images/default/uploadDefaultPic.jpg" width="300" height="300" alt="" class="dis pictureWrap" id="picture" />
+																	</c:if>
+																	<c:if test="${queryUser.avatar!=null&&queryUser.avatar!=''}">
+																	<img src="<%=staticImageServer%>${queryUser.avatar}"
+																	width="300" height="300" alt="" class="dis pictureWrap"
+																	id="picture" />
+																	</c:if>
+																	<div></div>
+																	<div id="preview-pane" class="preview-pane1">
+																		<div class="preview-container">
+																			<c:if test="${queryUser.avatar==null||queryUser.avatar==''}">
+																				<img src="<%=imagesPath%>/static/edu/images/default/uploadDefaultPic.jpg" class="jcrop-preview" alt="Preview" style="width: 180px;height:180px" />
+																			</c:if>
+																			<c:if test="${queryUser.avatar!=null&&queryUser.avatar!=''}">
+																				<img src="<%=staticImageServer%>${queryUser.avatar}" class="jcrop-preview" alt="Preview" style="width: 180px;height:180px" />
+																			</c:if>
+																		</div>
+																		<p class="c-666">大尺寸头像，180x180像素</p>
+																	</div>
+																	<div id="preview-pane" class="preview-pane2">
+																		<div class="preview-container">
+																			<c:if test="${queryUser.avatar==null||queryUser.avatar==''}">
+																				<img src="<%=imagesPath%>/static/edu/images/default/uploadDefaultPic.jpg" class="jcrop-preview" alt="Preview" style="width: 80px;height: 80px;" />
+																			</c:if>
+																			<c:if test="${queryUser.avatar!=null&&queryUser.avatar!=''}">
+																				<img src="<%=staticImageServer%>${queryUser.avatar}" class="jcrop-preview" alt="Preview" style="width: 80px;height: 80px;" />
+																			</c:if>
+																		</div>
+																		<p class="c-666">中尺寸头像，80x80像素</p>
+																	</div>
+																	<div id="preview-pane" class="preview-pane3">
+																		<div class="preview-container">
+																			<c:if test="${queryUser.avatar==null||queryUser.avatar==''}">
+																				<img src="<%=imagesPath%>/static/edu/images/default/uploadDefaultPic.jpg" class="jcrop-preview" alt="Preview" style="width: 50px;height: 50px;" />
+																			</c:if>
+																			<c:if test="${queryUser.avatar!=null&&queryUser.avatar!=''}">
+																				<img src="<%=staticImageServer%>${queryUser.avatar}" class="jcrop-preview" alt="Preview" style="width: 50px;height: 50px;" />
+																			</c:if>
+																		</div>
+																		<p class="c-666">小尺寸头像，50x50像素</p>
+																	</div>
+																</div>
+																<!--头像裁切控件-->
+																<div class="fr uploadWrap">
+																	<p class="c-orange">您上传的图片将会自动生成三种尺寸的清晰头像，请注意小尺寸的头像是否清晰。</p>
+																</div>
+																<section class="clear"></section>
+																<div class="uploadBc of mt20">
+																	<center>
+																		<span id="save_message" class="orangeCol">&nbsp;</span>
+																	</center>
+																	<center>
+																		<div class="uFunc">
+																			<label class="u-a-set-btn"><input type="button"
+																		value="保&nbsp;存" onclick="catparams()"></label> <input type="button" class="commBtn bgGreen w80 ml50" value="取&nbsp;消" id="quxiao" style="display: none">
+																		</div>
+																	</center>
+																</div>
+															</section>
+														</section>
+
+													</div>
+												</form>
+											</section>
+										</div>
+									</section>
+									<div style="display: none">
+										<c:if test="${empty queryUser.avatar}">
+											<input id="photoPath" name="photoPrams.photoPath" />
+										</c:if>
+										<c:if test="${!empty queryUser.avatar}">
+											<input id="photoPath" name="photoPrams.photoPath" value="${queryUser.avatar}" />
+										</c:if>
+										<input name="photoPrams.txt_width" value="1" id="picture_width" style="display: none; background: none" /> <br /> <input name="photoPrams.txt_height" value="1" id="picture_height" style="display: none" /> <br /> <input name="photoPrams.txt_top"
+											value="82" id="txt_top" style="display: none" /> <br /> <input name="photoPrams.txt_left" value="73" id="txt_left" style="display: none" /> <br /> <input name="photoPrams.txt_DropWidth" value="120" id="txt_DropWidth" style="display: none" />										<br /> <input name="photoPrams.txt_DropHeight" value="120" id="txt_DropHeight" style="display: none" /> <br /> <input name="photoPrams.txt_Zoom" id="txt_Zoom" style="display: none" />
+									</div>
+								</article>
+							</section>
+						</div>
+					<!--/头像设置-->
+				</div>
+			</section>
+			<!--/个人资料-->
+			<!--我的课程-->
+			<section class="xf-u-c-right u-c-box fr" style="display: none;">
+				<header class="xf-u-c-title">
+					<ul class="clearfix course-title">
+						<li class="current"><a href="">收藏课程</a></li>
+						<li><a href="">浏览课程</a></li>
+					</ul>
+				</header>
+				<div class="course-box">
+					<div class="course-list course">
+						<ul class="course-infor-box clearfix">
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /></a>
+								<p class="mt10 course-title tac"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10 pl5"><span class="mr20">8个课程</span><span class="mr20"><a href="">取消收藏</a></span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDRdddddddddddddd广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20"><a href="">取消收藏</a></span><span><a href="">继续学习</a></span></p>
+							</li>
+						</ul>
+					</div>
+					<div class="course-list course" style="display: none;">
+						<ul class="course-infor-box clearfix">
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+							<li class="mb30">
+								<a href=""><img src="images/course/couse-left-icon1.png" alt="" width="200" height="160" /><span class="time">2016-3-5</span></a>
+								<p class="mt10 course-title ml10"><a href="">PS/AI/CDR广告设计实战体验班</a></p>
+								<p class="curse-opera mt10"><span class="mr20">8个课程</span><span class="mr20">80课时</span><span><a href="">继续学习</a></span></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--我的求职-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title">
+					<ul class="clearfix resume-title">
+						<li class="current"><a href="">我的简历</a></li>
+						<li><a href="">投递职位</a></li>
+					</ul>
+				</header>
+				<div class="resume-box">
+					<div class="resume-content resume">
+					<!--简历完整度-->
+						<div class="re-integrity-m clearfix">
+							<div class="re-solid fl">
+								<span class="ml30">简历完整度</span>
+							</div>
+							<span class="ml10 fl">80%</span>
+						</div>
+					<!--/简历完整度-->					
+					<!--基本信息-->
+						<div class="personal-infor base-box clearfix">
+							<h4>基本信息<span class="del hand"></span><span class="amend hand"></span></h4>
+							<div class="personal-infor-1 fl">
+								<dl>
+									<dt>姓名：</dt>
+									<dd>***</dd>
+								</dl>
+								<dl>
+									<dt>手机：</dt>
+									<dd>13763507155</dd>
+								</dl>
+								<dl>
+									<dt>学历：</dt>
+									<dd>本科</dd>
+								</dl>
+								
+								<dl>
+									<dt>婚姻状况：</dt>
+									<dd>未婚</dd>
+								</dl>
+								<dl>
+									<dt>居住地：</dt>
+									<dd>群众</dd>
+								</dl>
+							</div>
+							<div class="personal-infor-2 fl">
+								<dl>
+									<dt>性别：</dt>
+									<dd>男</dd>
+								</dl>	
+								<dl>
+									<dt>出生日期：</dt>
+									<dd>1995-10-11</dd>
+								</dl>
+								<dl>
+									<dt>邮箱：</dt>
+									<dd>1787824557@163.com</dd>
+								</dl>
+								<dl>
+									<dt>户口：</dt>
+									<dd>深圳</dd>
+								</dl>
+								<dl>
+									<dt>邮编：</dt>
+									<dd>518000</dd>
+								</dl>
+							</div>
+							<ul class="user-icon fl">
+								<li>
+									<img src="images/course/course-video-icon1.png" alt="头像" height="102" width="101"/>
+								</li>
+								<li>公开程度:公开</li>
+							</ul>
+						</div>
+					<!--/基本信息-->
+					<!--基本信息(编辑)-->
+					<div class="personal-infor-edit edit-box clearfix" style="display: none;">
+						<form class="demoform" action="">
+								<h4>基本信息</h4>
+								<section class="clearfix" style="min-height: 210px;">
+									<div class="personal-edit-infor-1 fl">
+										<dl>
+											<dt><span class="mr28">姓</span>名：</dt>
+											<dd><input type="text" name="" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！" style="width: 160px;"/></dd>
+										</dl>
+										<dl>
+											<dt><span class="mr28">手</span>机：</dt>
+											<dd><input type="text" style="width: 160px;"/></dd>
+										</dl>
+										<dl>
+											<dt><span class="mr28">学</span>历：</dt>
+											<dd>
+												<select name="" style="width: 120px;">
+												<option value="本科">本科</option>
+											</select>
+											</dd>
+										</dl>
+										<dl>
+											<dt><span class="mr28">邮</span>编：</dt>
+											<dd><input type="text" style="width: 114px;"/></dd>
+										</dl>
+										<dl>
+											<dt>婚姻状况：</dt>
+											<dd>
+												<select name="" style="width: 120px;">
+												<option value="本科">本科</option>
+											</select>
+											</dd>
+										</dl>
+										
+									</div>
+									<div class="personal-edit-infor-2 fl">
+										<dl>
+											<dt>性别：</dt>
+											<dd>
+												<select name="" style="width: 55px;">
+												<option value="本科">本科</option>
+											</select>
+											</dd>
+										</dl>
+									</div>
+									<div class="personal-edit-infor-3 fl">
+										<dl>
+											<dt>出生日期：</dt>
+											<dd><input type="date" value="" style="width: 160px;"/></dd>
+										</dl>
+										<dl>
+											<dt><span class="mr28">邮</span>箱：</dt>
+											<dd><input type="text" name="email" value="" style="width: 160px;"/></dd>
+										</dl>
+										<dl>
+											<dt><span class="mr28">户</span>口：</dt>
+											<dd class="mr17"><select name="" style="width: 75px;">
+												<option value=""></option>
+											</select></dd>
+											<dd><select name="" style="width: 75px;">
+												<option value=""></option>
+											</select></dd>
+										</dl>
+										<dl>
+											<dt>身份证<span class="ml14">：</span></dt>
+											<dd><input type="text" name="" value="" style="width: 160px;"/></dd>
+										</dl>
+										<dl>
+											<dt>工作经验：</dt>
+											<dd><select name="" style="width: 120px;">
+												<option value=""></option>
+											</select></dd>
+										</dl>
+									</div>
+									<ul class="user-icon fl">
+										<li>
+											<img src="images/course/course-video-icon1.png" alt="头像" height="102" width="101"/>
+										</li>
+										<li>公开程度  <select name="" style="width:55px">
+											<option value=""></option>
+										</select></li>
+									</ul>
+								</section>
+								<div style="overflow: hidden;">
+									<label>居住地址：</label>
+									<input type="text" style="width: 334px;"/>
+								</div>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+						</form>
+					</div>
+					<!--/基本信息(编辑)-->
+					<!--教育经历-->
+					<div class="educationalBackground base-box-1">
+						<h4>教育经历</h4>
+						 <div class="base-box-2">
+							<div class="base-box">
+								<ul class="edu-bg-title clearfix">
+									<li>2012.09--2016.06</li>
+									<li>中南大学</li>
+									<li>信息系统</li>
+									<li>本科</li>
+									<li class="show-box">
+										<span class="del hand"></span>
+										<span class="amend hand"></span>
+									</li>
+								</ul>
+								<p class="c-656 fsize14 mt15 lh">Java课程是java软件工程师学习和应用java的必要课程，java课程主要学习：Java编程语言，Java类文件格式，Java虚拟机和Java
+		应用程序接口(Java API)，java游戏项目开发等课程。</p>
+							</div>
+							<div class="line-1"></div>
+						</div>
+						 <div>
+							<div class="base-box">
+								<ul class="edu-bg-title clearfix">
+									<li>2012.09--2016.06</li>
+									<li>中南大学</li>
+									<li>信息系统</li>
+									<li>本科</li>
+									<li class="show-box">
+										<span class="del hand"></span>
+										<span class="amend hand"></span>
+									</li>
+								</ul>
+								<p class="c-656 fsize14 mt15 lh">Java课程是java软件工程师学习和应用java的必要课程，java课程主要学习：Java编程语言，Java类文件格式，Java虚拟机和Java
+		应用程序接口(Java API)，java游戏项目开发等课程。</p>
+							</div>
+						</div>
+						<p class="tar add"><button class="add-btn">继续添加</button></p>
+					</div>
+					<!--/教育经历-->
+					<!--教育经历(编辑)-->
+					<div class="educationalBackground-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>教育经历</h4>
+							<ul class="edu-bg-title clearfix">
+								<li class="fl mr15">
+									<dl>
+										<dt class="fl">开始时间：</dt>
+										<dd class="fl">
+											<input class="mr10" type="date" style="width: 54px;"/>
+											<input type="text" style="width: 54px;"/>
+										</dd>
+									</dl>
+								</li>
+								<li class="fl">
+									<dl>
+										<dt class="fl">结束时间：</dt>
+										<dd class="fl">
+													<input class="mr10" type="text" style="width: 54px;"/>
+											<input type="text" style="width: 54px;"/>
+										</dd>
+									</dl>
+								</li>
+								<li class="fr">
+									<dl>
+										<dt class="fl">学校：</dt>
+										<dd class="fl">
+											<input type="text" style="width: 200px;"/>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+							<ul class="edu-bg-title clearfix mt20">
+								<li class="fl mr15">
+									<dl>
+										<dt class="fl"><span class="mr25">专</span>业：</dt>
+										<dd class="fl">
+											<input type="date" style="width: 205px;"/>
+		
+										</dd>
+									</dl>
+								</li>
+								<li class="fr">
+									<dl>
+										<dt class="fl">学历：</dt>
+										<dd class="fl">
+											<select name="" style="width: 206px;">
+												<option value=""></option>
+											</select>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+							<ul class="edu-bg-title clearfix mt20">
+								<li>
+									主要课程：
+								</li>
+								<li class="text-edit-box mt10 pr">
+									<textarea name="" rows="" cols=""></textarea>
+									<span class="pa set-length">最多显示500</span>
+								</li>						
+							</ul>
+							<div class="tac mt30">
+									<button class="save">保存</button>
+							</div>
+						</form>
+					</div>
+					<!--/教育经历(编辑)-->
+					<!--求职意向-->
+					<div class="careerObjective base-box">
+						<h4>求职意向<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="self-assessment">
+							<span class="lh">自我评价：</span>
+							<span class="lh">
+								本人诚实守信，工作严谨踏实，认真负责，处事机灵。拥有积极向上的生活态度和广泛的兴趣爱好,具有良好的心理素质
+和吃苦耐劳精神，对事有自己的见解，并有较强的共事协作能力。我有着年轻人特有的朝气和魄力,富有开创事业的头脑和激-情,有
+较好的文字功底,口头表达能力以及交际能力，注重团队合作。。
+							</span>
+						</div>
+						<ul class="job-infor">
+							<li>
+								<dl>
+									<dt>城市：</dt>
+									<dd>深圳</dd>
+								</dl>
+								<dl>
+									<dt>行业：</dt>
+									<dd>电子商务</dd>
+								</dl>
+								<dl>
+									<dt>职位：</dt>
+									<dd>架构师</dd>
+								</dl>
+								<dl>
+									<dt>工作类型：</dt>
+									<dd>实习</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>期望薪资：</dt>
+									<dd>20000/月</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>到岗时间：</dt>
+									<dd>一个月</dd>
+								</dl>		
+							</li>
+						</ul>
+					</div>
+					<!--/求职意向-->
+					<!--求职意向(编辑)-->
+					<div class="careerObjective-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>求职意向</h4>
+							<div class="self-assessment-edit">
+								<ul class="edu-bg-title clearfix mt20">
+									<li>
+										自我评价：
+									</li>
+									<li class="text-edit-box mt10 pr">
+										<textarea name="" rows="" cols=""></textarea>
+										<span class="pa set-length">最多输入500</span>
+									</li>						
+								</ul>
+								<ul class="mt10  edu-bg-title clearfix">
+									<li class="fl mr38">
+										<dl>
+											<dt class="fl"><span class="mr25">城</span>市：</dt>
+											<dd class="fl">
+												<input class="mr10" type="date" style="width: 54px;"/>
+												<input type="text" style="width: 54px;"/>
+											</dd>
+										</dl>
+									</li>
+									<li class="fl mr38">
+										<dl>
+											<dt class="fl"><span class="mr25">行</span>业：</dt>
+											<dd class="fl">
+														<input type="text" style="width: 90px;"/>
+												
+											</dd>
+										</dl>
+									</li>
+									<li class="fl mr38">
+										<dl>
+											<dt class="fl"><span class="mr27">职</span>位：</dt>
+											<dd class="fl">
+												<input type="text" style="width: 90px;"/>
+											</dd>
+										</dl>
+									</li>
+									<li class="fr">
+										<dl>
+											<dt class="fl">工作类型：</dt>
+											<dd class="fl">
+												<input type="text" style="width: 90px;"/>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<ul class="edu-bg-title clearfix mt20">
+									<li class="fl mr38">
+										<dl>
+											<dt class="fl">期望薪资：</dt>
+											<dd class="fl" style="width: 135px;">
+												<select name="" style="width:95px ;">
+													<option value=""></option>
+												</select>
+											</dd>
+										</dl>
+									</li>
+									<li class="fl mr38">
+										<dl>
+											<dt class="fl">到岗时间：</dt>
+											<dd class="fl">
+														<select name="" style="width: 95px;">
+															<option value=""></option>
+														</select>
+												
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+							</div>
+						</form>
+						
+					</div>
+					<!--/求职意向(编辑)-->
+					<!--在校表现-->
+					<div class="school-expression base-box">
+						<h4>在校表现<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyText pt5">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09</span>
+								<span class="strongText">
+									全国大学生英语竞赛一等奖
+								</span>
+							</div>
+						</div>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09--2015.06</span>
+								<span class="strongText">学生会外联部部长</span>
+								<p>
+外联部是学生会的一个重要部门，是联系社会与学校的重要部门。 外联部最主要的任务就是为学生会和学生活动筹集资金。
+							</p>
+							</div>
+							
+						</div>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2013.09--2014.06</span>
+								<span class="strongText">义务家教</span>
+							<p>
+虽然义务家教并未给我带来一丝物质上的利益，但我知道，我把我的爱心传递给别人，当自己身处困境时，也定会有人向我伸出
+他们的援助之手。
+							</p>
+							</div>
+						</div>
+					</div>
+					<!--/在校表现-->
+					<!--在校表现(编辑)-->
+					<div class="school-expression-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>在校表现</h4>
+							<ul class="edu-bg-title clearfix">
+									<li>
+										获得荣誉
+									</li>
+									<li class="fl mr38 mt10">
+										<dl>
+											<dt class="fl"><span class="mr25">时</span>间：</dt>
+											<dd class="fl">
+												<input class="mr10" type="date" style="width: 54px;"/>
+												<input type="text" style="width: 54px;"/>
+											</dd>
+											<dd class="ml30 fl">
+												<input type="text" style="width: 330px;"/>
+											</dd>
+										</dl>
+									</li>					
+								</ul>	
+								<ul class="edu-bg-title clearfix mt20">
+										<li>
+											在校职位
+										</li>
+										<li class="mt10">
+											<dl class="fl mr10 of">
+												<dt class="fl">开始时间：</dt>
+												<dd class="fl">
+													<input class="mr10" type="date" style="width: 54px;"/>
+													<input type="text" style="width: 54px;"/>
+												</dd>
+												
+											</dl>
+											<dl class="fl mr50 of">
+												<dt class="fl">结束时间：</dt>
+												<dd class="fl">
+													<input class="mr10" type="date" style="width: 54px;"/>
+													<input type="text" style="width: 54px;"/>
+												</dd>
+												
+											</dl>
+											<dl class="fl of">
+												<dt class="fl"><span class="mr25">职</span>务：</dt>
+												<dd class="fl">
+													<input class="mr10" type="date" style="width: 252px;"/>
+													
+												</dd>
+												
+											</dl>
+										</li>
+									</ul>
+									<ul class="edu-bg-title clearfix mt20">
+										<li class="text-edit-box mt10 pr" >
+											<textarea name="" rows="" cols=""></textarea>
+											<span class="pa set-length">100</span>
+										</li>						
+								</ul>
+									<div class="tac mt30">
+										<button class="save">保存</button>
+									</div>
+						</form>
+					</div>
+					<!--/在校表现(编辑)-->
+					<!--培训经历-->
+					<div class="train-experience base-box">
+						<h4>培训经历<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09</span>
+								<span class="strongText mr20">北大青鸟</span>
+								<span class="strongText">安卓开发</span>
+							</div>
+							<p class="mt20">
+培训经历其实可以算是教育经历的一部分，但如果您所受的培训与所应聘的职位有很大的相关性，有些企业十分看重培训经历，因
+为在社会上的培训对实际的工作都较有帮助，建议您不妨把培训经历单列为一部分，吸引招聘人员的眼球。
+							</p>
+						</div>
+					</div>
+					<!--培训经历(编辑)-->
+					<div class="school-expression-edit edit-box" style="display: none;">
+						<form action="">
+								<h4 class="mt15">培训经历</h4>
+									<ul class="edu-bg-title clearfix ">
+											<li class="mt10">
+												<dl class="fl mr10 of">
+													<dt class="fl">开始时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">结束时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl of">
+													<dt class="fl"><span class="mr25">职</span>务：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 252px;"/>
+														
+													</dd>
+													
+												</dl>
+											</li>
+										</ul>
+										<ul class="edu-bg-title clearfix mt20">
+											<li class="text-edit-box mt10 pr" >
+												<textarea name="" rows="" cols=""></textarea>
+												<span class="pa set-length">100</span>
+											</li>						
+									</ul>
+									<div class="tac mt30">
+										<button class="save">保存</button>
+									</div>
+						</form>
+					</div>
+					<!--/培训经历(编辑)-->
+					<!--工作经历-->
+					<div class="work-experience base-box">
+						<h4>工作经历<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09</span>
+								<span class="strongText mr20">深圳市讯方科技有限公司</span>
+								<span class="strongText">安卓工程师</span>
+							</div>
+							<p class="mt20">
+具体地说，用数据或百分比指标来量化我们的业绩和技能，如多少数量、多少次、占多少百分比等等，表述越具体，未来的雇主就
+越容易判断出我们是否适合去他的公司工作。
+							</p>
+						</div>
+					</div>
+					<!--/工作经历-->
+					<!--工作经历(编辑)-->
+					<div class="work-experience-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>工作经历</h4>
+						<ul class="edu-bg-title clearfix">
+									<li class="fl mr38">
+										<dl class="fl mr10 of">
+													<dt class="fl">开始时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">结束时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+									</li>					
+								</ul>	
+								<ul class="edu-bg-title clearfix mt20">
+										<li class="mt10">
+											<dl class="fl mr10 of">
+												<dt class="fl">公司名称：</dt>
+												<dd class="fl">
+													<input class="mr10" type="date" style="width: 180px;"/>
+													
+												</dd>
+												
+											</dl>
+											<dl class="fl mr50 of">
+												<dt class="fl"><span class="mr25">部</span>门：</dt>
+												<dd class="fl">
+													<input  type="text" style="width: 170px;"/>
+												</dd>
+												
+											</dl>
+											<dl class="fr of">
+												<dt class="fl"><span class="mr25">岗</span>位：</dt>
+												<dd class="fl">
+													<input type="date" style="width: 160px;"/>
+													
+												</dd>
+												
+											</dl>
+										</li>
+									</ul>
+									<ul class="edu-bg-title clearfix mt20">
+										<li>工作描述：</li>
+										<li class="text-edit-box mt10 pr" >
+											<textarea name="" rows="" cols=""></textarea>
+											<span class="pa set-length">最多输入200</span>
+										</li>						
+								</ul>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+						</form>
+						
+					</div>
+					<!--/工作经历(编辑)-->
+					<!--项目经验-->
+					<div class=" base-box">
+						<h4>项目经验<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09</span>
+								<span class="strongText">智慧城市APP开发</span>
+							</div>
+							<p class="mt20">
+								智慧城市是一个APP的应用
+							</p>
+							<p class="mt20">具体地说，用数据或百分比指标来量化我们的业绩和技能，如多少数量、多少次、占多少百分比等等，表述越具体，未来的雇主就
+越容易判断出我们是否适合去他的公司工作。</p>
+						</div>
+					</div>
+					<!--/项目经验-->
+					<!--项目经验(编辑)-->
+					<div class="project-edit edit-box" style="display: none;">
+						<form action="" method="post">
+							<h4>项目经验</h4>
+						<ul class="edu-bg-title clearfix">
+									<li class="fl mr38">
+										<dl class="fl mr10 of">
+													<dt class="fl">开始时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">结束时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+												<dt class="fl"><span class="mr25">标</span>题：</dt>
+												<dd class="fl">
+													<input class="mr10" type="text" style="width: 170px;"/>
+												</dd>
+												
+											</dl>
+									</li>					
+								</ul>	
+								<ul class="edu-bg-title clearfix mt20">
+									<li>工作描述：</li>
+									<li class="text-edit-box mt10 pr" >
+										<textarea name="" rows="" cols=""></textarea>
+										<span class="pa set-length">最多输入200</span>
+									</li>						
+								</ul>
+								<ul class="edu-bg-title clearfix mt20">
+									<li>责任描述：</li>
+									<li class="text-edit-box mt10 pr" >
+										<textarea name="" rows="" cols=""></textarea>
+										<span class="pa set-length">最多输入200</span>
+									</li>						
+								</ul>
+								<div class="tac mt30">
+										<button class="save">保存</button>
+								</div>
+						</form>
+					</div>
+					<!--/项目经验(编辑)-->
+					<!--证书-->
+					<div class="credential base-box">
+						<h4>证书<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyText">
+							<div class="studyTxet_title">
+								<span class="mr20">2015.09</span>
+								<span class="strongText">北大青鸟优秀学员</span>
+							</div>
+						</div>
+					</div>
+					<!--/证书-->
+					<!--证书(编辑)-->
+					<div class="credential-edit edit-box" style="display: none;">
+						<form action="">
+						<h4>证书</h4>
+						<ul class="edu-bg-title clearfix">
+									<li class="fl mr38">
+										<dl class="fl mr10 of">
+													<dt class="fl">开始时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">结束时间：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 54px;"/>
+														<input type="text" style="width: 54px;"/>
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+												<dt class="fl"><span class="mr25">证</span>书：</dt>
+												<dd class="fl">
+													<input class="mr10" type="text" style="width: 170px;"/>
+												</dd>
+												
+											</dl>
+									</li>					
+								</ul>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+						</form>
+					</div>
+					<!--/证书(编辑)-->
+					<!--语言能力-->
+					<div class="language base-box">
+						<h4>语言能力<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyUnit">
+							<dl class="w212">
+								<dt class="mr170 w212">普通话</dt>
+								<dd>
+									<dl>
+										<dt>读写:</dt>
+										<dd class="mr140">良好</dd>
+										<dt>听说:</dt>
+										<dd>良好</dd>
+									</dl>
+								</dd>
+							</dl>
+							<dl class="mt30">
+								<dt class="mr170 w212">英语</dt>
+								<dd>
+									<dl>
+										<dt>读写:</dt>
+										<dd class="mr140">良好</dd>
+										<dt>听说:</dt>
+										<dd>良好</dd>
+									</dl>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!--/语言能力-->
+					<!--语言能力(编辑)-->
+					<div class="language-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>语言能力</h4>
+						<ul class="edu-bg-title clearfix">
+									<li class="fl mr38">
+										<dl class="fl mr10 of">
+													<dt class="fl">语种：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 110px;"/>
+														
+													</dd>
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">听说能力：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 110px;"/>
+														
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+												<dt class="fl">读写能力：</dt>
+												<dd class="fl">
+													<input class="mr10" type="text" style="width: 110px;"/>
+												</dd>
+												
+											</dl>
+									</li>					
+								</ul>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+						</form>
+					</div>
+					<!--/语言能力(编辑)-->
+					<!--附件信息-->
+					<div class="accessoryInfor base-box">
+						<h4>附件信息<span class="del hand"></span><span class="amend hand"></span></h4>
+						<div class="studyUnit">
+							<ul>
+								<li>数据库</li>
+								<li>熟练</li>
+								<li>2年经验</li>
+							</ul>
+							<dl>
+								<dt>作品链接：</dt>
+								<dd>WWW.bia.com</dd>
+							</dl>
+							<dl>
+								<dt>测评报告：</dt>
+								<dd>www.zhiqiantong.com</dd>
+							</dl>
+							<dl class="c-b7b">
+								<dt>所学课程：</dt>
+								<dd>所学课程：此前在职前通学习了JAVA工程师等10门课程.</dd>
+							</dl>
+						</div>
+					</div>
+					<!--/附件信息-->
+					<!--附件信息(编辑)-->
+					<div class="accessoryInfor-edit edit-box" style="display: none;">
+						<form action="">
+							<h4>附件信息</h4>
+						<ul class="edu-bg-title clearfix">
+									
+									<li class="fl mr38">
+										<dl class="fl mr10 of">
+													<dt class="fl">IT技能<span class="mr18">：</span></dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 110px;"/>
+														
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+													<dt class="fl">掌握程度：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 110px;"/>
+														
+													</dd>
+													
+												</dl>
+												<dl class="fl mr50 of">
+												<dt class="fl">使用时间：</dt>
+												<dd class="fl">
+													<input class="mr10" type="text" style="width: 110px;"/><span>个月</span>
+												</dd>
+												
+											</dl>
+									</li>	
+									<li class="fl mr38 mt20">
+										<dl class="fl mr10 of">
+													<dt class="fl">作品链接：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 325px;"/>
+														
+													</dd>
+													
+												</dl>
+									</li>	
+									<li class="fl mr38 mt20">
+										<dl class="fl mr10 of">
+													<dt class="fl">测评报告：</dt>
+													<dd class="fl">
+														<input class="mr10" type="date" style="width: 325px;"/>
+														
+													</dd>
+													
+												</dl>
+									</li>	
+								</ul>
+								<div class="tac mt30">
+									<button class="save">保存</button>
+								</div>
+						</form>
+					</div>
+				</div>
+					<!--</div>-->
+					<!--投递简历-->
+					<div class="resume-send resume" style="display: none;">
+						<ul class="clearfix">
+							<li class="post-list">
+								<ul>
+									<li class="search">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li class="pr"><a class="appr-box">评价该公司</a>
+										<dl class="pop-up-box">
+											<dt><span class="fsize16 c-fff pl20 pr20">评价</span></dt>
+											<dd class="pl20">
+												<span style="display: inline-block">
+													<span class="fsize14 vam">XX通讯公司</span>
+													<span class="ml20">
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam n-star"></b>
+													</span>
+												</span>
+												<p class="welfare clearfix">
+													<span>面试官很NICE</span>
+													<span>面试效率高</span>
+													<span>环境高大上</span>
+													<span>发展前景好</span>
+													<span>福利杠杠的</span>
+													<span>面试官态度差</span>
+													<span>环境一般般</span>
+													<span>薪资与描述不符</span>
+													<span>等的花儿都谢了</span>
+												</p>
+												<p class="text">
+													<textarea name="" rows="" cols="">
+													</textarea>
+												</p>
+												<p class="btn" style="display: block;">
+													<button class="cancel">取消</button>
+													<button class="">确定</button>
+												</p>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li class="pr"><a class="appr-box">评价该公司</a>
+										<dl class="pop-up-box">
+											<dt><span class="fsize16 c-fff pl20 pr20">评价</span></dt>
+											<dd class="pl20">
+												<span style="display: inline-block">
+													<span class="fsize14 vam">XX通讯公司</span>
+													<span class="ml20">
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam n-star"></b>
+													</span>
+												</span>
+												<p class="welfare clearfix">
+													<span>面试官很NICE</span>
+													<span>面试效率高</span>
+													<span>环境高大上</span>
+													<span>发展前景好</span>
+													<span>福利杠杠的</span>
+													<span>面试官态度差</span>
+													<span>环境一般般</span>
+													<span>薪资与描述不符</span>
+													<span>等的花儿都谢了</span>
+												</p>
+												<p class="text">
+													<textarea name="" rows="" cols="">
+													</textarea>
+												</p>
+												<p class="btn" style="display: block;">
+													<button class="cancel">取消</button>
+													<button class="">确定</button>
+												</p>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li class="pr"><a class="appr-box">评价该公司</a>
+										<dl class="pop-up-box">
+											<dt><span class="fsize16 c-fff pl20 pr20">评价</span></dt>
+											<dd class="pl20">
+												<span style="display: inline-block">
+													<span class="fsize14 vam">XX通讯公司</span>
+													<span class="ml20">
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam"></b>
+														<b class="icon-11 vam n-star"></b>
+													</span>
+												</span>
+												<p class="welfare clearfix">
+													<span>面试官很NICE</span>
+													<span>面试效率高</span>
+													<span>环境高大上</span>
+													<span>发展前景好</span>
+													<span>福利杠杠的</span>
+													<span>面试官态度差</span>
+													<span>环境一般般</span>
+													<span>薪资与描述不符</span>
+													<span>等的花儿都谢了</span>
+												</p>
+												<p class="text">
+													<textarea name="" rows="" cols="">
+													</textarea>
+												</p>
+												<p class="btn" style="display: block;">
+													<button class="cancel">取消</button>
+													<button class="">确定</button>
+												</p>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</li>
+							<li class="post-list">
+								<ul>
+									<li class="post">通讯工程师</li>
+									<li class="company">中兴通讯</li>
+									<li class="address">广东深圳</li>
+									<li class="date">2016-3-27</li>
+									<li class="operation">已下载</li>
+									<li>评价该公司</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<!--/投递简历-->
+				</div>
+			</section>
+			
+			
+			<!--我的关注-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title">
+					<ul class="clearfix user-infor">
+						<li class="current"><a class="hand">公司</a></li>
+						<li><a class="hand">高校</a></li>
+						<li><a class="hand">朋友</a></li>
+					</ul>
+				</header>
+				<div class="company-box">
+					<!--company-->
+					<ul class="clearfix company-list">
+						<li class="current">
+							<ul>
+								<li class="company-title"><img src="images/huawei.png" alt="华为" width="33" height="31" /><span class="c-color">华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span></li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+								</li>
+							</ul>
+						</li>
+						<li class="other-infor">
+							<ul>
+								<li class="company-title">
+									<img src="images/huawei.png" alt="华为" width="33" height="31" /><span>华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span>
+								</li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--/company-->
+					<!--college-->
+					<ul class="clearfix company-list college-list" style="display: none">
+						<li class="current">
+							<ul>
+								<li class="company-title"><img src="images/huawei.png" alt="华为" width="33" height="31" /><span class="c-color">华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span></li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXo。
+								</li>
+							</ul>
+						</li>
+						<li class="other-infor">
+							<ul>
+								<li class="company-title">
+									<img src="images/huawei.png" alt="华为" width="33" height="31" /><span>华为2016校园招聘启动</span><span class="fr mr20">2016-03-20</span>
+								</li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--/college-->
+					<!--friends-->
+					<ul class="clearfix company-list friend-list" style="display: none">
+						<li class="current">
+							<ul>
+								<li class="company-title"><img src="images/icon1.png" alt="华为" width="30" height="30" /><span class="c-color">西门吹雪</span></li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXo。
+								</li>
+							</ul>
+						</li>
+						<li class="other-infor">
+							<ul>
+								<li class="company-title">
+									<img src="images/icon2.png" alt="华为" width="30" height="30" /><span>独孤求败</span>
+								</li>
+								<li class="recruit-infor">
+									华为2016校园招聘会网申开始，16届毕业生可以登录www.huawei.com进行申请，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--/friends-->
+				</div>
+			</section>
+			<!--/我的关注-->
+			
+			
+			<!--我的积分-->
+			<section class="xf-u-c-right u-c-box fr">
+				<ul class="clearfix integral-box">
+					<li><span>您的积分为 : </span><span class="c-red"> 120</span></li>
+					<li>赚积分</li>
+					<li>花积分</li>
+				</ul>
+			</section>
+			<!--我的提醒-->
+			<section class="xf-u-c-right u-c-box  fr">
+				<header class="xf-u-c-title">
+					<ul class="clearfix">
+						<li class="current"><a href="javascript:void(0)">我的提醒</a></li>
+						<!--<c:if test="${isok==true}">
+							<li><a href="javascript:void(0)"><input type="checkbox" onclick="openNotice()" <c:if test="${userExpand.notice==1}">checked</c:if> />开启三天未登录提醒</a></li>
+						</c:if>-->
+					</ul>
+				</header>
+				<div class="u-cou-learn-box">
+					<form action="${ctx}/uc/letter" name="searchForm" id="searchForm" method="post">
+						<input id="pageCurrentPage" type="hidden" name="page.currentPage" value="${page.currentPage}" />
+					</form>
+					<section class="mt20">
+						<c:if test="${empty queryLetterList }">
+							<section class="comm-tips-1" style="display:none">
+								<p>
+									<em class="vam c-tips-1">&nbsp;</em>
+									<font class="c-999 fsize12 vam">最近没有新消息！</font>
+								</p>
+							</section>
+						</c:if>
+						<c:if test="${queryLetterList!=null&&queryLetterList.size()>0 }">
+							<div style="padding-right: 15px;">
+								<span><input type="checkbox" onclick="allCheck(this)"/>全选</span>
+								<span class="ml10"><a href="javascript:javascript:void(0);" onclick="bathDel()" title="批量删除" class="c-999">批量删除</a></span>
+								<span class="ml10"><a href="javascript:javascript:void(0);" onclick="bathUpdate()" title="批量已读" class="c-999">批量标为已读</a></span>
+							</div>
+							<div class="pr15">
+								<section>
+									<ul class="u-sys-message">
+										<c:forEach items="${queryLetterList}" var="qltl">
+											<li>
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody>
+														<tr>
+															<td width="30%" valign="top">
+																<p class="mt5"><tt class="c-999"><input type="checkbox" name="ids" value="${qltl.id }"/>发送于:<fmt:formatDate type="both" value="${qltl.addTime }" pattern="yyyy-MM-dd"></fmt:formatDate></tt></p>
+															</td>
+															<td width="53%" valign="top" class="u-s-m-desc">
+																<div class="mt5">
+																	<p class="c-666 pl20">
+																		${qltl.content }
+																	</p>
+																</div>
+															</td>
+															<td><a class="c-666" href="javascript:void(0)" onclick="delULetter(${qltl.id })">删除</a></td>
+															<c:if test="${qltl.status==0 }">
+																<td id="readTd${qltl.id }"><a class="c-666" href="javascript:void(0)" onclick="updateULetter(${qltl.id })">标为已读</a></td>
+															</c:if>
+														</tr>
+													</tbody>
+												</table>
+											</li>
+										</c:forEach>
+									</ul>
+								</section>
+								<section class="mt5 mb5">
+									<div class="pagination pagination-large tac">
+										<jsp:include page="/WEB-INF/view/common/page.jsp" />
+									</div>
+								</section>
+
+								<!--<%--<section class="mt5 mb5">--%>
+								<%--<jsp:include page="/WEB-INF/view/edu/common/u_page.jsp" />--%>
+							<%--</section>--%>-->
+							</div>
+					</section>
+				</div>
+				</c:if>
+			</section>
+			<!--我的提问-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title">
+					<ul class="clearfix myQuestion">
+						<li><a href="">问题来源</a></li>
+						<li><a href="">标题</a></li>
+						<li><a href="">时间</a></li>
+						<li><a href="">操作</a></li>
+					</ul>
+				</header>
+				<div class="u-cou-learn-box">
+					<ul class="clearfix myQtList">
+						<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+						<li>JAVA字符串的问题</li>
+						<li class="date">2016-4-28</li>
+						<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+					</ul>
+					<ul class="clearfix myQtList">
+						<li class="u-title">1.您在观看JAVA基础课程中提出了</li>
+						<li>JAVA字符串的问题</li>
+						<li class="date">2016-4-28</li>
+						<li class="u-change"><a href="">查看</a><a href="">删除</a></li>
+					</ul>
+				</div>
+			</section>
+			<!--我的订单-->
+			<section class="xf-u-c-right u-c-box fr" id="study">
+				<header class="xf-u-c-title">
+					<ul class="clearfix">
+						<li class="current"><a href="${ctx}/uc/order" class="whiteCol">课程订单</a></li>
+						<li><a href="${ctx}/uc/lineOrder" class="whiteCol">测评订单</a></li>
+					</ul>
+				</header>
+				<section class="order-box">
+					<div class="u-cou-learn-box">
+						<form action="${ctx}/uc/order" id="searchForm" method="post">
+							<input type="hidden" name="page.currentPage" value="${page.currentPage}" id="pageCurrentPage" />
+						</form>
+						<section class="line1">
+							<div class="u-m-sub-head">
+								<ul class="clearfix tac c-333 fsize14">
+									<li style="width: 257px;">课程</li>
+									<li style="width: 104px;">价格</li>
+									<li style="width: 105px;">课时</li>
+									<li style="width: 113px;">实付款</li>
+									<li style="width: 120px;">订单状态</li>
+									<li style="width: 145px;">交易操作</li>
+								</ul>
+							</div>
+							<div>
+								<div>
+									<section>
+										<input id="orderId" type="hidden" value=""><input id="orderno" type="hidden" value="">
+										<section class="comm-tips-1" style="display: none;">
+											<p>
+												<em class="vam c-tips-1">&nbsp;</em>
+												<font class="c-999 fsize12 vam">对不起，还没有订单！建议你<a href="${ctx}/front/showcoulist" title="" class="c-orange">去选课</a></font>
+											</p>
+										</section>
+										<table style="width: 847px;" border="0" cellspacing="0" cellpadding="0" class="u-order-table">
+											<thead>
+												<tr>
+													<th colspan="6"><span> <span class="vam fsize12">订单号：7420160518111410021</span>
+														</span> <span class="dislb mr20">下单时间：  2016-05-18 11:14:10</span> <span class="dislb mr20">状态:未支付 </span> 优惠 0.00
+														<span class="c-green"></span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td style="border-right: none;width:257px" valign="top">
+														<section class="fl u-order-img pl10">
+															<img class="mr10" src="images/ucenter/1460621724321462146.jpg" height="57" width="75" alt="">
+														</section>
+														<h6 class="unFw c-blue ml10" style="line-height: 57px;"> Android开发工程师</h6>
+														<div class="mt10 u-order-desc">
+															<p class="c-999"></p>
+														</div>
+													</td>
+													<td style=" width:104px;/* border-right: none; border-left: none; */" align="center" valign="middle"><strong class="c-666">￥9000.00</strong></td>
+													<td style="width:101px;/* border-left: none; */" align="center" valign="middle">33课时</td>
+													<td style="width:105px;" align="center" valign="middle" rowspan="${trxorder.trxorderDetailList.size()}">
+														<p>
+															<tt class="c-orange f-fM fsize16"> ￥ 9000.00</tt>
+														</p>
+													</td>
+													<td style="width:115px;/* border-left: none; */" align="center" valign="middle">
+														已退款
+													</td>
+													<td align="center" style="width:144px;" rowspan="${trxorder.trxorderDetailList.size()}">
+														<div>
+															<span>
+																<a href="javascript:toDetails(${trxorder.id})" class="c-blue ml5">查看详情</a>
+															</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</section>
+								</div>
+								<section class="mt5 mb5">
+									<div class="pagination pagination-large tac">
+										<jsp:include page="/WEB-INF/view/common/page.jsp" />
+									</div>
+								</section>
+							</div>
+						</section>
+					</div>
+					<!--测试订单-->
+					<div class="u-cou-learn-box" style="display:none">
+						<form action="${ctx}/uc/order" id="searchForm" method="post">
+							<input type="hidden" name="page.currentPage" value="${page.currentPage}" id="pageCurrentPage" />
+						</form>
+						<section class="line1">
+							<div class="u-m-sub-head">
+								<ul class="clearfix tac c-333 fsize14">
+									<li style="width: 257px;">测评量表</li>
+									<li style="width: 104px;">测评类型</li>
+									<li style="width: 105px;">价格</li>
+									<li style="width: 113px;">实付款</li>
+									<li style="width: 120px;">订单状态</li>
+									<li style="width: 145px;">交易操作</li>
+								</ul>
+							</div>
+							<div>
+								<div>
+									<section>
+										<input id="orderId" type="hidden" value=""><input id="orderno" type="hidden" value="">
+										<section class="comm-tips-1" style="display: none;">
+											<p>
+												<em class="vam c-tips-1">&nbsp;</em>
+												<font class="c-999 fsize12 vam">对不起，还没有订单！建议你<a href="${ctx}/front/showcoulist" title="" class="c-orange">去选课</a></font>
+											</p>
+										</section>
+										<table style="width: 847px;" border="0" cellspacing="0" cellpadding="0" class="u-order-table">
+											<thead>
+												<tr>
+													<th colspan="6"><span> <span class="vam fsize12">订单号：7420160518111410021</span>
+														</span> <span class="dislb mr20">下单时间：  2016-05-18 11:14:10</span> <span class="dislb mr20">状态:未支付 </span> 优惠 0.00
+														<span class="c-green"></span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td style="border-right: none;width:257px" valign="top">
+														<section class="fl u-order-img pl10">
+															<img class="mr10" src="images/ucenter/1460621724321462146.jpg" height="57" width="75" alt="">
+														</section>
+														<h6 class="unFw c-blue ml10" style="line-height: 57px;"> Android开发工程师</h6>
+														<div class="mt10 u-order-desc">
+															<p class="c-999"></p>
+														</div>
+													</td>
+													<td style=" width:104px;/* border-right: none; border-left: none; */" align="center" valign="middle"><strong class="c-666"> 性格测试</strong></td>
+													<td style="width:101px;/* border-left: none; */" align="center" valign="middle">￥ 9000.00</td>
+													<td style="width:105px;" align="center" valign="middle" rowspan="${trxorder.trxorderDetailList.size()}">
+														<p>
+															<tt class="c-orange f-fM fsize16">￥ 9000.00</tt>
+														</p>
+													</td>
+													<td style="width:115px;/* border-left: none; */" align="center" valign="middle">
+														已退款
+													</td>
+													<td align="center" style="width:144px;" rowspan="${trxorder.trxorderDetailList.size()}">
+														<div>
+															<span>
+																<a href="javascript:toDetails(${trxorder.id})" class="c-blue ml5">查看详情</a>
+															</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</section>
+									<section>
+										<input id="orderId" type="hidden" value=""><input id="orderno" type="hidden" value="">
+										<section class="comm-tips-1" style="display: none;">
+											<p>
+												<em class="vam c-tips-1">&nbsp;</em>
+												<font class="c-999 fsize12 vam">对不起，还没有订单！建议你<a href="${ctx}/front/showcoulist" title="" class="c-orange">去选课</a></font>
+											</p>
+										</section>
+										<table style="width: 847px;" border="0" cellspacing="0" cellpadding="0" class="u-order-table">
+											<thead>
+												<tr>
+													<th colspan="6" style="border-top: 0;"><span> <span class="vam fsize12">订单号：7420160518111410021</span>
+														</span> <span class="dislb mr20">下单时间：  2016-05-18 11:14:10</span> <span class="dislb mr20">状态:未支付 </span> 优惠 0.00
+														<span class="c-green"></span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td style="border-right: none;width:257px" valign="top">
+														<section class="fl u-order-img pl10">
+															<img class="mr10" src="images/ucenter/1460621724321462146.jpg" height="57" width="75" alt="">
+														</section>
+														<h6 class="unFw c-blue ml10" style="line-height: 57px;"> Android开发工程师</h6>
+														<div class="mt10 u-order-desc">
+															<p class="c-999"></p>
+														</div>
+													</td>
+													<td style=" width:104px;/* border-right: none; border-left: none; */" align="center" valign="middle"><strong class="c-666"> 性格测试</strong></td>
+													<td style="width:101px;/* border-left: none; */" align="center" valign="middle">￥ 9000.00</td>
+													<td style="width:105px;" align="center" valign="middle" rowspan="${trxorder.trxorderDetailList.size()}">
+														<p>
+															<tt class="c-orange f-fM fsize16">￥ 9000.00</tt>
+														</p>
+													</td>
+													<td style="width:115px;/* border-left: none; */" align="center" valign="middle">
+														已退款
+													</td>
+													<td align="center" style="width:144px;" rowspan="${trxorder.trxorderDetailList.size()}">
+														<div>
+															<span>
+																<a href="javascript:toDetails(${trxorder.id})" class="c-blue ml5">查看详情</a>
+															</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</section>
+								</div>
+								<section class="mt5 mb5">
+									<div class="pagination pagination-large tac">
+										<jsp:include page="/WEB-INF/view/common/page.jsp" />
+									</div>
+								</section>
+							</div>
+						</section>
+					</div>
+				</section>
+			</section>
+			<!--<div id="actdivWinId" style="display: none; background: none repeat scroll 0 0 #000000; height: 100%; left: 0; opacity: 0.2; position: fixed; top: 0; width: 100%; z-index: 9999999;"></div>-->
+			<!--/我的订单-->
+			<!--我的社区-->
+			<section class="xf-u-c-right u-c-box fr">
+				<header class="xf-u-c-title cmty-head">
+					<ul class="clearfix cmty-title">
+						<li class="current">我的帖子</li>
+						<li>我评论的帖子</li>
+						<li>我收藏的帖子</li>
+					</ul>
+				</header>
+				<div class="u-cou-learn-box cmty-box">
+					<ul class="clearfix">
+						<li class="u-title cmty-title">标题</li>
+						<li class="date">发布日期</li>
+						<li class="number">跟帖数</li>
+						<li class="">其他</li>
+					</ul>
+					<ul class="clearfix cmty-list mt20">
+						<li class="c-color cmty-infor">1.公司招聘是否会优先考虑参加过职业培训的毕业生？</li>
+						<li class="date">2015-10-27</li>
+						<li class="number pl30">3</li>
+						<li class="handle">置顶</li>
+					</ul>
+				</div>
+			</section>
+			<!--uc-right-begin-->
+			<!--uc-left-begin-->
+			<menu class="u-m-left u-c-box fr">
+				<header>
+					<ul class="resume-right-title of">
+						<li class="fl">简历完整度：<span class="base-r-c">100%</span> (已认证)</li>
+						<li class="fr"><a class="base-r-c" href="">预览简历</a></li>
+						<li class="clear pt20">
+							<div class="re-integrity-m clearfix">
+								<div class="re-solid fl " id="wcd">
+								</div>
+							</div>
+						</li>
+					</ul>
+						
+				</header>
+				<section class="mt20">
+					<div class="mr_module">
+						<ul>
+							<li data-md="baseinfo" class="active md_flag">
+								<a class="clearfixs">
+									<b class="require">*</b>
+									<i class="f-f9 mr_base_i"></i>
+									<span class="mr_m_name mr_base_in">基本信息</span>
+									<b class="f-f9 select fr"></b>
+								</a>
+							</li>
+							<li class="md_flag" data-md="workExperience">
+								<a class="clearfixs">
+									<b class="require">*</b>
+									<i class="f-f9 mr_works_i"></i>
+									<span class="mr_m_name">教育经历 </span>
+								</a>
+							</li>
+							<li class="md_flag" data-md="educationalBackground">
+								<a class="clearfixs">
+									<b class="require">*</b>
+									<i class="f-f9 mr_edu_i"></i>
+									<span class="mr_m_name">求职意向</span>
+								</a>
+							</li>
+							<li class="m_hide md_flag" data-md="projectExperience">
+								<a class="clearfixs">
+									<i class="f-f9 mr_school_i"></i>
+									<span class="mr_m_name">在校表现</span>
+									<b class="f-f9 select fr del"></b>
+								</a>
+							</li>
+							<li class="dn m_hide" data-md="worksShow">
+								<a class="clearfixs">
+									<i class="f-f9 mr_production_i"></i>
+									<span class="mr_m_name">培训经历</span>
+								</a>
+							</li>
+							<li class="dn m_hide" data-md="selfDescription">
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_self_i"></i>
+									<span class="mr_m_name">工作经验</span>
+								</a>
+							</li>
+							<li class="dn m_hide" data-md="expectJob">
+								<a class="clearfixs">
+									<i class="f-f9 mr_items_i"></i>
+									<span class="mr_m_name">项目经验</span>
+								</a>
+							</li>
+							<li class="dn m_hide" data-md="skillsAssess">
+								<a class="clearfixs">
+									<i class="f-f9 mr_cetr_i"></i>
+									<span class="mr_m_name">证书</span>
+								</a>
+							</li>	
+							<li class="dn m_hide" data-md="customBlock">
+								<a class="clearfixs">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_language_i"></i>
+									<span class="mr_m_name">语言能力</span>
+								</a>
+							</li>					
+							<li class="dn m_hide" data-md="customBlock">
+								<a>
+									<span class="mr_hide_addic"></span>
+									<i class="f-f9 mr_addmd_i"></i>
+									<span class="mr_m_name">附加能力</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</menu>
+		<!--uc-left-end-->
+		</div>
+		
+		</section>
+		
+		
+<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- 公共底引入 -->
+		<!-- 统计代码 -->
+		<script type="text/javascript">
+			
+			$('.order-infor li:last-child').css({
+				'display': 'inline-block',
+				'width': '10px',
+				'position': 'relative',
+				'top': '-15px',
+				'right': '-25px'
+			});
+			$(".order-box .infor").on('click', function(e) {
+				$(this).parent().next().css({
+					'width': '826px',
+					'font-size': '12px',
+					'position': 'absolute',
+					'top': '45px',
+					'right': '5px',
+					'z-index': '100',
+					'background': '#ffffff'
+				}).show();
+				e.preventDefault();
+				$('.order-close').on('click', function() {
+					$(this).parent().parent().hide()
+				})
+			})
+		</script>
+	</body>
+
+</html>

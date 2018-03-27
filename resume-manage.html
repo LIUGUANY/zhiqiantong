@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简历管理</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<link rel="stylesheet" type="text/css" href="css/dropkick.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.dropkick-min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+      	<script src="js/html5.js"></script>
+    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+	<header id="header">
+			<section class="head-wrap ep-login">
+				<section class="w1200">
+					<h1 class="fl"><a href="" title="职前通" class="png mr30"><img src="images/enterprise/logo.png" class="logo"/></a></h1>
+					<nav class="ep-hNav clearfix">
+						<ul id="ep-nav">
+							<!--header nav begin-->
+							<li><a href="index.html" title="企业中心">企业中心</a></li>
+							<li class="current"><a href="appraisal.html" title="简历管理">简历管理</a></li>
+							<li><a href="" title="简历职位">简历职位</a></li>
+							<li><a href="courseList.html" title="校园招聘">校园招聘</a></li>
+							<li class="ep-hNav-lastItem mr30"><a href="" title="公司主页">公司主页</a></li>
+							<!--header nav end-->
+						</ul>
+					</nav>
+				</section>
+			</section>
+		</header>
+	<!-- 公共头引入 -->
+	<!--简历管理-->
+	<article id="container" class="pt30 pb30">
+		<section class="qy-resume-box w1200 clearfix">
+			<!--left-->
+			<nav class="u-m-left u-c-box fl">
+				<section class="resume-left">
+					<div class="mr_module of">
+						<ul>
+							<li class="m_hide md_flag" >
+								<a class="clearfix">
+									<i class="f-f9 mr_school_i"></i>
+									<span class="mr_m_name">待处理的简历</span>
+									<span class="fr resume-num">400</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20">
+								<a class="clearfix">
+									<i class="f-f9 mr_production_i"></i>
+									<span class="mr_m_name">已通知简历</span>
+									<span class="fr resume-num">100</span>
+								</a>
+							</li>
+							<li class="dn m_hide  mt20" >
+								<a class="clearfix">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_self_i"></i>
+									<span class="mr_m_name">收藏的简历</span>
+									<span class="fr resume-num">200</span>
+								</a>
+							</li>
+							<li class="m_hide md_flag  mt20">
+								<a class="clearfix">
+									<i class="f-f9 mr_cetr_i"></i>
+									<span class="mr_m_name">不合适简历</span>
+									<span class="fr resume-num">300</span>
+								</a>
+							</li>
+							<li class="m_hide md_flag  mt20  active">
+								<a class="clearfix">
+									<i class="f-f9 mr_hire_i"></i>
+									<span class="mr_m_name">已录用简历</span>
+									<span class="fr resume-num">100</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20" >
+								<a class="clearfix">
+									<i class="f-f9 mr_search_i"></i>
+									<span class="mr_m_name">搜索简历</span>
+								</a>
+							</li>
+							<li class="dn m_hide mt20" >
+								<a class="clearfix">
+									<span class="mr_hide_del"></span>						
+									<i class="f-f9 mr_appr_i"></i>
+									<span class="mr_m_name">面试评价</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</nav>
+			<!--/left-->
+			<!--right-->
+		<!--已录用的简历-->
+			<section class="work-load" >
+				<section class="work-center">
+					<div class="select-load pr">
+						<p class="c-666 fsize20 mr5">已录用的简历<span class="prace-color">(100)</span></p>
+						<img class="pa" src="images/page/angle.png" alt="" width="24" height="27"/>
+					</div>
+					<!--/条件筛选-->
+					<div class="select-res">
+						<dl>
+							<dd class="select-city">
+								<ul>
+									<li>
+										<input class="checkbox"  type="checkbox" name=''/>
+										<span class="checkbox"><span class="fsize14">全选：</span></span>
+									</li>
+									<li class="hot-city">
+										<span><i class="f-f13 f-f13-4"></i><em class="vam fsize14">收藏</em></span>
+										<span><i class="f-f13 f-f13-5"></i><em class="vam fsize14">下载</em></span>
+										<span><i class="f-f13 f-f13-6"></i><em class="vam fsize14">不合适</em></span>
+									</li>
+								</ul>
+							</dd>
+							<dd class="select-post pt5 pb5">
+								<ul>
+									<li>招聘岗位：</li>
+									<li class="current w60"><b>不限</b></li>
+									<li><b>销售实习生</b></li>
+									<li><b>运营实习生</b></li>
+									<li><b>产品实习生</b></li>
+									<li><b>财务实习生</b></li>
+								</ul>
+								<p class="more more-post fr hand">
+									更多筛选<i class="f-f11 more-icon"></i>
+								</p>
+							</dd>
+							<dd  class="select-more pb5">
+								<ul>
+									<li>最低学历：</li>
+									<li class="current w60"><b>不限</b></li>
+									<li><b>中专</b></li>
+									<li><b>大专</b></li>
+									<li><b>本科</b></li>
+									<li><b>硕士</b></li>
+								</ul>
+							</dd>
+							<dd  class="select-more pb5">
+								<ul>
+									<li>工作经验：</li>
+									<li class="current w60"><b>不限</b></li>
+									<li><b>应届毕业生</b></li>
+									<li><b>1年经验</b></li>
+									<li><b>2年经验</b></li>
+									<li><b>3-4年经验</b></li>
+								</ul>
+							</dd>
+							<dd  class="select-more pb5">
+								<ul>
+									<li>简历完整：</li>
+									<li class="current w60"><b>不限</b></li>
+									<li><b>60%含以上</b></li>
+									<li><b>70%含以上</b></li>
+									<li><b>80%含以上</b></li>
+									<li><b>90%含以上</b></li>
+									<li><b>100%</b></li>
+								</ul>
+							</dd>
+							<dd  class="select-more pb5">
+								<ul>
+									<li>平台认证：</li>
+									<li class="current w60"><b>不限</b></li>
+									<li><b>认证</b></li>
+									<li><b>未认证</b></li>
+								</ul>
+							</dd>
+						</dl>
+				</div>
+				<!--/条件筛选-->
+					<section class="mt15 operation-resume">
+						<div class="resume-box clearfix">
+							<div class="of select-title">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span class="fsize14 c-666"><em class="c-999">应聘：</em>新媒体运营</span></span>
+								<time class="fr fsize14">2016-05-03</time>
+							</div>
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<img src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize14 c-666">陈子昂  /  男  /  1995  /  深圳  </p>
+										<p class="mt15 fsize14 c-999 w390">中山大学  /  建筑系</p>
+										<p class="mt15 hand fsize14 border-bom">查阅简历<i class="fsize14">&gt;</i></p>
+									</dd>
+								</dl>
+								<div class="fr edit vam">
+									<dl>
+										<dt><i class="f-f13 f-f13-8"></i></dt>
+										<dd>收藏</dd>
+									</dl>
+									<dl>
+										<dt><i class="f-f13 f-f13-9"></i></dt>
+										<dd>下载</dd>
+									</dl>
+									<dl class="hire-inform">
+										<dt><i class="f-f13 f-f13-13"></i></dt>
+										<dd>发送录用通知</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<div class="resume-box clearfix">
+							<div class="of select-title">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span class="fsize14 c-666"><em class="c-999">应聘：</em>新媒体运营</span></span>
+								<time class="fr fsize14">2016-05-03</time>
+							</div>
+							<div class="clearfix user-infor">
+								<dl class="fl mt20">
+									<dt class="fl clearfix mr15">
+										<img src="images/course/course-video-icon1.png" alt="" width="86" height="86"/>
+									</dt>
+									<dd class="fl">
+										<p class="fsize14 c-666">陈子昂  /  男  /  1995  /  深圳  </p>
+										<p class="mt15 fsize14 c-999 w390">中山大学  /  建筑系 </p>
+										<p class="mt15 hand fsize14 border-bom">查阅简历<i class="fsize14">&gt;</i></p>
+									</dd>
+								</dl>
+								<div class="fr edit vam">
+									<dl>
+										<dt><i class="f-f13 f-f13-12"></i></dt>
+										<dd>面试</dd>
+									</dl>
+									<dl >
+										<dt><i class="f-f13 f-f13-8"></i></dt>
+										<dd>收藏</dd>
+									</dl>
+									<dl  class="hire-inform">
+										<dt><i class="f-f13 f-f13-13"></i></dt>
+										<dd>发送录用通知</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</section>
+		<!--/已录用的简历-->
+		</section>
+	<!--/right-->
+	</article>
+	<script type="text/javascript">
+			/*切换*/
+			$('.resume-left .m_hide').each(function(){
+				$(this).on('click',function(){
+					var $index = $(this).index();
+					$('.resume-left .m_hide').removeClass('active');
+					$(this).addClass('active');
+					$('.work-load').eq($index).show().siblings('.work-load').hide();
+				})
+			})
+			/*筛选缩放*/
+			$('.select-more').hide();
+			$('.select-res').css('border-bottom','1px solid #ebebeb');
+			var selectFlg = $(".select-res .more-post");
+			selectFlg.on("click",function(){
+			   if($(this).hasClass('on')){
+			   		$(this).removeClass('on');
+			   		$(this).parent().siblings('.select-more').slideUp(200);
+			  		$(this).parents('.select-res').css('border-bottom','1px solid #ebebeb');
+			   		$('.select-post').css('border-bottom','none');
+			  		$(this).children('.more-icon').css('background-position','-176px -375px');
+			   }else{
+			   		$(this).addClass('on');
+			   		$(this).parent().siblings('.select-more').slideDown(200);
+			   		$(this).parents('.select-res').css('border-bottom','1px solid #e8e8e8');
+			   		$('.select-post').css('border-bottom','none');
+			  		$(this).children('.more-icon').css('background-position','-176px -387px');
+			   }
+			  })
+	</script>
+	
+	</body>
+</html>

@@ -1,0 +1,243 @@
+@charset "utf-8";
+    .b(@w,@h){
+        width: @w;
+        height: @h;
+        display: inline-block;   
+    }
+    *{
+        margin:0;
+        padding:0;
+    }
+    html{font-size:62.5%;}  
+    body {
+        background-color: #fff;
+        font:normal 100% "microsoft yahei";
+        font-size:14px; 
+        font-size:1.2rem; 
+        }  
+    ul,li{
+        list-style: none;
+    }
+    .w-body{
+        background: #fff;
+    }
+    #test{
+        width:90%;
+        margin:0 auto;
+        padding: 4rem 0 0 0;
+    }
+    #test p{
+        font-size: 1.4rem;
+        font-weight: 700;
+        color:#333;
+        line-height:2rem ;
+        margin-left: 1rem;
+    }
+    #test li label{
+        display: inline-block;
+        width: 88%;
+        position: relative;
+        padding: 1rem 1rem 1rem 2.9rem;
+        color: #666;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    #test li label:hover{
+        background: #fffffc;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    #test li label input{
+        margin-bottom: 5px;
+    }
+    .re-integrity-m {
+    margin-top:60px ;
+    height: 20px;
+    width: 85%;
+    background: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #ebebeb;
+    }
+    .re-integrity-m .re-solid {
+        height: 20px;
+        width: 50%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        background: #90e331;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .appr-result .btn {
+      background-color: #6bc513;
+      border: 0 none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      height: 40px;
+      text-align: center;
+      width: 120px;
+    }
+    .appr-result .btn:hover{
+      background-color: #fd5d2e;
+    } 
+    .appr-result{
+        width: 100%;
+        margin:0 auto;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    .pro{
+     margin-top:30px ;
+    }
+     .progress {
+      width: 91%;
+      padding:0 1rem 0 1rem;
+    }
+    
+    .progress {
+      background-color:#fafafa ;
+      border-radius: 11px;
+    }
+    .progress-bar {
+      position: relative;
+      height: 14px;
+      border-radius: 14px;
+      -webkit-transition: 0.4s linear;
+      -moz-transition: 0.4s linear;
+      -o-transition: 0.4s linear;
+      transition: 0.4s linear;
+    }
+    
+    .label {
+      display: inline-block;
+      margin: 0 5px 5px;
+      padding: 3px 8px;
+      color: #aaa;
+      text-shadow: 0 1px black;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .radio:checked + .label {
+      color: white;
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .hid-box{
+        border:1px solid #ebebeb;
+        border-radius: 5px;
+        color: #656d78;
+        margin:20px;
+        padding:10px;
+        font-weight: 400;
+    }
+    /*add*/
+    .hand{
+        cursor: pointer;
+    }
+    /*按钮*/
+    .appr-result .btn {
+      background-color: #27b7f4;
+      border: 0 none;
+      margin-top: 0px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      height: 45px;
+      text-align: center;
+      width: 12.5rem;
+    }
+    #test .reminder{
+        color: #27b7f4;
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    /*按钮样式*/
+    input[type='radio'].radio {opacity:0; filter: alpha(opacity=0); position: absolute;}
+    span.radio {background:url('radio_check.png') no-repeat; display:inline-block;padding-left:25px;}
+    span.radio>span{display:inline-block;width:100%;margin-top: -.2rem;}
+    input[type='radio'].radio:checked + .radio {background:url('radio_checked.png') no-repeat;}
+    /*标题换行缩进*/
+//  .line-feed{
+//      display:inline-block;width: 10%;
+//  }
+    .line-feed+span{
+        display:inline-block;width:89%;vertical-align: top;
+    }
+    #test .result-title{
+        margin-left: 0rem;
+        width: 100%;
+        height: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        color: #333;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-radius: 8px;
+        background-color: #e8e8e8;
+    }
+    .result-content{
+        font-size: 1.4rem;
+        color: #666;
+        margin-top:4rem;
+        border:1px solid #e8e8e8;
+        padding:3rem .5rem 3rem 1.5rem;
+        background-color:#fafafa ;
+        line-height: 2.4rem;
+        border-radius: 5px;
+    }
+    .tac{
+        margin-top: 2rem;
+        text-align: center;
+        line-height: 4rem;
+    }
+    .test-btn{
+        margin-top:3rem ;
+    }
+    /*才储结果页*/
+    #test .title{
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom:5rem ;
+    }
+    #test .share-icon{
+        .b(2rem,1.9rem);
+        background-position: -148px -226px;
+    }
+    .check-btn{
+        border-bottom: 1px solid #aaddfa;
+        color: #27b7f4;
+        width: 9.8rem;
+        a{
+            color: #27b7f4;
+             font-size:1.4rem ;        
+        }
+    }
+    #test .sub-btn{
+        display: inline-block;
+        width: 23.5rem;
+        height: 4.5rem;
+        .book-icon{
+            .b(17px,21px);
+            background-position: -181px -226px;
+            vertical-align: middle;
+        }
+        .mr5{
+            margin-right: .5rem;            
+        }
+    }
+    .recommend-course{
+        margin-top: 3.6rem;
+        font-size: 1.4rem;
+        color: #666;
+    }
+    .recomend-icon{
+        .b(22px,22px);
+        background-position: -93px -255px;
+        
+    }

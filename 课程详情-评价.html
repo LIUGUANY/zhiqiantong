@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <style>
+        /*课程评价*/
+        .course_appraise {
+            padding: 30px 0;
+        }
+        .course_appraise .course_appraise_header > p {
+            padding: 0 0 30px 30px;
+            border-bottom: 1px solid #e8e8e8;
+            font-weight: 700;
+        }
+        .course_appraise .f-f7 {
+            background-position: -63px -291px;
+            display: inline-block;
+            height: 15px;
+            margin-right: -2px;
+            width: 15px;
+        }
+        .course_appraise .no-star {
+            background-position: -87px -291px;
+            display: inline-block;
+            height: 17px;
+            width: 17px;
+        }
+        .course_appraise .course_appraise_header > p + ul {
+            margin: 20px 0 20px 30px;
+        }
+        .course_appraise .course_appraise_header > p + ul li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .course_appraise .course_rating {
+            width: 80px;
+        }
+        .course_appraise .course_rating dt {
+            font-size: 12px ;
+            color: #666;
+        }
+        .course_appraise .course_rating dt + dd {
+            margin-left: 8px;
+            font-size: 32px ;
+            color: #fd5d2e;
+            line-height: 32px;
+        }
+        .course_appraise .course_appr_num {
+            margin-left: 80px;
+        }
+        .course_appraise .course_appr_num a {
+            margin-right: 70px;
+            display: inline-block;
+            min-width: 108px ;
+            height: 30px;
+            border: 1px solid #d5d5d5;
+            font-size: 12px;
+            color: #666;
+            line-height: 30px;
+            text-align: center;
+        }
+        .course_appraise .course_appr_num a:last-child {
+            margin-right: 0;
+        }
+        .course_appraise .course_appr_num a.active {
+            border-color: #00aced;
+            color: #00aced;
+        }
+        .course_appraise .review-area {
+            border-top: 1px solid #e8e8e8;
+            padding: 26px 0;
+        }
+        .course_appraise .review-area .review-avater {
+            display: inline-block;
+            margin-left: 30px;
+            height: 50px;
+            margin-right: 14px;
+            width: 50px;
+        }
+        .course_appraise .review-area .review-avater img {
+            border-radius: 50%;
+        }
+        .course_appraise .review-area .review-right {
+            float: left;
+            width: 88%;
+        }
+        .course_appraise .review-area .review-right .review-name {
+            color: #333;
+            cursor: text;
+            float: left;
+            margin-right: 35px;
+            width: 42px;
+        }
+        .course_appraise .review-area .review-right .stars {
+            display: inline-block;
+            margin-top: -4px;
+            margin-right: 35px;
+        }
+        .course_appraise .review-area .review-right .review-date {
+            float: right;
+            color: #999;
+        }
+        .course_appraise .review-area .review-right .job-name {
+            font-size: 14px;
+            color: #666;
+            max-width: 115px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+        }
+        .course_appraise .review-area .review-right .review-type {
+            display: inline-block;
+        }
+        .course_appraise .review-area .review-right .interview-process {
+            line-height: 20px;
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+<!--课程评价-->
+<div class="toggle course_appraise">
+    <div class="course_appraise_list review-area clearfix">
+        <div class="review-avater fl">
+            <img width="50" height="50" alt="评价人头像" class="lazy_img" src="images/head.png" style="display: inline-block;">
+        </div>
+        <div class="review-right">
+            <div class="review-stars mb10 clearfix">
+                <span class="review-name fsize14 vam">匿名</span>
+                <div class="stars vam">
+											<span class="vam c-999">
+												评分 :
+											</span>
+                    <i class="f-f7 star vam"></i>
+                    <i class="f-f7 star vam"></i>
+                    <i class="f-f7 star vam"></i>
+                    <i class="f-f7 star vam"></i>
+                    <i class="f-f7 star vam"></i>
+                </div>
+                <span class="title c-999">观看课程 :</span>
+                <a title="" href="" class="job-name" target="_blank">观看课程</a></i>
+                <span class="review-date">2016-07-21</span>
+            </div>
+            <div class="review-content">
+                <div class="fsize14 c-666">
+                    <span class="review-type c-999">[评价]</span>
+                    <div class="interview-process">面试的过程还好，面试官很温柔</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--课程评价-->
+</body>
+</html>

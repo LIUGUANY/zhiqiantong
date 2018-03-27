@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ecenter.css"/>
+		<link href="css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+   		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.bor{
+				margin-top: 3px;
+			}
+			.bor:after{
+				content:'';
+				display: inline-block;
+				height: 1px;
+				width: 500px;
+				border-top: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+	<header id="header">
+			<section class="head-wrap ep-login">
+				<section class="w1200">
+					<h1 class="fl"><a href="" title="职前通" class="png mr30"><img src="images/enterprise/logo.png" class="logo"/></a></h1>
+					<nav class="ep-hNav clearfix">
+						<ul id="ep-nav">
+							<!--header nav begin-->
+							<li class="current"><a href="index.html" title="企业中心">企业中心</a></li>
+							<li ><a href="appraisal.html" title="简历管理">简历管理</a></li>
+							<li><a href="" title="简历职位">简历职位</a></li>
+							<li><a href="courseList.html" title="校园招聘">校园招聘</a></li>
+							<li class="ep-hNav-lastItem mr30"><a href="" title="公司主页">公司主页</a></li>
+							<!--header nav end-->
+						</ul>
+					</nav>
+				</section>
+			</section>
+		</header>
+	<!-- 公共头引入 -->
+	<!--企业中心-->
+	<div id="container" class="pt30 pb30">
+		<article class="ec-box w1200">
+			<!--企业信息-->
+			<section class="ec-setting">
+				<hgroup class="ec-setting-title">
+					<span>欢迎您，深圳市中兴通讯技术股份有限公司</span><a class="hand" href="javascript:;">设置</a>
+				</hgroup>
+				<section class="ec-edit-infor of">
+					<section class="fl ec-edit-infor-lf mt15">
+						<h5 class="tac c-666">欢迎注册职前通，请完善基本信息</h5>
+						<form action="">
+							<ul class="clearfix pt20">
+								<li>
+									<dl>
+										<dt>企业名称：</dt>
+										<dd><input type="text" style="width: 300px;"/></dd>
+									</dl>
+								</li>
+								<li>
+								<dl>
+									<dt><span class="mr28">地</span>址：</dt>
+									<dd>
+										<input class="mr10" type="text" style="width: 80px;" /><input class="mr10" type="text" style="width: 80px;" /><input type="text" style="width: 325px;" />
+									</dd>
+								</dl>
+							</li>
+								<li>
+									<dl>
+										<dt>联系人<span class="ml14">：</span></dt>
+										<dd><input type="text"  style="width:300px;"/></dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>联系方式：</dt>
+										<dd><input type="text" style="width:300px"/></dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>公司性质：</dt>
+										<dd>
+											<select name="" style="width: 304px;">
+												<option value=""></option>
+											</select>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>行业类别：</dt>
+										<dd>
+											<select class="first-select" multiple="multiple" id="my-select" name="my-select[]">
+								      <option value='elem_1'>互联网通信</option>
+								      <option value='elem_2'>市场商务</option>
+								      <option value='elem_3'>市场商务</option>
+								      <option value='elem_4'>市场商务</option>
+								      <option value='elem_2'>市场商务</option>
+								      <option value='elem_3'>市场商务</option>
+								      <option value='elem_4'>市场商务</option>
+		   							 </select>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>公司规模：</dt>
+										<dd>
+											<select name="" style="width: 304px;">
+												<option value=""></option>
+											</select>
+										</dd>
+									</dl>
+								</li>
+							<li>
+									<dl>
+										<dt>证明文件：</dt>
+										<dd>
+											<input class="upload-btn" type="file" name="" id="" value="上传" /><span class="fsize12">如：营业执照、税务登记证等</span>
+										</dd>
+									</dl>
+								</li>
+								
+								<li class="tac">
+									<input class="sub-btn" type="button"  value="提交审核"/>
+								</li>
+							</ul>
+							<p class="tac pb50 fsize12">只有通过人工审核后，才能在前台发布</p>
+							<p class="bor">
+									提交申请
+								</p>
+						</form>
+					</section>
+					<section class="fr ec-edit-infor-rt mt30 pl40 pt10 pb40">
+						<div>
+							<p class="fsize16 aside-title">联系我们</p>
+							<p class="fsize12 mt15">服务热线：400-200-29989</p>
+							<p class="fsize12 mt10">商务热线：400-200-29989</p>
+							<p class="fsize12 mt10">客服热线：400-200-29989</p>
+						</div>
+						<div class=" mt20">
+							<p><span class="fsize16 aside-title vam">认证企业</span><button class="apply-btn fsize12 vam ml10">申请认证</button></p>
+							<p class="fsize12 mt15">认证企业带认证标识</p>
+							<p class="fsize12 mt10">认证企业比普通企业排名靠前</p>
+							<p class="fsize12 mt10">求职者更信任认证企业</p>
+						</div>
+						<div>
+							<p class="fsize16 mt20 aside-title">上首页</p>
+							<p class="fsize12 mt15">服务热线：400-200-29989</p>
+							<p class="fsize12 mt10">商务热线：400-200-29989</p>
+							<p class="fsize12 mt10">客服热线：400-200-29989</p>
+						</div>
+					</section>
+				</section>
+			</section>
+		</article>
+		<!--/企业信息-->
+	</div>
+		<!--/企业中心-->
+		<script src="js/jquery.multi-select.js" type="text/javascript"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		$('#my-select').multiSelect();
+	    	/*获得多选框值*/
+		    	console.log($('#ms-my-select .ms-selection li:visible').text());
+	    	})
+	    </script>
+	</body>
+</html>

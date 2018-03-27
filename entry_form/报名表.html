@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>报名表</title>
+	<link rel="stylesheet" href="form.css">
+	<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if lt IE 9]>
+	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="form_bg">
+	<section class="w700">
+		<section class="entry_form">
+			<div class="menu_title of">
+				<a class="fl" href="javascript:void(0);">职前通首页</a>
+				<a class="fr" href="javascript:void(0);">登录</a>
+			</div>
+			<ul class="entry_form_lists">
+				<li class="prompt">
+					<span>*</span>
+					老用户登录，系统自动完善报名信息
+				</li>
+				<li class="mt40">
+					<div class="form-group">
+						<span class="remind_mark">*</span>
+						<label class="common_title" for="exampleInput">姓<i class="ml2"></i>名:<span>请填写您的姓名</span></label>
+						<input type="text" class="form-control" id="exampleInput" placeholder="">
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="radio_box">
+						<p class="radio_title"><span class="remind_mark">*</span>性 <i class="ml2"></i>别:</p>
+						<label>
+							<input class="radio"  type="radio" name=''/>
+							<span class="radio"><span>男</span></span>
+						</label>
+						<label class="ml90">
+							<input class="radio"  type="radio" name=''/>
+							<span class="radio"><span>女</span></span>
+						</label>
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="form-group">
+						<span class="remind_mark">*</span>
+						<label class="common_title" for="exampleInput">邮<i class="ml2"></i>箱:<span>请输入正确的邮箱</span></label>
+						<input type="text" class="form-control" id="exampleInput" placeholder="">
+					</div>
+					<p class="remind_text mt15">
+						请填写正确的邮箱啦
+					</p>
+				</li>
+				<li class="mt30">
+					<div class="form-group">
+						<span class="remind_mark">*</span>
+						<label class="common_title" for="exampleInput">手<i class="ml2"></i>机:<span>请输入正确的手机号码</span></label>
+						<input type="text" class="form-control" id="exampleInput" placeholder="">
+					</div>
+					<p class="remind_text mt15 dn">
+						请填写正确的手机号啦
+					</p>
+				</li>
+				<li class="mt30">
+					<div class="form_birth">
+						<span class="remind_mark">*</span>
+						<p class="common_title">出生年月:</p>
+						<ul class="search-content">
+							<li class="birth_box">
+								<div class="text">
+									<div id="birthdayYear" class="inputBox">1995</div><b class="year">年</b>
+								</div>
+								<div class="dis-box dn">
+									<ul class="of birthday_year">
+										<li class="current">1989</li>
+										<li>1990</li>
+										<li>1991</li>
+										<li>1992</li>
+										<li>1993</li>
+										<li>1994</li>
+										<li>1995</li>
+										<li>1996</li>
+										<li>1997</li>
+										<li>1998</li>
+										<li>1999</li>
+										<li>2000</li>
+									</ul>
+								</div>
+							</li>
+							<li class="birth_box">
+								<div  class="text">
+									<div id="birthdayMonth" class="inputBox">9</div><b class="month">月</b> </div>
+								<div class="dis-box" style="display: none;">
+									<ul class="of">
+										<li class="current">1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li>
+										<li>6</li>
+										<li>7</li>
+										<li>8</li>
+										<li>9</li>
+										<li>10</li>
+										<li>11</li>
+										<li>12</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="form-group">
+						<label class="common_title" for="exampleInput">学<i class="ml2"></i>校:<span>请输入学校名称</span></label>
+						<input type="text" class="form-control" id="exampleInput" placeholder="">
+					</div>
+					<p class="remind_text mt15 dn">
+						请填写正确的手机号啦
+					</p>
+				</li>
+				<li class="mt30">
+					<div class="form_city">
+						<dl>
+							<dt class="common_title">
+								城<i class="ml2"></i>市:
+							</dt>
+							<dd>
+								<div class="form_wrap normal_s">
+									<input type="button" class="mr_button" value="选择省" />
+									<i class="mr_sj"></i>
+									<div class="xl_list dn">
+										<ul class="ul_xl">
+											<li>山西省</li>
+											<li>广东省</li>
+											<li>广西省</li>
+											<li>河北省</li>
+											<li>福建省</li>
+										</ul>
+									</div>
+								</div>
+								<div class="form_wrap normal_s ">
+									<input type="button" class="mr_button" value="选择市" />
+									<i class="mr_sj"></i>
+									<div class="xl_list dn">
+										<ul class="ul_xl">
+											<li>太原市</li>
+											<li>忻州市</li>
+											<li>大同市</li>
+											<li>阳泉市</li>
+											<li>临汾市</li>
+										</ul>
+									</div>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="checkBox_box">
+						<p class="radio_title">兴趣爱好：</p>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+						<label class="mr50 mb30">
+							<input class="checkbox"  type="checkbox" name=''/>
+							<span class="checkbox"><span>旅游</span></span>
+						</label>
+					</div>
+				</li>
+				<li>
+					<div class="form-group">
+						<label class="common_title" for="exampleInput">报名宣言:<span>请填写报名宣言</span></label>
+						<textarea class="form_textarea" name="" id=""></textarea>
+					</div>
+					<p class="remind_text mt15 dn">
+						请填写正确的手机号啦
+					</p>
+				</li>
+				<li class="mt30">
+					<div class="file_box">
+						<dl>
+							<dt class="common_title">
+								最近生活照:
+							</dt>
+							<dd>
+								<p class="file_img pr">
+									<span class="file_title">上传电脑中的图片</span>
+									<input  type="file">
+									<i class="file_icon"></i>
+								</p>
+								<p class="file_text">图片大小不超过300k</p>
+							</dd>
+						</dl>
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="file_works">
+						<dl>
+							<dt class="common_title">
+								最近作品:
+							</dt>
+							<dd>
+								<p class="file_img pr">
+									<input  type="file">
+									<i class="file_icon"></i>
+								</p>
+								<p class="file_text">大小不超过2M</p>
+							</dd>
+						</dl>
+					</div>
+				</li>
+				<li class="mt30">
+					<div class="form-group">
+						<label class="common_title" for="exampleInput">费<i class="ml2"></i>用:<span style="color: #fa8563">1999元</span></label>
+					</div>
+				</li>
+				<li class="mt60">
+					<div class="form-btns">
+						<a class="submit_btn" href="javascript:void(0);">提交并支付</a>
+						<a class="disable_btn" href="javascript:void(0);" style="display: none;">提交</a>
+					</div>
+				</li>
+				<li class="mt50">
+					<div class="share_btns">
+						<a class="weibo_icon" href="javascript:void(0);"></a>
+						<a class="qq_icon" href="javascript:void(0);"></a>
+						<a class="weixin_icon" href="javascript:void(0);"></a>
+					</div>
+				</li>
+			</ul>
+			<footer  class="form_footer">
+				<span>Copyright © 职前通(zhiqiantong.com) 粤ICP备12068225号-4</span>
+			</footer>
+		</section>
+	</section>
+
+	<script>
+		$(function(){
+			$('.birth_box .text').each(function(){
+				$(this).on('click',function(event){
+					if($(this).hasClass('one')){
+						$(this).next('.dis-box').hide();
+						$(this).removeClass('one');
+						event.stopPropagation();
+					}else{
+						$(this).next('.dis-box').show();
+						$(this).parent().siblings().children('.dis-box').hide();
+						$(this).addClass('one');
+						$(this).parent().siblings().children('.text').removeClass('one');
+						event.stopPropagation();
+						/*点击城市显示*/
+						$(this).siblings('.dis-box').find('li').each(function(){
+							$(this).on('click',function(){
+								$(this).addClass('current');
+								$(this).siblings().removeClass('current');
+								var $currenVal = $(this).text();
+								$(this).parents('.birth_box').find('.inputBox').text($currenVal);
+								$(this).parents('.dis-box').hide();
+								$(this).parents('.dis-box').siblings('.text').removeClass('one');
+							})
+						})
+					}
+				})
+			})
+			/*下拉框*/
+			$('.normal_s').each(function(){
+				$(this).on('click',function(e){
+					if($(this).hasClass('select_color')){
+						$(this).find('.xl_list').hide();
+						$(this).removeClass('select_color');
+						e.stopPropagation();
+					}else{
+						$('.xl_list').hide();
+						$('.normal_s').removeClass('select_color');
+						$(this).find('.xl_list').show();
+						$(this).addClass('select_color');
+						e.stopPropagation();//
+					}
+				})
+			})
+			$('body').click(function(){
+				$('.xl_list').hide();
+				$('.normal_s').removeClass('select_color');
+				$('.dis-box').hide();
+				$('.search-content .text').removeClass('one');
+			})
+			$('.xl_list .ul_xl li').each(function(){
+				$(this).on('click',function(){
+					var $current_text = $(this).text();
+					$(this).parents('.form_wrap').find('input[type="button"]').val($current_text);
+				})
+			})
+			/*多选框*/
+			$(function(){
+				$('.checkBox_box label:nth-of-type(5n)').css('margin-right','0');
+			})
+		})
+	</script>
+</body>
+</html>

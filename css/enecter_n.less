@@ -1,0 +1,124 @@
+@charset "utf-8";
+//字体
+@base-c-1:#333;
+@base-c-2:#666;
+@base-c-3:#999;
+@base-font-1:12px;
+@base-font-2:14px;
+
+.b(@w,@h){
+    display: inline-block;
+    width:@w ;
+    height: @h;
+}
+//公司主页
+.Wbody{
+    .w1200{
+        width: 1180px;
+        margin:0 auto;
+    }
+}
+//主页头部
+.nav-bc{
+    box-shadow: 30px 0px 30px #d2d2d2;
+    z-index: 100;
+    position: relative;
+}
+#company-header{
+    padding-top: 30px;
+    height: 215px;
+    width: 100%;
+    background-color: #f2f2f2;
+    position: relative;
+    .company-infor{
+        height: 158px;
+        border:1px solid #d2d2d2;
+        background-color: #fff;
+        .company-logo{
+            img{
+                padding:10px 10px 13px 15px;
+                border-right: 1px solid #d2d2d2;
+            }
+        }
+        li{
+            float: left;
+        }
+    }
+    .company-intro{
+        width: 970px;
+       padding:20px 0 20px 30px;
+       .v-icon{
+           .b(24px,24px);
+           background-position:-54px -266px ;
+       } 
+       .tags{
+           float: right;
+           .tag{
+               border:1px solid #e8e8e8;
+               padding:6px 7px;
+               border-radius:7px;
+               font-size: 14px;
+               color: @base-c-3;
+               cursor: pointer;
+               margin-right: 3px;
+           }
+       }
+    }
+    .company-status{
+        margin-top: 35px;
+        color: @base-c-2;
+        font-size: @base-font-2;
+        .ml_20{
+            margin-left: -20px;
+        }
+        .border-r{
+            padding:7px 20px 7px 20px;
+            border-right: 1px solid #E8E8E8;
+        }
+        .f-f7-1{
+            .b(15px,15px);
+            background-position: -2px -266px;
+        }
+        .f-f7-2{
+            .b(11px,13px);
+            background-position: -2px -286px;
+        }
+        .f-f7-3{
+            .b(13px,13px);
+            background-position: -120px -227px;
+        }
+        .f-f7-4{
+            .b(16px,12px);
+            background-position: -93px -227px;
+        }
+        .star{
+            .b(15px,15px);
+            background-position: -27px -266px;
+            margin-right: 2px;
+        }
+        .no-star{
+            .b(17px,17px);
+            background-position: -25px -283px;
+        }
+    }
+    .company-nav{
+        font-size: 18px;
+        margin-top: 20px;
+        li{
+            float:left;
+            height: 33px;
+            margin-right: 40px;
+            a{
+                color: @base-c-1;
+                padding:0 2px 13px 2px;
+            }
+            a.current{
+                border-bottom: 2px solid #00aced;
+            }
+        }
+    }
+}
+//公司内容
+.line-2{
+    
+}

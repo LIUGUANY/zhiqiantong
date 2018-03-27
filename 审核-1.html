@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>企业中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qy-new.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+	      	<script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header" style="100%">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+							<div  class="j-nav-set sets">
+							<!--<div class="arr"></div>
+								<ul class="set">
+									<li><a href="${ctx}/uc/uinfo" title="个人设置">个人设置</a></li>
+									<li><a href="${ctx}/uc/course" title="我的课程">我的课程</a></li>
+									<li><a href="${ctx}/uc/letter" title="我的提醒">我的提醒</a></li>
+									<li><a href="${ctx}/uc/order" title="我的订单">我的订单</a></li>
+									<li class="exit"><a onclick="exit()" href="javascript:void(0)">退出</a></li>
+								</ul>
+							</div>-->
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li >
+							<a href="index.html" title="首页">企业中心</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">简历管理</a>
+						</li>
+						<li class="current">
+							<a href="" title="实习">职位管理</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">校园招聘</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+	<!--企业中心-->
+	<!--简历管理-->
+	<article id="container" class="pt30 pb30">
+		<section class="base-infor-new w1200 clearfix">
+			<!--right-->
+			<!--基本信息审核-->
+			<section class="work-load">
+				<section class="work-center">
+					<div class="pr base-infor-title">
+						<p class="c-666 fsize22 mr5 tac">欢迎注册职前通，请完善基本信息</p>
+						<img class="pa" src="images/page/angle.png" alt="" width="24" height="27"/>
+					</div>
+					<section class="post-item">
+							<form class="base_infor_box" action="">
+								<ul>
+									<li>
+										<dl>
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>企业全称</dt>
+											<dd class="input-box">
+												<input class="full_name" type="text" name="" id="" value="" />
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="fsize14"><span class="vam c-red mr5">*</span>企业简称</dt>
+											<dd class="input-box">
+												<input type="text" name="" id="" value="" />
+											</dd>
+										</dl>
+										<dl class="ml10">
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>公司性质</dt>
+											<dd class="select_box">
+												<select class="selectmenu" name="">
+													<option value=""></option>
+												</select>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>地址</dt>
+											<dd class="select_box select_box_1">
+												<div  class="ui-selectmenu-button ui-button pr">
+													<span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+													<span class="ui-selectmenu-text">不限</span>
+													<!--<div class="ui-selectmenu-menu ui-front ui-selectmenu-open pa" style="top:43px;">
+														<ul class="ui-menu ui-corner-bottom ui-widget ui-widget-content"  style="min-width: 116px;">
+															<li class="ui-menu-item">
+																<div class="ui-menu-item-wrapper ui-state-active" >广东省</div>
+															</li>
+															<li class="ui-menu-item">
+																<div class="ui-menu-item-wrapper">陕西省</div>
+															</li>
+															<li class="ui-menu-item">
+																<div class="ui-menu-item-wrapper">山西省</div>
+															</li>
+														</ul>
+													</div>-->
+												</div>
+												<div  class="ui-selectmenu-button ui-button pr ml10">
+													<span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+													<span class="ui-selectmenu-text">不限</span>
+													<!--<div class="ui-selectmenu-menu ui-front ui-selectmenu-open pa" style="top:43px;">
+															<ul class="ui-menu ui-corner-bottom ui-widget ui-widget-content"  style="min-width: 116px;">
+																<li class="ui-menu-item">
+																	<div class="ui-menu-item-wrapper ui-state-active" >太原市</div>
+																</li>
+																<li class="ui-menu-item">
+																	<div class="ui-menu-item-wrapper">临汾市</div>
+																</li>
+																<li class="ui-menu-item">
+																	<div class="ui-menu-item-wrapper">忻州市</div>
+																</li>
+															</ul>
+														</div>-->
+												</div>
+												<input style="width:301px;" class="ml10" type="text" name="" id="" value="" />
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>联系人</dt>
+											<dd><input type="text" value=""/></dd>
+										</dl>
+										<dl class="ml10">
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>联系电话</dt>
+											<dd><input type="text" value=""/></dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>联系邮箱</dt>
+											<dd><input type="text" value=""/></dd>
+										</dl>
+										<dl class="ml10">
+											<dt class="fsize14 "><span class="vam c-red mr5">*</span>公司规模</dt>
+											<dd class="select_box">
+												<select class="selectmenu" name="">
+													<option value="50">50元以下</option>
+													<option value="50">150元以下</option>
+												</select>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt class="fsize14"><span class="vam c-red mr5">*</span>行业类别</dt>
+											<dd>
+												<select  multiple="multiple" class="more-select mr10" >
+											      	<option value='elem_1'>互联网通信</option>
+											     	<option value='elem_2'>市场商务</option>
+											     	<option value='elem_3'>市场商务</option>
+											      	<option value='elem_4'>市场商务</option>
+			   									 </select>
+												<select multiple="multiple"  class="more-select">
+											      	<option value='elem_1'>互联网通信</option>
+											     	<option value='elem_2'>市场商务</option>
+											     	<option value='elem_3'>市场商务</option>
+											      	<option value='elem_4'>市场商务</option>
+			   									 </select>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="scanning">
+											<dt class="fsize14  vat"><span class="vam c-red mr5">*</span>营业执照扫描件</dt>
+											<dd class="ml10">
+												<img src="images/app.png" alt=""  width="90" height="80"/>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="scanning">
+											<dt class="fsize14  vat"><span class="vam c-red mr5">*</span>组织机构扫描件</dt>
+											<dd class="ml10">
+												<img src="images/app.png" alt=""  width="90" height="80"/>
+											</dd>
+										</dl>
+									</li>
+									<li class="mt50 tac pb20">
+										<a javascript:void(0); class="submit-btn">提交审核</a>
+										<p class="remind-text mt20">
+											只有通过人工审核后，才能在前台发布
+										</p>
+									</li>
+								</ul>
+							</form>
+					</section>
+				</section>
+			</section>
+		<!--/基本信息审核-->
+	<!--/right-->
+		</section>
+	</article>
+	<!-- 公共底引入 -->
+		<footer id="footer" class="foot-box mt50 pr">
+			<div class="f-ob-1 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="left-list fl">
+							<a href="">关于职前通</a>
+							<a href="">联系我们</a>
+							<a href="">我要合作</a>
+						</li>
+						<li class="right-list fr">
+							<dl class="mr40">
+								<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+								<dd><a href="">百度贴吧</a></dd>
+							</dl>
+							<dl class="mr40">
+								<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+								<dd><a href="">新浪微博</a></dd>
+							</dl>
+							<dl class="mr40 pr">
+								<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+								<dd class="wx-icon"><a href="">官方微信</a></dd>
+								<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+							</dl>
+							<dl>
+								<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+								<dd><a href="">下载APP</a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="f-ob-2 clearfix">
+				<div class="w1200">
+					<ul>
+						<li class="fl mt25">
+							<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+							<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+						</li>
+						<li class="fr mt15">
+							<dl>
+								<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+								<dd>职前通 最专业的ICT学习平台</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- 公共底引入 -->
+	<script type="text/javascript">
+			/*下拉框*/
+			$( ".selectmenu" ).selectmenu({change:function(){
+				console.log($(this).find('option:selected').val());
+			}});
+	</script>
+	<!--/企业中心-->
+	</body>
+</html>

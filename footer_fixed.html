@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>底部固定</title>
+	<style>
+		.tools-bar-wrap{
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			position: fixed;
+			text-align: left;
+			z-index: 1004;
+			background-image: url(images/toolbar-bg.png);
+			background-repeat: repeat-x;
+			padding-top: 5px;
+		}
+		.tools-bar{
+			max-width: 1200px;
+			vertical-align: middle;
+			background: center top;
+			height: 46px;
+			margin: auto;
+			line-height: 46px;
+			position: relative;
+			outline: 0 none;
+			z-index: 2;
+			text-align: center;
+		}
+		.tools-bar a{
+			position: relative;
+			display: inline-block;
+			text-decoration: none;
+			background: #00aced none repeat scroll 0 0;
+			border: 0 none;
+			border-radius: 3px;
+			color: #fff;
+			font-family: 'microsoft yahei';
+
+		}
+		.tools-bar a:hover{
+			background: #fd5d2e;
+		}
+		.tools-bar a b:before{
+			content: '';
+			display: inline-block;
+			width:16px ;
+			height:17px;
+			background:url(images/page/icon-2.png) no-repeat -44px -435px;
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+		.tools-bar a.collect_btn b:before{
+			background-position: -26px -434px;
+		}
+		.tools-bar a.appropriate_btn b:before{
+			background-position: -70px -434px;
+		}
+		.tools-bar a b{
+			display: block;
+			font-size: 16px;
+			line-height: 20px;
+			padding: 8px 16px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+<body>
+	<div class="tools-bar-wrap">
+		<div class="tools-bar">
+			<a class="download_btn" href="javascript:void(0);">
+				<b>下载</b>
+			</a>
+			<a class="collect_btn" href="javascript:void(0);">
+				<b>收藏</b>
+			</a>
+			<a class="appropriate_btn" href="javascript:void(0);">
+				<b>不合适</b>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

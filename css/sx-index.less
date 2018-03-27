@@ -1,0 +1,478 @@
+.b(@w, @h) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+}
+//背景颜色
+@bg: #f7f8f8; 
+//字体颜色
+@one-c: #333;
+@two-c: #666;
+@three-c: #999;
+@four-c: #b2b2b2;
+@five-c: #c5c5c5;
+@sta-c: #f2f2f2;
+@pre-c: #ff5734;
+@base-font: 12px;
+@base-font-2: 13px;
+@base-font-3: 14px;
+//头部阴影
+.nav-bc{
+    box-shadow: 30px 0px 30px #d2d2d2;
+    z-index: 100;
+    position: relative;
+}
+/*-----content-----*/
+.Wbody {
+    font: normal 12px/150% "microsoft yahei";
+    background-color: @bg;
+}
+.slide_box{
+    background:url(../images/page/sx-banner.png) no-repeat scroll center center;
+    height: 266px;
+    width: 100%;
+}
+//搜索
+.search_box {
+    margin-top: 90px;
+    border-radius: 20px 10px;
+    width: 1200px;
+    opacity: 0.8;
+    z-index: 3;
+    filter:alpha(opacity=80);
+}
+.search_box form {
+    line-height: 38px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #00aced;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.search_box .text-box {
+    width: 880px;
+    height: 50px;
+    padding: 0 15px;
+    border: 0;
+    font-size: 18px;
+    line-height: 50px;
+}
+.search_box dl {
+    margin: 10px 0 18px 0px;
+    color: #333333;
+}
+.search_box dt {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    float: left;
+    color: #333;
+    font-weight: 700;
+}
+.search_box dd {
+     font-family: "微软雅黑";
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.search_box dd a {
+    font-size: @base-font-3;
+    color: #333;
+    font-family: "微软雅黑";
+    font-weight: 700;
+}
+.search_box #search_sub {
+    height: 50px;
+    width: 300px;
+    border-radius: 0 5px 5px 0;
+    color: #FFF;
+    background: #00aced;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: 18px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+//company-logo
+#hot_job{
+    margin-top: 50px;
+    li{
+        float: left;
+        width:150px ;
+        height: 150px;
+        margin-right: 60px;
+    }
+    
+}
+//专业搜索
+.search-title{
+    margin-top: 50px;
+}
+//标题
+ .line-1 {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    height: 5px;
+    background: url("../images/index/03.png") repeat-x scroll 0 0;
+}
+.center_box .practice {
+    text-align: center;
+    margin: 0 auto;
+    width: 115px;
+    background-color: @bg;
+    margin-top: -12.5px;
+    font-weight: 700;
+    color: #666;
+}
+//内容
+.section {
+  margin-top: 35px;
+  width: 100%;
+}
+.section ul {
+  padding: 0 0 0 7px;
+}
+.section ul:after {
+  content: '';
+  height: 0;
+  display: block;
+  clear: both;
+}
+.section ul li {
+  float: left;
+  margin:0 33px 20px 0;
+  text-align: center;
+  width:118px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  border: 1px solid #02a0e9;
+  border-radius: 6px;
+  cursor: pointer;
+     
+}
+.section ul li a{
+    color: #333;
+}
+.section ul li:hover {
+  background-color: #02a0e9;
+}
+.section ul li:hover a{
+  color: #fff;
+}
+.section ul li.active {
+  background-color: #02a0e9;
+}
+.section ul li.active a{
+  color: #fff;
+}
+//热门职位
+.mt25{
+    margin-top: 25px;
+}
+.hot-title{
+    margin-top: 40px;
+}
+.job_inf {
+    float: left;
+  width: 593px;
+  height: 120px;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  margin-top: 10px;
+  margin-right:10px ;
+}
+.job_inf:after {
+  content: '';
+  height: 0;
+  display: block;
+  clear: both;
+}
+.job_inf:hover .jib_inf_inf > div {
+  box-shadow: none;
+}
+.job_inf i {
+  display: inline-block;
+}
+.job_inf .jib_inf_inf {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+.job_inf .jib_inf_inf:hover {
+  box-shadow: 0 0 7px 1px #ddd;
+}
+.job_inf .jib_inf_inf:hover h3{
+    color: #00aced;
+}
+.job_inf .jib_inf_inf > div {
+  margin:20px 0 0 50px;
+}
+.job_inf .jib_inf_inf > div p {
+line-height: 28px;
+  color: #999;
+  font-size: @base-font-2;
+}
+.job_inf .price{
+    font-size: @base-font-2;
+    margin-left: 45px;
+    color: #ff5734;
+}
+//.job_inf .company_logo{
+//  display: inline-block;
+//  float: left;
+//  width: 80px;
+//  height: 80px;
+//  border:1px solid #d2d2d2;
+//  border-radius: 5px;
+//  
+//}
+.job_inf .jib_inf_inf a {
+  color: #666;
+  display: inline-block;
+}
+.job_inf .jib_inf_inf img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  margin-top: -40px;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+}
+.job_inf h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 700;
+}
+.job_inf .jib_inf_inf .company_name {
+  color: #447791;
+}
+.job_inf{
+    .address,
+        .education,
+        .clock {
+            display: inline-block;
+            color: #999;
+            font-size: 13px;
+        }
+        .address {
+            min-width: 90px;
+            .addr-icon {
+                margin-right: 3px;
+                .b(15px,18px);
+                background-position: -87px -2px;
+                vertical-align: middle;
+            }
+        }
+        .education {
+            min-width: 75px;
+            .edu-icon {
+                margin-right: 3px;
+                .b(14px,16px);
+                background-position: -111px -2px;
+                vertical-align: middle;
+            }
+        }
+        .clock {
+            .clock-icon {
+                margin-right: 3px;
+                .b(18px,18px);
+                background-position: -134px -2px;
+                vertical-align: middle;
+            }
+        }
+}
+/*---------new-header----------*/
+
+
+
+.fun_view{
+  background-color: #fff;
+  padding:14px 0 18px 35px;
+}
+.edit_resume,.tj_resume,.data_statistics{
+  float: left;
+}
+.tj_resume{
+  width: 328px;
+  height: 146px;
+  border-right: 1px solid #dcdcdc;
+}
+.edit_resume{
+  width: 630px;
+  height:146px;
+  border-right: 1px solid #dcdcdc;
+  dl{
+    margin-top: 30px;
+  }
+  dt,dd{
+    display: inline-block;
+  }
+  dd{
+    vertical-align: top;
+    margin-left:30px;
+    p+p{
+      margin-top: 50px;
+      font-size: 16px;
+      color:#666;
+    }
+  }
+  input[type="radio"].radio{
+    display: inline-block;
+    opacity:0;
+    filter: alpha(opacity=0);
+    margin-top:-2px;
+  }
+  span.radio{
+    display: inline-block;
+    width: 170px;
+    height:20px;
+    background:url(../images/resume/radio_check.png) no-repeat;
+    padding-left:25px;
+    margin-left:-23px;
+  }
+input[type='radio'].radio:checked+span.radio{
+  background:url(../images/resume/radio_checked.png) no-repeat;
+}
+  .c-f33{
+    color:#ff3333;
+  }
+  .resume_icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background:url(../images/resume/FJ_resume.png) no-repeat;
+    vertical-align: middle;
+    margin-left:5px;
+    margin-top:-3px;
+  }
+  .preview_box{
+    .preview_resume{
+      margin-right: 106px;
+      margin-top:10px;
+      display: inline-block;
+      width: 102px;
+      height: 24px;
+      line-height: 24px;
+      border:1px solid #dcdcdc;
+      font-size:12px;
+      color:#666;
+      cursor: pointer;
+    }
+    .preview_resume:before{
+      content:'';
+      display: inline-block;
+      margin:0 5px ;
+      width: 15px;
+      height: 13px;
+      background:url(../images/resume/preview_icon.png) no-repeat;
+      vertical-align: middle;
+    }
+  }
+}
+
+.data_statistics{
+  padding:7px 0 0 20px;
+  p{
+    width: 147px;
+    height:57px;
+    border-radius: 5px;
+    line-height: 57px;
+    text-align: center;
+    background-color:#fea957;
+    color:#fff;
+    font-size: 18px;
+    span{
+      font-size: 28px;
+      vertical-align: bottom;
+    }
+  }
+  p+p{
+    background-color:#43d2a4;
+    margin-top:20px;
+  }
+}
+.tj_resume{
+  ul{
+    margin:30px 0 0 20px;
+  }
+  li{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  li+li{
+    width: 170px;
+    text-align: center;
+    color:#333;
+    font-size:14px;
+  }
+}
+/*-----write-resume-----*/
+.tj_resume{
+  height: 155px;
+}
+.fun_view{
+  border:1px solid #dcdcdc;
+  border-top: none;
+  padding:14px 0 18px 20px;
+}
+.resume_header{
+  height: 40px;
+  line-height: 40px;
+  border:1px solid #dcdcdc;
+  background-color:#fafafa;
+  color: #7e7e7e;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.edit_resume{
+  height: 155px;
+  .online_resume,.accessory_resume{
+    margin-right: 20px;
+    .c-000{
+      color:#000;
+    }
+  }
+  .online_resume{
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 20px;
+  }
+  .preview_icon,.amend_icon,.r_add_icon{
+    color:#00aced;
+  }
+  .preview_icon:before,.amend_icon:before,.r_add_icon:before{
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    width: 17px;
+    height:9px;
+    background:url(../images/writeResume/resume_review_icon.png) no-repeat;
+    vertical-align: middle;
+  }
+  .amend_icon:before{
+    width: 17px;
+    height:18px;
+    background:url(../images/writeResume/resume_amend_icon.png) no-repeat;
+  }
+  .r_add_icon:before{
+    width: 17px;
+    height:18px;
+    background:url(../images/writeResume/resuem_add_icon.png) no-repeat;
+  }
+  .no_perfect{
+    color: #ff3333;
+  }
+}

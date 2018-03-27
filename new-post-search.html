@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索页</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/enecter-1.css" />
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+      	<script src="js/html5.js"></script>
+    <![endif]-->
+	</head>
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header">
+			<section class="head-wrap fa">
+				<div class="w1200 login-info">
+					<ul>
+						<li class="fl">
+							<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+							<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+						</li>
+						<!--登录前-->
+						<li class="fr" style="display: none;">
+							<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录前-->
+						<!--登录后-->
+						<li class="fr pr">
+							<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+							<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+							<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+						</li>
+						<!--/登录后-->
+					</ul>
+				</div>
+			</section>
+			<section class="head-wrap nav-bc">
+				<nav class="hNav w1200 pl20">
+					<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+					<ul class="c-ece fl">
+						<!--header nav begin-->
+						<li class="current">
+							<a href="index.html" title="首页">首页</a>
+						</li>
+						<li>
+							<a href="appraisal.html" title="测评">找实习</a>
+						</li>
+						<li>
+							<a href="" title="实习">写简历</a>
+						</li>
+						<li>
+							<a href="courseList.html" title="课程">做测评</a>
+						</li>
+						<li>
+							<a href="" title="职乎">学课程</a>
+						</li>
+						<!--header nav end-->
+					</ul>
+				</nav>
+			</section>
+		</header>
+		<!-- /公共头引入 -->
+		<article id="post-search" class="b-fff">
+			<!--search-->
+			<header class="slide_box of">
+				<div class="search_box w1200 clearfix">
+					<form action="" method="get">
+						<input class="text-box" type="text" tabindex="1" placeholder=" " name="" value="" />
+						<input type="submit" cl="search_sub" value="搜 索 实 习" />
+					</form>
+					<ul class="search-item">
+						<li ><a class="current" href="javascript:void(0);">职位(200)</a></li>
+					</ul>
+				</div>
+			</header>
+			<!--/search-->
+			<section class="w1200">
+				<!--/条件筛选-->
+				<section class="select-res">
+					<dl>
+						<dd class="select-city"> 
+							<ul>
+								<li>工作地点：</li>
+								<li class="hot-city">
+									<span>深圳<i class="f-f11 f-f11-1"></i></span><span>黑龙江<i class="f-f11 f-f11-1"></i></span><i class="f-f11 f-f11-2 vam"></i>
+								</li>
+								<li  class="more hand">
+									更多<i class="f-f11 add-icon"></i>
+								</li>
+							</ul>
+						</dd>
+						<dd class="select-city select-post">
+							<ul>
+								<li>专业选择：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>互联网通信</b></li>
+								<li><b>电子电气</b></li>
+								<li><b>人事行政</b></li>
+								<li><b>外语外贸</b></li>
+								<li><b>财经法务</b></li>
+								<li><b>教育咨询</b></li>
+								<li><b>市场商务类</b></li>
+							</ul>
+							<p class="more more-post fr hand">
+								更多<i class="f-f11 more-icon"></i>
+							</p>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>日薪范围：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>50以下</b></li>
+								<li><b>50~100</b></li>
+								<li><b>100~150</b></li>
+								<li><b>150~200</b></li>
+								<li><b>200~300</b></li>
+								<li><b>300以上</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>实习天数：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>1天/周</b></li>
+								<li><b>2天/周</b></li>
+								<li><b>3天/周</b></li>
+								<li><b>4天/周</b></li>
+								<li><b>5天/周</b></li>
+								<li><b>6天/周</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>实习月数：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>1个月</b></li>
+								<li><b>2个月</b></li>
+								<li><b>3个月</b></li>
+								<li><b>4个月</b></li>
+								<li><b>5个月</b></li>
+								<li><b>6个月</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>学历要求：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>中专</b></li>
+								<li><b>大专</b></li>
+								<li><b>本科</b></li>
+								<li><b>硕士</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>转正机会：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>提供转正</b></li>
+								<li><b>不提供转正</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>员工宿舍：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>提供住宿</b></li>
+								<li><b>不提供住宿</b></li>
+							</ul>
+						</dd>
+						<dd  class="select-more">
+							<ul>
+								<li>在线面试：</li>
+								<li class="current w60"><b>不限</b></li>
+								<li><b>支持在线面试</b></li>
+								<li><b>不支持在线面试</b></li>
+							</ul>
+						</dd>
+					</dl>
+			</section>
+			<!--/条件筛选-->
+			<!--排序-->
+			<section class="sort-way mt10">
+					<ul	>
+						<li>排序方式：</li>
+						<li class="current w60"><b>默认</b></li>
+						<li><b>最近更新</b></li>
+						<li><b>人气最旺</b></li>
+						<li class="select-btn">
+							<a href="javascript:void(0);"><i class="f-f12 f-f12-1 vam"></i><i class="vam">全选</i></a>
+							<a class="c-green" href="javascript:void(0);"><i class="f-f12 f-f12-2 vam"></i><i class="vam">申请职位</i></a>
+							<a class="c-orange" href="javascript:void(0);"><i class="f-f12 f-f12-3 vam"></i><span class="vam">收</span>藏职位</a>
+						</li>
+					</ul>
+					<div class="fr page-style" style="border-left: 1px solid #e0e0e0;"> 
+						<span class="fsize18 vam"><b class="left">&lt;</b></span> 
+						<span class="fsize14 vam c-666"><b class="base-c">1</b> / 21</span> 
+						<span class="fsize18 vam"><b class="right"> &gt;</b></span> 
+					</div>
+			</section>
+			<!--/排序-->
+			<!--position-list-->
+			<section class="search-post-list position-list mt20">
+					<div class="detail-1 of">
+						<ul>
+							<li class="mr15">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span></span></span>
+							</li>
+							<li>
+								<dl>
+									<dt><a class="base-c fsize16 mr20 company-name" href="">IEG游戏技术实习生</a><span class="fsize16 c-999">2016 -07-08</span></dt>
+									<dd class="mt15">
+										<span class="pr-c fsize18 mr50 vam">￥119-120/天</span>
+										<span class="address">
+											<i class="f-f2 addr-icon vam" title="北京"></i> 
+											<span class="vam">北京</span>
+										</span>
+										<span class="education">
+											<i class="f-f2 edu-icon vam"></i>
+											<span class="vam">本科</span>
+										</span>
+										<span class="clock">
+											<i class="f-f2 clock-icon vam"></i>
+											<span class="vam">4天/周</span> 
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<li class="fr mt20">
+								<a  class="base-btn" href="javascript:void(0);">投个简历</a>
+							</li>
+							<li class="fr mr100">
+								<dl>
+									<dt class="fl">
+										<img src="images/enterprise/micro.png" alt="公司logo" width="60" height="60"/>
+									</dt>
+									<dd class="fl ml10">
+										<p class="mt5"><span class="fsize16 base-c vam mr5">腾讯计算机系统有限公司</span><i class="f-f7 v-icon vam"></i></p>
+										<p class="mt5 fsize14 c-666">互联网/企业服务/上市公司</p>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="detail-2">
+						<ul class="com-tags">
+							<li class="fsize14 c-666 fl">“上市公司、免费零食、饮料供应”</li>
+						</ul>
+					</div>
+				</section>
+				<!--/position-list-->
+				<!--position-list-->
+				<section class="search-post-list position-list mt20">
+					<div class="detail-1 of">
+						<ul>
+							<li class="mr15">
+								<input class="checkbox"  type="checkbox" name=''/>
+								<span class="checkbox"><span></span></span>
+							</li>
+							<li>
+								<dl>
+									<dt><a class="base-c fsize16 mr20 company-name" href="">IEG游戏技术实习生</a><span class="fsize16 c-999">2016 -07-08</span></dt>
+									<dd class="mt15">
+										<span class="pr-c fsize18 mr50 vam">￥119-120/天</span>
+										<span class="address">
+											<i class="f-f2 addr-icon vam" title="北京"></i> 
+											<span class="vam">北京</span>
+										</span>
+										<span class="education">
+											<i class="f-f2 edu-icon vam"></i>
+											<span class="vam">本科</span>
+										</span>
+										<span class="clock">
+											<i class="f-f2 clock-icon vam"></i>
+											<span class="vam">4天/周</span> 
+										</span>
+									</dd>
+								</dl>
+							</li>
+							<li class="fr mt20">
+								<a  class="base-btn" href="javascript:void(0);">投个简历</a>
+							</li>
+							<li class="fr mr100">
+								<dl>
+									<dt class="fl">
+										<img src="images/enterprise/micro.png" alt="公司logo" width="60" height="60"/>
+									</dt>
+									<dd class="fl ml10">
+										<p class="mt5"><span class="fsize16 base-c vam mr5">腾讯计算机系统有限公司</span><i class="f-f7 v-icon vam"></i></p>
+										<p class="mt5 fsize14 c-666">互联网/企业服务/上市公司</p>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="detail-2">
+						<ul class="com-tags">
+							<li class="fsize14 c-666 fl">“上市公司、免费零食、饮料供应”</li>
+						</ul>
+					</div>
+				</section>
+				<!--/position-list-->
+		</section>
+	</article>
+	<!-- 公共底引入 -->
+	<footer id="footer" class="foot-box mt50 pr">
+		<div class="f-ob-1 clearfix">
+			<div class="w1200">
+				<ul>
+					<li class="left-list fl">
+						<a href="">关于职前通</a>
+						<a href="">联系我们</a>
+						<a href="">我要合作</a>
+					</li>
+					<li class="right-list fr">
+						<dl class="mr40">
+							<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+							<dd><a href="">百度贴吧</a></dd>
+						</dl>
+						<dl class="mr40">
+							<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+							<dd><a href="">新浪微博</a></dd>
+						</dl>
+						<dl class="mr40 pr">
+							<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+							<dd class="wx-icon"><a href="">官方微信</a></dd>
+							<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+						</dl>
+						<dl>
+							<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+							<dd><a href="">下载APP</a></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="f-ob-2 clearfix">
+			<div class="w1200">
+				<ul>
+					<li class="fl mt25">
+						<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+						<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+					</li>
+					<li class="fr mt15">
+						<dl>
+							<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+							<dd>职前通 最专业的ICT学习平台</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+		<!-- 公共底引入 -->
+		<script type="text/javascript">
+			$(function(){
+				$('.search-item li').each(function(){
+					$(this).on('click',function(){
+						
+						$(this).children('a').addClass('current');
+						$(this).siblings('li').children('a').removeClass('current');
+					})
+				})
+				//筛选列表收缩
+				$('.select-more').hide();
+				$('.select-res').css('border-bottom','none');
+				$('.select-post').css('border-bottom-color','#d2d2d2');
+				var selectFlg = $(".select-res .more-post");
+				selectFlg.on("click",function(){
+				   if($(this).hasClass('on')){
+				   		$(this).removeClass('on');
+				   		$(this).parent().siblings('.select-more').slideUp(200);
+				  		$(this).parents('.select-res').css('border-bottom','none');
+				   		$('.select-post').css('border-bottom-color','#d2d2d2');
+				  		$(this).children('.more-icon').css('background-position','-176px -375px');
+				   }else{
+				   		$(this).addClass('on');
+				   		$(this).parent().siblings('.select-more').slideDown(200);
+				   		$(this).parents('.select-res').css('border-bottom','1px solid #d2d2d2');
+				   		$('.select-post').css('border-bottom-color','#ebebeb');
+				  		$(this).children('.more-icon').css('background-position','-176px -387px');
+				   }
+					});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>看资讯</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/news-style.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				oSlider();
+			})
+			//首页全屏适应幻灯片
+			function oSlider() {
+				var Wind = {};
+				Wind.Focus = {
+					init: function (args) {
+						this.id = $(args.id);
+						this.aBtn = $(args.aBtn);
+						this.prev = $(args.prev);
+						this.next = $(args.next);
+						this.li = $(args.li);
+						this.ms = args.ms;
+						this.auto = args.auto ? args.auto : false;
+						this.on = args.on;
+						this.nextTarget = 0;
+						this.autoTimer = null;
+						this.start();
+					},
+					start: function () {
+						var _this = this;
+						var color = this.li.eq(0).find("a").attr("name");
+						this.id.siblings(".slideColorBg").show().css("background-color", color);
+						this.aBtn.each(function () {
+							var index = _this.aBtn.index(this);
+							$(this).hover(function () {
+								_this.showSlides(index);
+							});
+						});
+						this.autoTimer = setInterval(function () {
+							_this.autoPlay();
+						}, _this.ms);
+						this.id.hover(function () {
+							clearInterval(_this.autoTimer);
+							_this.prev.show();
+							_this.next.show();
+						}, function () {
+							_this.autoTimer = setInterval(function () {
+								_this.autoPlay();
+							}, _this.ms);
+							_this.prev.hide();
+							_this.next.hide();
+						});
+						this.prev.click(function () {
+							_this.nextTarget--;
+							if (_this.nextTarget < 0) {
+								_this.nextTarget = _this.li.length - 1;
+							}
+							_this.showSlides(_this.nextTarget);
+						})
+						this.next.click(function () {
+							_this.nextTarget++;
+							if (_this.nextTarget > _this.li.length - 1) {
+								_this.nextTarget = 0;
+							}
+							_this.showSlides(_this.nextTarget);
+						});
+
+					},
+					showSlides: function (index) {
+						this.nextTarget = index;
+						var color = this.li.eq(index).find("a").attr("name");
+						var _thisId = this.id;
+						this.aBtn.eq(index).addClass(this.on).siblings().removeClass(this.on);
+						this.li.eq(index).fadeIn(800).siblings().hide();
+						_thisId.siblings(".slideColorBg").fadeIn("800", function () {
+							$(this).css("background-color", color)
+						});
+					},
+					autoPlay: function () {
+						this.nextTarget++;
+						if (this.nextTarget > this.li.length - 1) {
+							this.nextTarget = 0;
+						}
+						this.showSlides(this.nextTarget);
+					}
+				}
+
+				Wind.Focus.init({
+					//幻灯片id
+					id: "#oSlideFun",
+					//按钮
+					aBtn: "#oSbtn a",
+					//左右
+					prev: "#oSlideFun .sPrev",
+					next: "#oSlideFun .sNext",
+					//大图li
+					li: "#oSlideFun li",
+					//按钮鼠标放上时
+					on: "on",
+					//自动播放的时间
+					ms: 5000,
+					//是否自动播放
+					auto: true
+				});
+				/*banner按钮宽度设置*/
+				$(function () {
+					var $oSbtn_a = $(' .news_oSlide_P span.oSbtn a').length;
+					var $oSbtn = $('.news_oSlide_P span.oSbtn a').width() * $oSbtn_a + 10 * $oSbtn_a + ($oSbtn_a - 1) * 5;
+					$('.news_oSlide_P span.oSbtn').css('margin-left', '-' + $oSbtn / 2 + 'px');
+				})
+			}
+		</script>
+	</head>
+	<body>
+	<!-- 公共头引入 -->
+	<header id="header" style="100%">
+		<section class="head-wrap fa">
+			<div class="w1200 login-info">
+				<ul>
+					<li class="fl">
+						<span class="pr20 br"><i class="f-f0 qy-login vam"></i><a href="javascript:void(0);">企业登录</a></span>
+						<span class="ml20"><i class="f-f0 app-download vam"></i><a href="javascript:void(0);">下载APP</a></span>
+					</li>
+					<!--登录前-->
+					<li class="fr" style="display: none;">
+						<span class="pr20 br"><a href="javascript:void(0);">登录</a></span>
+						<span class="pl20 pr20 br"><a href="javascript:void(0);">注册</a></span>
+						<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+					</li>
+					<!--/登录前-->
+					<!--登录后-->
+					<li class="fr pr">
+						<span class="pr20 br"><a href="javascript:void(0);">消息<i class="message">1</i></a></span>
+						<span class="pl20 pr20 br"><a href="javascript:void(0);">我的简历</a></span>
+						<span class="pl20 pr20 br"><a href="javascript:void(0);">收藏夹</a></span>
+						<span class="pl20"><i class="f-f0 user-icon vam"></i><a href="javascript:void(0);">个人中心</a></span>
+					</li>
+					<!--/登录后-->
+				</ul>
+			</div>
+		</section>
+		<section class="head-wrap nav-bc">
+			<nav class="hNav w1200 pl20">
+				<a href="" title="职前通"><img src="images/index/logo.png" class="logo-2013" /></a>
+				<ul class="c-ece fl">
+					<!--header nav begin-->
+					<li class="current">
+						<a href="index.html" title="首页">首页</a>
+					</li>
+					<li>
+						<a href="appraisal.html" title="测评">找实习</a>
+					</li>
+					<li>
+						<a href="" title="实习">写简历</a>
+					</li>
+					<li>
+						<a href="courseList.html" title="课程">做测评</a>
+					</li>
+					<li>
+						<a href="" title="职乎">学课程</a>
+					</li>
+					<!--header nav end-->
+				</ul>
+			</nav>
+		</section>
+	</header>
+	<!-- /公共头引入 -->
+	<!--banner-->
+	<div class="news_banner pr" style="z-index:100;">
+		<section class="news_oSlide_P" id="oSlideFun">
+			<ul class="news_oSlideFun">
+				<li class="bannerbox">
+					<a class="banner-img" href="">
+						<img src="images/news/4.png" alt="banner"/>
+					</a>
+				</li>
+				<li class="bannerbox">
+					<a class="banner-img" href="">
+						<img src="images/news/3.png" alt="banner"/>
+					</a>
+				</li>
+			</ul>
+			<span id="oSbtn" class="oSbtn">
+					<a href="javascript:void(0)">&nbsp;</a>
+					<a href="javascript:void(0)">&nbsp;</a>
+			</span>
+			<div class="sPrev pa">
+				<a href="javascript: void(0);">
+					<img width="40" height="70" src="images/news/s-prev-btn.png">
+				</a>
+			</div>
+			<div class="sNext pa">
+				<a href="javascript: void(0);"><img width="40" height="70" src="images/news/s-next-btn.png"></a>
+			</div>
+		</section>
+
+	</div>
+	<!--/banner-end-->
+	<!--new_index-->
+		<div class="w1200 infor news_index of">
+			<div class="clearfix infor_link">
+				<a><img src="images/news/infor_a1.png"></a>
+				<a><img src="images/news/infor_a2.png"></a>
+				<a><img src="images/news/infor_a3.png"></a>
+				<a><img src="images/news/infor_a4.png"></a>
+			</div>
+			<section>
+				<div class="fl leftlist">
+					<ul>
+						<li class="mb10">
+							<div class="clearfix">
+								<img src="images/news/infor_picture1.jpg" class="fl">
+								<dl class="clearfix fl ml15">
+									<dt class="infor_title"><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></dt>
+									<dt>
+										<span class="fl mr20">2017-01-03</span>
+										<span class="fl mr20">二狗子编辑</span>
+										<span class="fl mr10">求职</span>
+										<span class="fl mr10">试用</span>
+										<span class="fl mr10">民企</span>
+									</dt>
+									<dt>
+										<p>说起投行，有的人羡慕他光鲜亮丽Money多，有的人抱怨他日夜颠倒压力大，更有人逃离投行只因尔虞 我诈水太深。其实，进入投行对大</p>
+									</dt>
+									<dd class="fr">
+										<a class="mr20">100</a>
+										<a class="mr20">100</a>
+										<a>100</a>
+									</dd>
+								</dl>
+							</div>
+						</li>
+						<li class="mb10">
+							<div class="clearfix">
+								<img src="images/news/infor_picture2.jpg" class="fl">
+								<dl class="clearfix fl ml15">
+									<dt class="infor_title"><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></dt>
+									<dt>
+										<span class="fl mr20">2017-01-03</span>
+										<span class="fl mr20">二狗子编辑</span>
+										<span class="fl mr10">求职</span>
+										<span class="fl mr10">试用</span>
+										<span class="fl mr10">民企</span>
+									</dt>
+									<dt>
+										<p>说起投行，有的人羡慕他光鲜亮丽Money多，有的人抱怨他日夜颠倒压力大，更有人逃离投行只因尔虞 我诈水太深。其实，进入投行对大</p>
+									</dt>
+									<dd class="fr">
+										<a class="mr20">100</a>
+										<a class="mr20">100</a>
+										<a>100</a>
+									</dd>
+								</dl>
+							</div>
+						</li>
+						<li class="mb10">
+							<div class="clearfix">
+								<img src="images/news/infor_picture3.jpg" class="fl">
+								<dl class="clearfix fl ml15">
+									<dt class="infor_title"><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></dt>
+									<dt>
+										<span class="fl mr20">2017-01-03</span>
+										<span class="fl mr20">二狗子编辑</span>
+										<span class="fl mr10">求职</span>
+										<span class="fl mr10">试用</span>
+										<span class="fl mr10">民企</span>
+									</dt>
+									<dt>
+										<p>说起投行，有的人羡慕他光鲜亮丽Money多，有的人抱怨他日夜颠倒压力大，更有人逃离投行只因尔虞 我诈水太深。其实，进入投行对大</p>
+									</dt>
+									<dd class="fr">
+										<a class="mr20">100</a>
+										<a class="mr20">100</a>
+										<a>100</a>
+									</dd>
+								</dl>
+							</div>
+						</li>
+						<li class="mb10">
+							<div class="clearfix">
+								<img src="images/news/infor_picture1.jpg" class="fl">
+								<dl class="clearfix fl ml15">
+									<dt class="infor_title"><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></dt>
+									<dt>
+										<span class="fl mr20">2017-01-03</span>
+										<span class="fl mr20">二狗子编辑</span>
+										<span class="fl mr10">求职</span>
+										<span class="fl mr10">试用</span>
+										<span class="fl mr10">民企</span>
+									</dt>
+									<dt>
+										<p>说起投行，有的人羡慕他光鲜亮丽Money多，有的人抱怨他日夜颠倒压力大，更有人逃离投行只因尔虞 我诈水太深。其实，进入投行对大</p>
+									</dt>
+									<dd class="fr">
+										<a class="mr20">100</a>
+										<a class="mr20">100</a>
+										<a>100</a>
+									</dd>
+								</dl>
+							</div>
+						</li>
+					</ul>
+					<div class="page">
+						<ul>
+							<li><a class="shouye">首页</a></li>
+							<li><a class="pageup">上一页</a></li>
+							<li><a class="pageon">1</a></li>
+							<li><a>2</a></li>
+							<li><a class="pagedown">下一页</a></li>
+							<li><a class="weiye">尾页</a></li>
+						</ul>
+					</div>					
+				</div>
+				<div class="fr rightlist">
+					<h2>推荐阅读</h2>
+					<ul class="mb20">
+						<li><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></li>
+						<li><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></li>						
+						<li><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></li>
+						<li><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></li>
+						<li><a>复旦气质美女讲述在摩根斯坦利的疯狂岁月</a></li>						
+					</ul>					
+					<a class="mb10 block"><img src="images/news/picture4.png"/></a>
+					<a class="mb10 block"><img src="images/news/picture5.png"/></a>
+					<a class="mb10 block"><img src="images/news/picture6.png"/></a>
+				</div>
+			</section>
+		</div>
+	<!--new_index-->
+	<!-- 公共底引入 -->
+	<footer id="footer" class="foot-box mt50 pr">
+		<div class="f-ob-1 clearfix">
+			<div class="w1200">
+				<ul>
+					<li class="left-list fl">
+						<a href="">关于职前通</a>
+						<a href="">联系我们</a>
+						<a href="">我要合作</a>
+					</li>
+					<li class="right-list fr">
+						<dl class="mr40">
+							<dt class="tieba-icon"><a href=""> <i class="f-f6"></i></a></dt>
+							<dd><a href="">百度贴吧</a></dd>
+						</dl>
+						<dl class="mr40">
+							<dt class="weibo-icon"><a href=""> <i class="f-f6 f-f6-1"></i></a></dt>
+							<dd><a href="">新浪微博</a></dd>
+						</dl>
+						<dl class="mr40 pr">
+							<dt class="weixin-icon"><a href=""> <i class="f-f6 f-f6-2"></i></a></dt>
+							<dd class="wx-icon"><a href="">官方微信</a></dd>
+							<dd class="current-ewm"><img src="images/index/ewm.png" alt="" /></dd>
+						</dl>
+						<dl>
+							<dt class="download-icon"><a href=""> <i class="f-f6 f-f6-3"></i></a></dt>
+							<dd><a href="">下载APP</a></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="f-ob-2 clearfix">
+			<div class="w1200">
+				<ul>
+					<li class="fl mt25">
+						<p>Copyright © 2016 All Rights Reversed 职前通 (zhiqiantong.com) 版权所有 粤ICP备 15003345号-1</p>
+						<p class="mt5">品牌、招聘和网页设计版权 由 职前通 持有，未经本公司允许，请勿建立镜像和其他违法用途。</p>
+					</li>
+					<li class="fr mt15">
+						<dl>
+							<dt class="tac"><img src="images/index/logo-1.png" width="36" height="36"/></dt>
+							<dd>职前通 最专业的ICT学习平台</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<!-- 公共底引入 -->
+	</body>
+</html>

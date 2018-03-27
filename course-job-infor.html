@@ -1,0 +1,522 @@
+<!--<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ include file="/base.jsp"%>-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/kindeditor-all-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/courseVideo.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/video.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/course-list.css" />
+		<script type="text/javascript">
+			var baselocation = "${ctx}";
+			var type = "${type}";
+			var buyURL = baselocation + "/buy";
+			var usercookiekey = "<%=usercookiekey%>";
+			var mydomain = "<%=mydomain%>";
+			var keImageUploadUrl = "<%=keImageUploadUrl%>"; //kindeditor中使用的路径需要2个参数来区分项目和模块
+			var uploadSimpleUrl = "<%=uploadSimpleUrl%>"; //单独的上传按钮使用的路径
+			var staticImageServer = "<%=staticImageServer%>"; //返回路径
+			var courseId = "${course.id}"; //课程id
+			var currentKpointId; //直接播放该节点
+			var countPlayTimeOut = '15'; //播放后记录播放次数的延时
+			$(function() {
+				occFun(); //开关灯效果；
+				sideNav(); //右侧悬浮滑动；
+				cTabFun(); //评论等的定位
+				wxinHover();
+				ew();
+			});
+			//开关灯效果
+			function occFun() {
+				var bMask = $('<div class="bMask"></div>');
+				bMask.css({
+					"opacity": "0.8"
+				});
+				$(".dpBtn").click(function() {
+					console.log("000");
+					var _this = $(this);
+					if (!_this.hasClass("dpOpen")) {
+						$("body").prepend(bMask);
+						_this.addClass("dpOpen");
+						_this.children("a").text("开灯").attr("title", "开灯");
+						$(".v-p-box").css("z-index", "99999");
+					} else {
+						bMask.remove();
+						_this.removeClass("dpOpen");
+						_this.children("a").text("关灯").attr("title", "关灯");
+						$(".v-p-box").css("z-index", "28");
+					};
+				})
+			};
+
+			function sideNav() {
+				var vBtn = $("#v-nav-first"),
+					naxBox = $(".video-nav-wrap");
+				vBtn.click(function() {
+					if (!vBtn.hasClass("vBtnCurr")) {
+						naxBox.stop().animate({
+							"right": "0"
+						}, 400);
+						vBtn.addClass("vBtnCurr");
+					} else {
+						naxBox.stop().animate({
+							"right": "-350px"
+						}, 400);
+						vBtn.removeClass("vBtnCurr");
+					};
+				});
+			}
+
+			function cTabFun() {
+				var cTab = $("#v-nav-list>li>a");
+				cTab.each(function() {
+					var _this = $(this),
+						_tName = _this.attr("name"),
+						cTabTop = $(".c-i-content").offset().top;
+					var _tPrentName = $("." + _tName + "-content").attr("name");
+					console.log(_tPrentName);
+					_this.click(function() {
+						if (_tName != undefined) {
+							$("." + _tName + "-content").parent().addClass("current").siblings().removeClass("current");
+							$("html,body").animate({
+								"scrollTop": cTabTop
+							}, 500);
+							getProblem(_this, _tPrentName);
+						};
+					})
+				})
+			}
+
+			function wxinHover() {
+				var vBtn = $(".wx-btn"),
+					naxBox = $(".gf-tx-ewm");
+				vBtn.hover(function() {
+					naxBox.css({
+						"display": "block"
+					});
+				}, function() {
+					naxBox.css({
+						"display": "none"
+					});
+				});
+			}
+
+			function ew() {
+				$.ajax({
+					url: baselocation + "/ajax/websiteProfile/online",
+					data: {},
+					dataType: "json",
+					type: "post",
+					success: function(result) {
+						var websitemap = result.entity; //获得map
+						if (websitemap != null && websitemap != '') {
+							if (websitemap.online.onlineKeyWord == 'ON') {
+								$("#onlineConsultBox").show();
+							}
+							$(".onlineC-item1").children("a").attr("href", websitemap.online.onlineUrl);
+							$("#gf-tx-ewm").children().attr("src", staticImageServer + websitemap.online.appImageUrl);
+						}
+					}
+				});
+			}
+			/*评价*/
+			
+
+		</script>
+	</head>
+
+	<body>
+		<!-- 公共头引入 -->
+		<header id="header">
+			<section class="head-wrap">
+				<section class="w1200">
+					<h1><a href="" title="职前通" class="png"><img src="images/page/logo.png" class="logo-2013"/></a></h1>
+					<nav class="hNav">
+						<ul class="c-ece fl">
+							<!--header nav begin-->
+							<li><a href="" title="首页">首页</a></li>
+							<li><a href="" title="测评">测评</a></li>
+							<li><a href="" title="实习">实习</a></li>
+							<li><a href="" title="课程">课程</a></li>
+							<li><a href="" title="职乎">职乎</a></li>
+							<!--header nav end-->
+						</ul>
+						<div class="searchBox fl">
+							<form method="post" action="">
+								<input type="text" name="search" value="" />
+								<b class="search"></b>
+							</form>
+						</div>
+					</nav>
+					<ul class="t-link c-ece fr" style="display: none;">
+						<!--登录前开始-->
+						<li class="login li"><a href="/login" title="登录">登录</a></li>
+						<li class="register li"><a href="/register" title="注册">注册</a></li>
+						<li class="qyLogin ml20 li"><a href="/login" title="企业登录">企业登录</a></li>
+					</ul>
+					<ul class="t-link c-ece fr">
+						<!--登录后开始-->
+						<li class="user fl li"><span>你好,zqt5555</span></li>
+						<li class="fl user-icon"><img src="images/page/head.png" alt="头像" width="30" height="30" />
+							<div class="j-nav-set sets" style="display: none;">
+								<div class="arr"></div>
+								<ul class="set">
+									<li><a href="">个人设置</a></li>
+									<li><a href="">我的课程</a></li>
+									<li><a href="">我的求职</a></li>
+									<li><a href="">我的关注</a></li>
+									<li><a href="">我的积分</a></li>
+									<li><a href="">我的提醒</a></li>
+									<li><a href="">我的提问</a></li>
+									<li><a href="">我的订单</a></li>
+									<li><a href="">我的社区</a></li>
+									<li class="exit"><a href="">退出</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="qyLogin ml20 fl li"><a href="/login" title="企业登录">企业登录</a></li>
+					</ul>
+					<div class="clear"></div>
+				</section>
+			</section>
+		</header>
+		<!-- 公共头引入 -->
+		<!-- /课程介绍 -->
+		<script type="text/javascript">
+		</script>
+		<section class="course-play">
+			<!-- 播放器开始 -->
+			<!--面包屑导航-->
+			<div class="xf-video-play">
+				<header class="v-p-top">
+					<section class="1200">
+						<div class="v-p-wrap">
+							<ul class="clearfix c-666 fsize14">
+								<li><a href="javascript:;">首页</a>&gt;</li>
+								<li><a href="javascript:;">课程</a>&gt;</li>
+								<li><a href="javascript:;">移动互联网</a>&gt;</li>
+								<li><a href="javascript:;">Android</a></li>
+							</ul>
+						</div>
+					</section>
+				</header>
+				<!--播放器-->
+				<section class="v-p-box">
+					<section id="loadHtml" class="flash-play-wrap" style="height: 488px;z-index:99999">
+					</section>
+				</section>
+				<section class="v-p-bottom">
+					<section class="w1200">
+						<div class="clearfix">
+							<div class="fl mt20">
+								<p class="c-ccc fl fsize12" id="pf">评分:
+									<span onclick="pf(1)" class="icon3 hand icon-good">好评</span>
+									<span onclick="pf(0)" class="icon3 hand icon-neutral">中评</span>
+									<span onclick="pf(-1)" class="icon3 hand icon-bad">差评</span>
+								</p>
+								<div class="share-box share-box2 fl">
+									<div class="share"><a href="javascript:void(0);"><em></em><span class=" fsize12 ml10">分享</span></a></div>
+									<div class="bdshare-box" onclick="shareCourse()">
+										<div class="pr" style="position:relative;top:-22px;left:63px;">
+											<div class="bdsharebuttonbox"><a title="分享到QQ空间" href="javascript:void(0)" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="javascript:void(0)" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="javascript:void(0)" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="javascript:void(0)" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="javascript:void(0)" class="bds_weixin" data-cmd="weixin"></a><a title="分享到QQ好友" href="javascript:void(0)" class="bds_sqq" data-cmd="sqq"></a></div>
+											<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fr mt20 c-video-icon">
+							<span class="fr dpBtn"><em class="kd-icon"></em><a href="javascript:void(0)" title="关灯" class="c-fff vam ml5">关灯</a></span>
+							<div class="view-num fr"><em></em><span id="studyhistoryNum" class="c-red fsize12 ml10">0</span></div>
+							<div class="review fr"><em></em><span id="assessNum" class="fsize12 ml10">0</span></div>
+						</div>
+						</div>
+					</section>
+				</section>
+				<div class="video-nav-wrap clearfix">
+					<div class="pr">
+						<div class="c-video-ml">
+							<div class="c-video-m-box" id="c-video-m-box">
+								<div class="c-v-m-cou">
+									<a href="javascript: void(0);" title="" class="c-v-m-title" onclick="menuChange(this)">
+										<span class="fr"> <em class="icon14 m-tree-icon"></em></span>
+										<em class="c-v-m-sec mr5"><font></font> </em>
+									</a>
+									<section class="c-v-nav-sec undis">
+										<a class="c-v-chapter clearfix">
+										<span class="fsize14 c-ccc f-fM"></span>
+										<span class="fr" ><em class="icon14 m-tree-icon"></em> </span>
+										</a>
+										<ul class="c-v-chap-sec undis">
+											<li><a class="fsize14 c-ccc f-fM txtOf"></a></li>
+										</ul>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="v-nav-list" id="v-nav-list">
+						<li>
+							<a href="javascript:; " id="v-nav-first">
+								<em class="c-nav-video-icon "></em>
+								<span class="c-fff fsize14 f-fM dis">目录</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:; " name="c-i ">
+								<em class="c-nav-dl-icon "></em>
+								<span class="c-fff fsize14 f-fM dis ">下载</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:; " name="c-m ">
+								<em class="c-nav-col-icon "></em>
+								<span class="c-fff fsize14 f-fM dis ">收藏</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:; " name="c-q ">
+								<em class="c-nav-she-icon "></em>
+								<span class="c-fff fsize14 f-fM dis ">分享</span>
+							</a>
+						</li>
+						<li class="pr ">
+							<a href="javascript:; " id="wx-btn " class="wx-btn ">
+								<em class="c-nav-dz-icon "></em>
+								<span class="c-fff fsize14 f-fM dis ">点赞</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- 播放器结束 -->
+		<section class="back-color pt30 course-play">
+			<div class="w1200 ">
+				<div class="clearfix ">
+					<div class="fl c-j-desc ">
+						<div class="c-j-cont " id="kpointContent ">
+							<h2><a href="javascript:; ">Android项目开发实战：微博之项目搭建</a></h2>
+							<div class="timebox ">
+								<span>5课时，85分钟</span>
+								<span class="fr pr15 ">2016-04-26</span>
+							</div>
+							<div class="teacher-info mt20 of ">
+								<a href=" ">
+									<img src="images/course/course-video-icon1.png " alt=" " width="50 " height="50 "/>
+								</a>
+								<div class="infor-text "><strong><a class="c-333 " href=" ">ifxcj王</a></strong><p>职前通签约授课老师</p></div>
+							</div>
+							<div class="infor-content ">
+								<p>课程背景</p>
+								微博已经成为现下非常主流的社交工具，
+								本课程带领大家打造一个完整的微博应用
+								通过第一次课的学习，可以学会常用开放
+								平台的导入使用流程，以及掌握基本的项
+								目搭建方法。
+							</div>
+						</div>
+					</div>
+					<!--课程列表,评价-->
+					<div class="fr c-j-estra-info ">
+						<header class="xf-u-j-title">
+							<ul class="clearfix ">
+								<li class="current "><a  href="javascript:void(0) " onclick="getProblem(this, 'assess') " name="assess " class="c-i-content ">课时列表</a></li>
+								<li><a  href="javascript:void(0) " onclick="getProblem(this, 'problem') "  name="problem " class="c-q-content ">评价</a></li>
+							</ul>
+						</header>
+						<!--课时列表-->
+						<div class="course-catalog toggle-tabs" style="padding-bottom: 70px;">
+							<div class="c-line-left">
+								<div class="c-m-s-box">
+									<p class="fsize16 ml10 mt20"><b class="list-hide icon2"></b>4G移动通信技术与应用</p>
+								</div>
+								<div class="chapter">
+									<h3>
+										<strong>
+											<b class="state-expand icon2 vam mr5"></b>
+											<span class="vam ">第1章 LTE发展演进及关键技术</span>
+										</strong>
+										<span class="plus_minus icon-plus icon2 fr "></span>
+									</h3>
+									<ul class="video ">
+										<li>
+											<a class="J-media-item studyvideo " href=" " target="_blank ">
+												<b class="play icon2 "></b> 1-1 Java简介 (05:49)
+												<i class="study-state icon2 fr "></i>
+											</a>
+										</li>
+										<li>
+											<a class="J-media-item studyvideo " href=" " target="_blank ">
+												<b class="play icon2 "></b> 1-1 Java简介 (05:49)
+												<i class="study-state icon2 fr "></i>
+											</a>
+										</li>
+										<li>
+											<a class="J-media-item studyvideo " href=" " target="_blank ">
+												<b class="play icon2 "></b> 1-1 Java简介 (05:49)
+												<i class="study-state icon2 fr "></i>
+											</a>
+										</li>
+										<li>
+											<a class="J-media-item studyvideo " href=" " target="_blank ">
+												<b class="play icon2 "></b> 1-1 Java简介 (05:49)
+												<i class="study-state icon2 fr "></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!--评价-->
+						<div id="course-video">
+							<section class="appr-discuss toggle-tabs mt20" style="display: none;">
+							<div class="issques clearfix isques_1">
+								<!--<p class="ml20">评分:
+									<b class="vam icon2 appr-discuss-icon1 vam tac hand" style="border:1px solid #ccc;width: 20px;height: 20px;display: inline-block;">好</b>
+									<b class="vam icon2 appr-discuss-icon2 vam tac hand" style="border:1px solid #ccc;width: 20px;height: 20px;display: inline-block;">中</b>
+									<b class="vam icon2 appr-discuss-icon3 vam tac hand" style="border:1px solid #ccc;width: 20px;height: 20px;display: inline-block;">差</b>
+								</p>-->
+								<div class="wgt-ipt-wrap pub-editor-wrap w98 mt15 mr20 fr clearfix">
+										<textarea name="" rows="" cols="" placeholder="想说啥说啥！"></textarea>
+								</div>
+								<div class="clearfix">
+										<button class="pub-btn mr15 fr">发表评论</button>
+								</div>
+							</div>
+							<div class="appr-discuss-item clearfix ">
+								<ul>
+									<li class="clearfix mr100">
+										<div class="test-discuss clearfix">
+											<div class="fl user-icon mt10">
+												<img class="vam" src="images/appr/appr-img1.png" alt="user" width="52" height="52"/>
+												<p class="userName tac fsize16">小喵</p>
+											</div>
+											<div class="appr-grade pt20 clearfix">
+												<p class="comment tar pb5">
+													<b class="vam icon2 appr-discuss-icon1 "></b><span class="fsize14 mr20">1</span>
+													<b class="vam icon2 appr-discuss-icon2"></b><span class="fsize14 mr20">1</span>
+													<b class="vam icon2 appr-discuss-icon3"></b><span class="fsize14">0</span>
+													<p class="fsize14 pl20 vam mt20 appr-content">哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.哎呀!我跪了.</p>
+												</p>
+											</div>
+										</div>
+										<div class="reply-bg clearfix fr mb20 mt50">
+											<p class="clearfix fr withdraw clearfix" style="margin-top:-20px;">收起回复</p>
+											<div class="test-answer fr mb10 clearfix">
+												<p class="ml30 mt17"><img class="vam" src="images/appr/appr-img2.png" alt="user-icon" width="52" height="52"/><span class="answer-user vam">核桃仁&nbsp;:&nbsp;</span><span class="fsize14 vam">女神,请收下我的膝盖.</span></p>
+												<p class="tar pr30 mb10 mt_10"><span class="answer-date mr10">2016-4-5</span><b class="vam icon2 appr-discuss-icon1 "></b></p>
+											</div>
+											<div class="more-appr-reply" >
+												<p class="more-appr" >还有<span>111</span>条回复<a class="c-color pl5 hand click">点击查看</a><span class="fr pr40 click-appr hand">我也说一句</span></p>
+												<div class="clearfix reply-box" style="display: none;">
+													<div class="pub-editor-wrap">
+														<textarea name="" rows="" cols="" placeholder="想说啥说啥！"></textarea>
+													</div>
+													<div class="pub-btm clearfix">
+														<button class="reply-btn fr">发表</button>
+													</div>
+												</div>
+											</div>
+		
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- /lh-play-wrap -->
+	<footer id="footer" class="foot-box of">
+		<div class="f-ob w1200 clearfix">
+			<ul class="clearfix fl tac web-infor mt10">
+				<li class="fsize30">职前通</li>
+				<li class="mt15 fsize14">2015讯方版权所有</li>
+				<li class="mt15 fsize14">最专业的ICT学习平台</li>
+				<li class="mt15 fsize14">&copy;2015<a class="mr5" href="">zhitiantong.com</a>All  Right  Reversed</li>
+				<li class="mt15">京ICP备12020869号-2 京公网安备110102000459-2</li>
+			</ul>
+			<ul class="f-t-item">
+				<li>关注我们</li>
+				<li><a href="">百度贴吧</a></li>
+				<li><a href="">新浪微博</a></li>
+				<li><a href="">官方微信</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li>帮助中心</li>
+				<li><a href="">新手指南</a></li>
+				<li><a href="">常见问题</a></li>
+				<li><a href="">服务条款</a></li>
+				<li><a href="">VIP权益</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li>关于我们</li>
+				<li><a href="">关于职前通</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">诚聘英才</a></li>
+				<li><a href="">意见反馈</a></li>
+			</ul>
+			<ul class="f-t-item">
+				<li>我要合作</li>
+				<li><a href="">培训驻入</a></li>
+				<li><a href="">企业合作</a></li>
+				<li><a href="">高校合作</a></li>
+			</ul>
+			<ul class="f-t-item f-t-ewm fl">
+				<li class="app"><img src="images/page/app.png" width="153" height="155"/></li>
+				<li class="app">APP下载</li>
+			</ul>
+		</div>
+		
+	</footer>
+	<!--默认播放节点-->
+	<script type="text/javascript ">
+		 $(function(){
+			$(".share-box ").hover(function() {
+				$(this).stop().animate({"width " : "265px "}, 200);
+				$(this).children("#bdshare ").stop().animate({"right " : "0 "}, 200);
+			}, function() {
+				$(this).stop().animate({"width " : "63px "}, 200);
+				$(this).children("#bdshare ").stop().animate({"right " : "-160px "}, 200);
+			});
+			/*评价*/
+			$(".appr-discuss-item .test-answer").each(function(){
+				if($(this).index()===4){
+					$(".appr-discuss-item .test-answer:gt(4)").css('display',"none");
+					$('.appr-discuss-item .more-appr-reply').slideDown();
+				}
+				$('.appr-discuss-item .more-appr .click').on('click',function(){
+					$(".appr-discuss-item .test-answer:lt(9)").fadeIn();
+				})
+				$('.appr-discuss-item .click-appr').on('click',function(){
+					$('.appr-discuss-item .reply-box').fadeIn();
+				})
+			})
+			$('.appr-discuss-item .appr-discuss-icon1').each(function(){
+				$(this).on('click',function(){
+					$(".reply-box").slideDown();
+				})
+			})
+			$('.appr-discuss-item .comment .appr-discuss-icon2').each(function(){
+				$(this).on('click',function(){
+					$(this).css({"background-position":"-50px -48px","cursor":'auto'});
+				})
+			})
+			$('.appr-discuss-item .comment .appr-discuss-icon3').each(function(){
+				$(this).on('click',function(){
+					$(this).css({"background-position":'-80px -48px',"cursor":'auto'})
+				})
+			})
+		})
+	</script>
+</body>
+</html>
